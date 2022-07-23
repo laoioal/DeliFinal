@@ -28,9 +28,18 @@
 		<input type="hidden" name="vw" id="vw" value="${param.vw}">
 	 </form>
 
+	 <form method="POST" action="/deli/member/boardWrite.dlv" id="pfrm" name="pfrm">
+		<input type="hidden" name="placeName" value="고척근린공원"/>
+		<input type="hidden" name="category" value="치킨"/>
+		<input type="hidden" name="rest" value="11"/>
+		<input type="hidden" name="parea" value="서울 구로구 고척로 47길"/>
+	 </form>
+
+
 <div class="w3-container">
 		<!-- 회원정보 버튼 -->
 		<button id="myinfo" class="w3-button w3-green w3-large">Info</button>
+		<button id="pbtn" class="w3-button w3-green w3-large">BoardWrite</button>
 
  	<div id="id01" class="w3-modal">
 		<div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:500px">

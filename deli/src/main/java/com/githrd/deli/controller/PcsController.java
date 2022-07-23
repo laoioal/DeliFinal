@@ -97,15 +97,20 @@ public class PcsController {
 	// 글쓰기 폼
 	@RequestMapping("/boardWrite.dlv")
 	public ModelAndView boardWrite(ModelAndView mv, HttpSession session, RedirectView rv, PcsVO pcVO) {
-		List<PcsVO> llist = PcDao.largeArea();
-		List<PcsVO> menu = PcDao.menuCate();
+	//	List<PcsVO> llist = PcDao.largeArea();
+	//	List<PcsVO> menu = PcDao.menuCate();
+		PcsVO pcVO1 = PcDao.getRest(pcVO);
+		pcVO.setRname(pcVO1.getRname());
 		
-		mv.addObject("MENU", menu);
-		mv.addObject("LARGE", llist);
+		System.out.println(pcVO);
+	//	mv.addObject("MENU", menu);
+	//	mv.addObject("LARGE", llist);
+		mv.addObject("PICK", pcVO);
 		mv.setViewName("member/boardWrite");		
 		return mv;
 	}
 	
+/*	
 	// 음식점 카테고리
 	@RequestMapping("/rest.dlv")
 	@ResponseBody
@@ -129,7 +134,7 @@ public class PcsController {
 		List<PcsVO> list = PcDao.smallArea(pcVO);
 		return list;
 	}
-	
+*/	
 	// 글쓰기 등록 요청
 	@RequestMapping("/boardWriteProc.dlv")
 	public ModelAndView boardWrietProc(ModelAndView mv, PcsVO pcVO, HttpSession session, String nowPage) {
@@ -142,6 +147,7 @@ public class PcsController {
 		if(cnt == 1) {
 			System.out.println("pcVO : " + pcVO);
 			PcDao.addRegimem(pcVO);
+			PcDao.addPickUp(pcVO);
 			nowPage = "1";
 			mv.addObject("NOWPAGE", nowPage);
 			mv.addObject("VIEW", view);
@@ -165,9 +171,9 @@ public class PcsController {
 		}
 		*/
 		// 데이터 가져오고
-		PcsVO PcVO = PcDao.getIdInfo(id);
+		PcsVO pcVO = PcDao.getIdInfo(id);
 		
-		mv.addObject("DATA", PcVO);
+		mv.addObject("DATA", pcVO);
 		mv.setViewName("member/myInfo");
 		return mv;
 	}
@@ -335,7 +341,7 @@ public class PcsController {
 		map.put("result", result);
 		return map;
 	}
-/*	
+	
 	// 스마트에디터 단일파일 업로드
 	@RequestMapping("/bWriteProc.dlv")
 	public String photoUpload(HttpServletRequest req, BphotoVO bpVO) {
@@ -373,7 +379,7 @@ public class PcsController {
 		System.out.println("callback : " + callback);
 		return "redirect:" + callback + "?callback_func="+callback_func+file_result;
 	}
-*/	
+	
 	// 다중파일업로드
 	@RequestMapping("/bMulitWriteProc.dlv")
 	public void bMulitWriteProc(HttpServletRequest req, HttpServletResponse resp) {

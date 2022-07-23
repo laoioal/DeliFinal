@@ -9,15 +9,15 @@ $(document).ready(function(){
 			this.reset();
 		});
 		oEditors.getById["ir1"].exec("SET_IR", [""]); //내용초기화
-		$('#middle').css('display', 'none');
-		$('#small').css('display', 'none');
-		$('rest').css('display', 'none');
+//		$('#middle').css('display', 'none');
+//		$('#small').css('display', 'none');
+//		$('rest').css('display', 'none');
 	});
 	
-	$('.w3-select').not('#large').css('display', 'none');
-	$('#menu').css('display', 'block');
+//	$('.w3-select').not('#large').css('display', 'none');
+//	$('#menu').css('display', 'block');
 	$('#end').css('display', 'block');
-	
+/*	
 	// 지역 중분류
 	$('#large').change(function(){
 		var code = $('#large > option:selected').attr('id');
@@ -95,6 +95,20 @@ $(document).ready(function(){
 			}
 		});
 	});
+*/	
+	// 지역 구분
+	var parea = $('#parea').val();
+	var large = parea.substring(0, parea.indexOf(' '));
+	if(large == '서울'){
+		large = '서울특별시';
+	}
+	var middle = parea.substring(parea.indexOf(' ')+1, parea.indexOf(' ', parea.indexOf(' ') + 1));
+	var small = parea.substring(parea.indexOf(' ', parea.indexOf(' ') + 1) + 1);
+	
+	$('#large').val(large);
+	$('#middle').val(middle);
+	$('#small').val(small);
+	
 	
 	// 글 등록 버튼 클릭
 	$('#wbtn').click(function(){
@@ -104,10 +118,18 @@ $(document).ready(function(){
 		var sarea = $('#small').val();
 		var end = $('#end').val();
 		var category = $('#menu').val();
-
+		var rest = $('#rest').val();
+		var pickName = $('#placeName').val();
 		
 		oEditors.getById['ir1'].exec('UPDATE_CONTENTS_FIELD', []);
 		let content = $('#ir1').val();
+		
+/*		var elm = document.createElement('div');
+		$(elm).append(content);
+		if($(elm).children().children().attr('src').includes('http')){
+			alert("비 정상적인 접근입니다. 이미지 파일 업로드는 우측 상단 사진 버튼을 사용 해주세요.");
+			return;
+		}*/
 		
 		if(content == ''){
 			alert("내용을 입력해주세요.");
@@ -117,11 +139,11 @@ $(document).ready(function(){
 			console.log(content);
 		}
 		
-		if(content.length > 3000){
+		if(content.length > 4000){
 			alert("입력가능한 글자수를 초과 하였거나, 또는 비 정상적인 접근입니다.");
 			return;
 		}
-		var el = $('#title, #large, #middle, #small, #end, #menu, #ir1');
+		var el = $('#title, #large, #middle, #small, #end, #menu, #rest, #placeName, #ir1');
 		
 		for(var i = 0; i < el.length; i++){
 			var txt = $(el).eq(i).val();

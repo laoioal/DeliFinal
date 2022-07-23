@@ -7,6 +7,8 @@ package com.githrd.deli.vo;
  * 			작업이력 ]
  * 					2022/06/11	- 담당자 : 박찬슬
  * 									회원관련 vo 클래스 제작
+ * 					2022/07/22  - 담당자 : 박찬슬
+ * 									글쓰기 관련 데이터 추가
  */
 import java.text.*;
 import java.sql.Time;
@@ -19,8 +21,8 @@ import org.springframework.web.multipart.MultipartFile;
 public class PcsVO {
 	private int bno, mno, mmno, code, end, rest;
 	private double esti;
-	private String id, name, kakaoid, pw, mail, tel, addr, dti_addr, oriname, dir, savename,
-		city, foodtype, authkey, title, body, larea, marea, sarea, category, rname, sdate;
+	private String id, name, kakaoid, pw, mail, tel, addr, dti_addr, oriname, dir, savename, placeName,
+		city, foodtype, authkey, title, body, parea, larea, marea, sarea, category, rname, sdate;
 	private Date jdate;
 	private MultipartFile[] file;
 	private List<FileVO> list;
@@ -133,6 +135,12 @@ public class PcsVO {
 	public void setSavename(String savename) {
 		this.savename = savename;
 	}
+	public String getPlaceName() {
+		return placeName;
+	}
+	public void setPlaceName(String placeName) {
+		this.placeName = placeName;
+	}
 	public String getCity() {
 		return city;
 	}
@@ -162,6 +170,12 @@ public class PcsVO {
 	}
 	public void setBody(String body) {
 		this.body = body;
+	}
+	public String getParea() {
+		return parea;
+	}
+	public void setParea(String parea) {
+		this.parea = parea;
 	}
 	public String getLarea() {
 		return larea;
@@ -227,10 +241,11 @@ public class PcsVO {
 		return "PcsVO [bno=" + bno + ", mno=" + mno + ", mmno=" + mmno + ", code=" + code + ", end=" + end + ", rest="
 				+ rest + ", esti=" + esti + ", id=" + id + ", name=" + name + ", kakaoid=" + kakaoid + ", pw=" + pw
 				+ ", mail=" + mail + ", tel=" + tel + ", addr=" + addr + ", dti_addr=" + dti_addr + ", oriname="
-				+ oriname + ", dir=" + dir + ", savename=" + savename + ", city=" + city + ", foodtype=" + foodtype
-				+ ", authkey=" + authkey + ", title=" + title + ", body=" + body + ", larea=" + larea + ", marea="
-				+ marea + ", sarea=" + sarea + ", category=" + category + ", rname=" + rname + ", sdate=" + sdate
-				+ ", jdate=" + jdate + ", file=" + Arrays.toString(file) + ", list=" + list + "]";
+				+ oriname + ", dir=" + dir + ", savename=" + savename + ", placeName=" + placeName + ", city=" + city
+				+ ", foodtype=" + foodtype + ", authkey=" + authkey + ", title=" + title + ", body=" + body + ", parea="
+				+ parea + ", larea=" + larea + ", marea=" + marea + ", sarea=" + sarea + ", category=" + category
+				+ ", rname=" + rname + ", sdate=" + sdate + ", jdate=" + jdate + ", file=" + Arrays.toString(file)
+				+ ", list=" + list + "]";
 	}
-	
+
 }

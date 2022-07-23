@@ -61,28 +61,40 @@ function save(){
 		<div class="w3-col ">
 		<form method="POST" action="/deli/member/boardWriteProc.dlv" id="bfrm" name="bfrm"
 			class="w3-border w3-margin-top w3-margin-bottom">
-				
+						
 				<div class="w3-col w3-margin-top">
-					<div class="w3-quarter w3-margin-bottom w3-margin-left" style="width :20%">
+					<div class="w3-col">
+						<div class=" w3-left-align w3-padding">
+							<label class="w3-margin-right" style="width: 20%" >글 제목 : </label>
+							<input class="w3-margin-left" name="title" id="title" type="text" style="width: 80%;">
+						</div>
+					</div>
 						<input type="hidden" name="id" value="${SID}">
-						<select class="w3-select w3-border w3-center" name="larea" id="large">
-							<option disabled selected>지역(대)</option>
-					<c:forEach var="data" items="${LARGE}" varStatus="st">		
-							<option value="${data.city}" id="${data.code}" class="w3-text-blue">${data.city}</option>
-					</c:forEach>		
-						</select>
+			<c:if test="${not empty PICK}">
+					<input type="hidden" value="${PICK.parea}" id="parea" disabled>
+					<div class="w3-center">
+						<div class="w3-third mgb10">
+							<label>지역(대)</label>
+							<input type="text" name="larea" id="large" value="" readonly/>
+						</div>
+						<div class="w3-third mgb10">
+							<label>지역(중)</label>
+							<input type="text" name="marea" id="middle" value="" readonly/>
+						</div>
+						<div class="w3-third mgb10">
+							<label>지역(소) </label>
+							<input type="text" name="sarea" id="small" value="" readonly/>
+						</div>
 					</div>
-					<div class="w3-quarter w3-margin-bottom w3-margin-left" style="width :20%">
-						<select class="w3-select w3-border w3-center" name="marea" id="middle">
-							<option disabled selected>지역(중)</option>
-						</select>
-					</div>
-					<div class="w3-quarter w3-margin-bottom w3-margin-left" style="width :20%">
-						<select class="w3-select w3-border w3-center" name="sarea" id="small">
-							<option disabled selected>지역(소)</option>
-						</select>
-					</div>
-					<div class="w3-quarter w3-margin-bottom w3-margin-left w3-margin-right w3-right" style="width :20%;">
+			</c:if>
+				<div>
+			<c:if test="${not empty PICK}">
+						<div class="w3-quarter w3-margin-left">
+							<label class="w3-left">픽업 장소 : </label>
+							<input class="w3-left" type="text" name="placeName" id="small" value="${PICK.placeName}" readonly/>
+						</div>
+			</c:if>
+					<div class="w3-quarter w3-margin-bottom w3-margin-left w3-margin-right w3-right">
 						<select class="w3-select w3-border w3-center" name="end" id="end">
 							<option disabled selected>제한 시간(시)</option>
 							<option class="w3-text-blue">1</option>
@@ -99,35 +111,31 @@ function save(){
 							<option class="w3-text-blue">12</option>
 						</select>
 					</div>
+				</div>
+		<c:if test="${not empty PICK}">
+				<div class="w3-col">
+					<div class="w3-quarter w3-margin-bottom w3-margin-left w3-margin-right w3-right">
+						<input type="hidden" class="w3-border w3-center" 
+							name="rest" id="rest" value="${PICK.rest}"/>
+						<input type="text" class="w3-border w3-center" 
+							value="${PICK.rname}" disabled/>
+					</div>
+					<div class="w3-quarter w3-margin-bottom w3-margin-left w3-margin-right w3-left">
+						<label>카테고리</label>
+						<input type="text" class="w3-border w3-center" 
+							name="category" id="menu" value="${PICK.category}" readonly/>
+					</div>
+				</div>
+		</c:if>	
 					
-				</div>
-				<div>
-					<div class="w3-quarter w3-margin-bottom w3-margin-left w3-margin-right w3-left" style="width :20%;">
-						<select class="w3-select w3-border w3-center" name="category" id="menu">
-							<option disabled selected>메뉴</option>
-					<c:forEach var="data" items="${MENU}" varStatus="st">		
-							<option value="${data.category}" class="w3-text-blue" id="${data.code}">${data.category}</option>
-					</c:forEach>	
-						</select>
-					</div>
-					<div class="w3-quarter w3-margin-bottom w3-margin-left w3-margin-right w3-right" style="width :50%;">
-						<select class="w3-select w3-border w3-center" name="rest" id="rest">
-							<option disabled selected>음식점</option>
-						</select>
-					</div>
-				</div>
-				<div class="w3-col w3-padding">
-					<div class=" w3-left-align w3-padding">
-						<label class="w3-margin-right" style="width: 20%" >글 제목 : </label>
-						<input class="w3-margin-left" name="title" id="title" type="text" style="width: 80%;">
-					</div>
 				</div>
 				<textarea name="body" id="ir1" rows="10" cols="100" style="width: 100%;"></textarea>
 		</form>
 			</div>
 			<div class="w3-col">			
-				<div class="w3-button w3-black w3-hover-grey w3-left w3-border" id="rbtn">reset</div>
 				<div class="w3-button w3-black w3-hover-grey w3-right w3-border" id="wbtn">글 등록</div>
+				<div class="w3-button w3-black w3-hover-grey w3-margin-right w3-right w3-border" id="rbtn">Reset</div>
+				<div class="w3-button w3-black w3-hover-grey w3-left w3-border" id="pbtn">PickUp</div>
 			</div>
 	</div>
 </body>

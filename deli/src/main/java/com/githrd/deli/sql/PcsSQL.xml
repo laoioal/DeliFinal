@@ -224,4 +224,39 @@
 			#{bno}, #{id}
 		)
 	</insert>
+	<!-- 음식점 명, 해당 코드 가져오는 질의명령  -->
+	<select id="restaurant" resultType="pcVO" parameterType="pcVO">
+		SELECT
+			restno rest, rname
+		FROM
+			restaurant
+		WHERE
+			restno = #{rest}
+	</select>
+	<!-- 픽업 테이블 -->
+	<insert id="insertPickUp" parameterType="pcVO">
+		INSERT INTO
+			pickupplace(cusname, cusid)
+		VALUES(
+			#{placeName}, #{id}
+		)
+	</insert>
+	<!-- 지역(대)분류 이름으로 코드 뽑기 -->
+	<select id="getLCode" parameterType="pcVO">
+		SELECT
+			code
+		FROM
+			largearea
+		WHERE
+			city = #{city}
+	</select>
+	<!-- 지역(중)분류 이름으로 코드 뽑기 -->
+	<select id="getMCode" parameterType="pcVO">
+		SELECT
+			code
+		FROM
+			middlearea
+		WHERE
+			city = #{city}
+	</select>
 </mapper>

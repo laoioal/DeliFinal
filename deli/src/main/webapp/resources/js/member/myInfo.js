@@ -2,7 +2,9 @@ $(document).ready(function(){
 	$('#ebtn').click(function(){
 		$(location).attr('href', '/deli/member/editInfo.dlv')
 	});
-	
+	$('#pbtn').click(function(){
+		$('#pfrm').submit();
+	});
 	$('#dbtn').click(function(){
 		// 보낼 데이터 읽고
 		var sno = $('#infomno').html();

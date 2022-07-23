@@ -132,4 +132,22 @@ public class PcsDao {
 	public int addRegimem(PcsVO pcVO) {
 		return sqlSession.insert("pcSQL.insertRegimem", pcVO);
 	}
+	
+	// 음식점 이름, 해당 코드 요청 함수
+	public PcsVO getRest(PcsVO pcVO) {
+		return sqlSession.selectOne("pcSQL.restaurant", pcVO);
+	}
+	
+	// 픽업 테이블 등록 요청 함수
+	public int addPickUp(PcsVO pcVO) {
+		return sqlSession.insert("pcSQL.insertPickUp", pcVO);
+	}
+	// 지역 대분류 코드 요청 함수
+	public List<PcsVO> getLcode(PcsVO pcVO) {
+		return sqlSession.selectList("pcSQL.getLcode", pcVO);
+	}
+	// 지역 대분류 코드 요청 함수
+	public List<PcsVO> getMcode(PcsVO pcVO) {
+		return sqlSession.selectList("pcSQL.getMcode", pcVO);
+	}
 }
