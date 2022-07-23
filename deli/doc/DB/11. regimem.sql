@@ -109,4 +109,6 @@ VALUES(
     19, 'YHLEE'
 );
 
+ALTER TABLE regimem DROP COLUMN estishow;
+
 commit;
