@@ -66,6 +66,7 @@ VALUES(
 );
 
 
+
 INSERT INTO
     imgfile(ano, amno, oriname, dir, savename)
 VALUES(
