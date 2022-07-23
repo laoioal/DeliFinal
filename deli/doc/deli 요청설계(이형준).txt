@@ -1,23 +1,46 @@
-
+######################### payment 관련 요청 설계 ################################
 
 # beforPay 페이지 보기 요청
 요청내용	:	/deli/payment/beforePay.dlv
-파라미터	:	무
-컨트롤러	:	com.githrd.deli.controller.pay.BeforePay
+파라미터	:	bno, mname, mprice, sid
+컨트롤러	:	com.githrd.deli.controller.PayController
 뷰			:	/WEB-INF/views/payment/beforePay.jsp
+
 ----------------------------------------------------------------------------------
-# 결제 처리 요청
-요청내용	:	/deli/payment/payProc.dlv
-파라미터	:	무
-컨트롤러	:	com.githrd.deli.controller.pay.PayProc
-뷰			:	
-				성공시 )	/deli/payment/beforePay.dlv
-				실패시 )  /deli/payment/afterPay.dlv
+# 위변조 내용 확인
+요청내용	:	/deli/payment/complete.dlv
+파라미터	:	imp_merchant, imp_uid, KEY, SECRET
+컨트롤러	:	com.githrd.deli.controller.PayController
+뷰			:	실패 ) /deli/payment/beforePay.dlv
+					    
+----------------------------------------------------------------------------------
+# 환불 처리 요청(오류 발생시)
+요청내용	:	/deli/payment/cancelPay.dlv
+파라미터	:	imp_merchant, KEY, SECRET
+컨트롤러	:	com.githrd.deli.controller.PayController
+뷰			:	성공 ) /deli/main.dlv
+				실패 ) /deli/payment/beforePay.dlv
+					    
+----------------------------------------------------------------------------------
+# 환불 처리 요청(오류 X 환불을 원할 시)
+요청내용	:	/deli/payment/canCelPay.dlv
+파라미터	:	imp_merchant, KEY, SECRET
+컨트롤러	:	com.githrd.deli.controller.PayController
+뷰			:	성공 ) /deli/main.dlv
+				실패 ) /deli/payment/afterPay.dlv
 					    
 ----------------------------------------------------------------------------------
 # afterPay 페이지 보기 요청
 요청내용	:	/deli/payment/afterPay.dlv
-파라미터	:	무
-컨트롤러	:	com.githrd.deli.controller.pay.AfterPay
+파라미터	:	bno, mname, mprice, sid, imp_uid, imp_merchant, request, KEY, SECRET
+컨트롤러	:	com.githrd.deli.controller.PayController
 뷰			:	/WEB-INF/views/payment/afterPay.jsp
+
+----------------------------------------------------------------------------------
+# orderHistory 페이지 보기 요청
+요청내용	:	/deli/payment/orderHistory.dlv
+파라미터	:	sid
+컨트롤러	:	com.githrd.deli.controller.PayController
+뷰			:	/WEB-INF/views/payment/orderHistory.jsp
+
 ----------------------------------------------------------------------------------
