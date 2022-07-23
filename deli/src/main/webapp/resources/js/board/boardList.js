@@ -49,4 +49,8 @@ $(document).ready(function(){
 	$('#lbtn').click(function(){
 		$(location).attr('href', '/deli/member/login.dlv');
 	});
+	
+	$('#writebtn').click(function(){
+		$(location).attr('href', '/deli/member/insertId.dlv');
+	});
 });

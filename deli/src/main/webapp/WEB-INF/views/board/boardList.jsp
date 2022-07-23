@@ -106,7 +106,7 @@
 			
 		</div>
 
-		<div class="w3-button w3-right w3-border w3-margin-top">글작성</div> 
+		<div class="w3-button w3-right w3-border w3-margin-top" id="writebtn">글작성</div> 
 
 
 
