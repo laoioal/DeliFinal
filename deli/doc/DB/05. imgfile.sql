@@ -77,7 +77,7 @@ VALUES(
 INSERT INTO
     imgfile(ano, amno, oriname, dir, savename)
 VALUES(
-    (SELECT NVL(MAX(ano) + 1, 100000) FROM imgfile), 109,
+    (SELECT NVL(MAX(ano) + 1, 100000) FROM imgfile), 1009,
     'img_avatar2.png', '/resources/upload', 'img_avatar6.png'
 );
 
