@@ -13,6 +13,10 @@ public class MemberService {
 	@Autowired
 	private MemberDao dao;
 	
+	public memberVO selectById(String id) {
+		return dao.selectOne(id);
+	}
+	
 	public void searchById(guestVO guest) {
 		memberVO memb = dao.selectOne(guest.getId());
 		if(memb==null) {
