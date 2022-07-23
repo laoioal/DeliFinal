@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="eSQL">
+	<select id="selId" resultType="string" parameterType="string">
+		SELECT
+		    CONCAT(RPAD(SUBSTR(id, 1, 2), LENGTH(id)-1, '*'), LPAD(SUBSTR(id, LENGTH(id)), 1)) id
+		FROM
+		    member
+		WHERE
+		    isshow = 'Y'
+		    AND mail = #{mail}
+	</select>
+	
+	<select id="selMail" resultType="string" parameterType="eVO">
+		SELECT
+		    mail
+		FROM
+		    member
+		WHERE
+		    isshow = 'Y'
+		    AND id = #{id}
+		    AND mail = #{mail}
+	</select>
+	
+	<update id="upPw" parameterType="eVO">
+		UPDATE
+			member
+		SET
+			pw = #{npw}
+		WHERE
+			isshow = 'Y'
+			AND id = #{id}
+	</update>
+	
+	<insert id="insEtableA" parameterType="eVO">
+		INSERT ALL
+		    WHEN
+		        abno = #{bno} AND aid != #{id} THEN
+		    INTO
+		        estitable
+		    VALUES(
+		        #{bno}, #{id}, aid, isshow
+		    )
+		    SELECT * FROM regimem
+	</insert>
+	
+	<insert id="insEtableB" parameterType="eVO">
+		INSERT ALL
+		    WHEN
+		        abno = #{bno} AND aid != #{id} THEN
+		    INTO
+		        estitable
+		    VALUES(
+		        #{bno}, aid, #{id}, isshow
+		    )
+		    SELECT * FROM regimem
+	</insert>
+	
+	<select id="selBinfo" resultType="eVO" parameterType="string">
+		SELECT
+		    bno, title, sdate
+		FROM
+		    (
+		        SELECT
+		            bno, title, b.wdate sdate
+		        FROM
+		           regimem r, board b
+		        WHERE
+		            r.abno = b.bno
+		            AND r.isshow = 'Y'
+		            AND aid = #{id}
+		)
+	</select>
+	
+	<select id="selEinfo" resultType="eVO" parameterType="eVO">
+		SELECT
+		    idb, show, dir, savename, bno
+		FROM
+		    imgfile i, member m, (
+		        SELECT
+		            etidb idb, isshow show, etbno bno
+		        FROM
+		            estitable
+		        WHERE
+		            isshow = 'Y'
+		            AND etbno = #{bno}
+		            AND etidb != #{id}
+		            AND etida = #{id}
+		    )
+		WHERE
+		    i.amno = m.mno
+		    AND m.id = idb
+	</select>
+	
+	<insert id="insEsti" parameterType="eVO">
+		INSERT INTO
+		    estimate
+		VALUES(
+		    #{bno}, #{id}, #{idb}, #{nesti}
+		)
+	</insert>
+	
+	<update id="upEtable" parameterType="eVO">
+		UPDATE
+		    estitable
+		SET
+		    isshow = 'N'
+		WHERE
+		    etbno = #{bno}
+		    AND etida = #{id}
+		    AND etidb = #{idb}
+	</update>
+	
+	<select id="selPoint" resultType="eVO" parameterType="string">
+		SELECT
+		    spts, cpts
+		FROM
+		    (
+		        SELECT
+		            SUM(epoint) spts, count(epoint) cpts
+		        FROM
+		            estimate
+		        WHERE
+		            eidb = #{idb}
+		    )
+	</select>
+	
+	<update id="upEsti" parameterType="eVO">
+		UPDATE
+		    member
+		SET
+		    esti = #{esti}
+		WHERE
+		    id = #{idb}
+	</update>
+	
+</mapper>
