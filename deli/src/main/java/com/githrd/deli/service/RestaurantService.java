@@ -20,7 +20,6 @@ public class RestaurantService {
 		
 		//1차 : 카테고리로 걸러줌
 		List<restaurantVO> list = dao.selectCname(cname);
-		System.out.println(list);
 		List<restaurantVO> sortList = new ArrayList<>();
 		//2차 : 걸러진 카테고리 중 mcode가 같으면 list에 넣어줌		
 		for(int i = 0; i<list.size();i++) {
