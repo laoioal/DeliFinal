@@ -464,4 +464,30 @@
 		    id = #{id}
 	</select>
 	
+	<!-- 후기 작성 가능하게 db에 넣기 -->
+	<insert id="insEtableA" parameterType="yVO">
+      INSERT ALL
+          WHEN
+              abno = #{bno} AND aid != #{id} THEN
+          INTO
+              estitable
+          VALUES(
+              #{bno}, #{id}, aid, isshow
+          )
+          SELECT abno, aid, isshow, wdate, ddate FROM regimem
+   </insert>
+   
+   <!-- 후기 작성 가능하게 db에 넣기 -->
+   <insert id="insEtableB" parameterType="yVO">
+      INSERT ALL
+          WHEN
+              abno = #{bno} AND aid != #{id} THEN
+          INTO
+              estitable
+          VALUES(
+              #{bno}, aid, #{id}, isshow
+          )
+          SELECT abno, aid, isshow, wdate, ddate FROM regimem
+   </insert>
+	
 </mapper>

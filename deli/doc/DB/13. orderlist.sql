@@ -22,3 +22,9 @@ alter table orderlist add(
     CONSTRAINT ODL_SHOW_CK CHECK (isshow IN('Y', 'N'))
     CONSTRAINT ODL_SHOW_NN NOT NULL
 );
+
+ALTER TABLE 
+    orderlist
+ADD olmenu VARCHAR2(40 CHAR) 
+    CONSTRAINT OL_MENU_NN NOT NULL
+;

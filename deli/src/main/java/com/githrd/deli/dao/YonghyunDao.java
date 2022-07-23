@@ -165,4 +165,14 @@ public class YonghyunDao {
 		return sqlSession.selectOne("ySQL.getMno", yVO);
 	}
 	
+	// 후기 작성 가능하게 공구 신청한 대상 db에 넣는 함수1
+	public int insEtableA(YonghyunVO yVO) {
+		return sqlSession.insert("ySQL.insEtableA", yVO);
+	}
+
+	// 후기 작성 가능하게 공구 신청한 대상 db에 넣는 함수2
+	public int insEtableB(YonghyunVO yVO) {
+		return sqlSession.insert("ySQL.insEtableB", yVO);
+	}
+	
 }

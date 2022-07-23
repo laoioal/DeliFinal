@@ -188,6 +188,9 @@
 		<input type="hidden" name="res" id="res">
 		<input type="hidden" name="upno" id="upno">
 		<input type="hidden" name="body" id="body">
+		<input type="hidden" name="1mname" id="1mname">
+		<input type="hidden" name="1price" id="1price">
+		
 	</form>
 </body>
 </html>

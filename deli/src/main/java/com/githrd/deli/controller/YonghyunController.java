@@ -102,7 +102,8 @@ public class YonghyunController {
 				int cnt = yDao.regiMem(yVO);
 				if(cnt == 1) {
 					mv.addObject("RESULT", 0);
-					
+					yDao.insEtableA(yVO);
+					yDao.insEtableB(yVO);
 				} else {
 					mv.addObject("RESULT", 1);
 				}

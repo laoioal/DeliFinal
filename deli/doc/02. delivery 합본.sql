@@ -2130,6 +2130,12 @@ CREATE TABLE ordermenu(
         CONSTRAINT OM_ONO_FK REFERENCES ordertask(ono)
 );
 
+ALTER TABLE 
+    orderlist
+ADD olmenu VARCHAR2(40 CHAR) 
+    CONSTRAINT OL_MENU_NN NOT NULL
+;
+
 alter table ordermenu add(
     isshow CHAR(1) DEFAULT 'Y'
     CONSTRAINT ODM_SHOW_CK CHECK (isshow IN('Y', 'N'))
