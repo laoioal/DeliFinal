@@ -100,18 +100,10 @@
 				<div class="w3-col m8">${MAIN.body}</div>
 				<div class="w3-col m4"> 
 					<div class="w3-center">식당정보</div>
-<c:forEach var="menu" items="${MENU}" varStatus="st">	
+<c:forEach var="menu" items="${MENU}">	
 					<div>
 						<div class="w3-right w3-padding" id="restname">${menu.rname}</div>
-						<div class="mname w3-padding pricebtn" id="${menu.mname}">${menu.mname} : ${menu.mprice}
-							<div class="w3-button w3-right pricebtn1" <%-- id="${menu.mprice}" --%> id="${st.count}">-
-								<input type="hidden" id="${menu.mprice}">
-							</div>
-							<input class="inputprice w3-right w3-center" type="text" value="0" disabled>
-							<div class="w3-button w3-right pricebtn2" <%-- id="${menu.mprice}" --%> id="${st.count}">+
-								<input type="hidden" id="${menu.mprice}">
-							</div>
-						</div>
+						<div class="mname w3-padding pricebtn" id="${menu.mname}">${menu.mname} : ${menu.mprice}<div class="w3-button w3-right pricebtn1" id="${menu.mprice}">-</div><input class="inputprice w3-right w3-center" type="text" disabled value="0"><div class="w3-button w3-right pricebtn2" id="${menu.mprice}">+</div></div>
 					</div>
 </c:forEach>	
 					<input type="hidden" id="price" name="price">
@@ -119,21 +111,21 @@
 			</div>
 		</div>
 
-<c:if test="${not empty PAY}">
+	<c:if test="${not empty PAY}">
 		<form method="POST" action="/deli/payment/beforePay.dlv" id="payfrm" name="payfrm">
-			<div class="w3-col w3-border w3-margin-top w3-left w3-padding" id="abc">
-	<c:forEach var="remenu" items="${MENU}" varStatus="st">
-				<div class="w3-col menuinputfrm">
-					<div class="w3-col m4 w3-right-align" id="${remenu.mname}">${remenu.mname} : &nbsp;&nbsp;</div>
-					<input class="w3-col m5 w3-center valueck" type="text" name="${st.count}" disabled value="">
-				</div>	
-	</c:forEach>
-			</div>
+		<div class="w3-col w3-border w3-margin-top w3-left w3-padding" id="abc">
+<c:forEach var="remenu" items="${MENU}">
+		<div class="w3-col menuinputfrm">
+			<div class="w3-col m4 w3-right-align">${remenu.mname} : &nbsp;&nbsp;</div>
+			<input class="w3-col m5 w3-center valueck" type="text" name="${remenu.mname}" disabled>
+		</div>	
+</c:forEach>
+		</div>
 		</form>
 		<div class="w3-col">
 		</div>
 		<div class="w3-col w3-button w3-border w3-margin-top" id="paybtn">결제하기</div>
-</c:if>
+	</c:if>
 
 </c:if>		
 <c:if test="${MAIN.endalert < 0}">
@@ -196,11 +188,6 @@
 		<input type="hidden" name="res" id="res">
 		<input type="hidden" name="upno" id="upno">
 		<input type="hidden" name="body" id="body">
-<c:if test="${not empty PAY}">
-	<c:forEach var="remenu" items="${MENU}">
-		<input type="hidden" name="${remenu.mname}">
-	</c:forEach>
-</c:if>
 	</form>
 </body>
 </html>
