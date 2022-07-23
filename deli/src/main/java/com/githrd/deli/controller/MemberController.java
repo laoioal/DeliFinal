@@ -2,6 +2,7 @@ package com.githrd.deli.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,11 +36,10 @@ public class MemberController {
 	
 	//insertId라는 주소가 url에 들어오면 member객체를 넘기고 현위치가 담겨있는 페이지를 보여줌
 	@GetMapping("/insertId.dlv")
-	public String insertID(@Param("id")String id,Model model) {
-		member = service.selectById(id);
+	public String insertID(HttpSession session,Model model) {
+		member = service.selectById((String)session.getAttribute("id"));
 		model.addAttribute("member",member);	//member객체 넘긴다.
 		return "/search/1.mapSearch/myPositionSearch";
- 
 	}
 	
 	
@@ -64,6 +64,4 @@ public class MemberController {
 	
 
 }
-	
-	
 
