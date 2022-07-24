@@ -2,7 +2,7 @@
 
 create table pickup (
     name varchar2(10 char) constraint name_pickup_pk primary key,
-    address varchar2(60 char)constraint name_pickup_nn not null,
+    address varchar2(60 char)constraint address_pickup_nn not null,
     pickuplat number constraint lat_pickup_nn not null,
     pickuplon number constraint lon_pickup_nn not null
 );
