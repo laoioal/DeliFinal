@@ -465,6 +465,7 @@
 	</select>
 	
 	<!-- 후기 작성 가능하게 db에 넣기 -->
+	<!-- 
 	<insert id="insEtableA" parameterType="yVO">
       INSERT ALL
           WHEN
@@ -476,8 +477,10 @@
           )
           SELECT abno, aid, isshow, wdate, ddate FROM regimem
    </insert>
+    -->
    
    <!-- 후기 작성 가능하게 db에 넣기 -->
+   <!-- 
    <insert id="insEtableB" parameterType="yVO">
       INSERT ALL
           WHEN
@@ -489,5 +492,5 @@
           )
           SELECT abno, aid, isshow, wdate, ddate FROM regimem
    </insert>
-	
+	 -->
 </mapper>

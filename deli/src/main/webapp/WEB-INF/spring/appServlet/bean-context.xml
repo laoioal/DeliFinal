@@ -42,16 +42,6 @@
 	<bean class="com.githrd.deli.service.AdminService" id="AdminService"/>
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"> 
-		<property name="host" value="smtp.google.com"/> 
-	</bean>
+
 	
 </beans>

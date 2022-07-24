@@ -167,6 +167,7 @@ public class YonghyunDao {
 	
 	// 후기 작성 가능하게 공구 신청한 대상 db에 넣는 함수1
 	public int insEtableA(YonghyunVO yVO) {
+System.out.println(yVO);
 		return sqlSession.insert("ySQL.insEtableA", yVO);
 	}
 

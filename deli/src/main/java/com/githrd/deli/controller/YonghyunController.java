@@ -102,8 +102,8 @@ public class YonghyunController {
 				int cnt = yDao.regiMem(yVO);
 				if(cnt == 1) {
 					mv.addObject("RESULT", 0);
-					yDao.insEtableA(yVO);
-					yDao.insEtableB(yVO);
+	//				yDao.insEtableA(yVO);
+	//				yDao.insEtableB(yVO);
 				} else {
 					mv.addObject("RESULT", 1);
 				}
@@ -288,6 +288,15 @@ public class YonghyunController {
 		mv.addObject("MYADDR", yVO);
 		mv.addObject("LIST", list);
 		mv.setViewName("board/friendArround");
+		return mv;
+	}
+	
+	// 메일발송
+	@RequestMapping("/mailSend.dlv")
+	public ModelAndView mailsend(ModelAndView mv) {
+		String[] mail = {"dktldkgoddh@naver.com", "galaxysuser@gmail.com"};
+		ySrvc.joinEmail(mail);
+		mv.setViewName("remain");
 		return mv;
 	}
 	
