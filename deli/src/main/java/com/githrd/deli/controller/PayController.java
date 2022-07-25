@@ -164,8 +164,8 @@ public class PayController {
 		
 		String sid = (String) session.getAttribute("SID");
 		paVO = paDao.selPays(paVO);
-		String mname = (String)req.getParameter("mname1");
-		String mmprice = (String)req.getParameter("price1");
+		String mname = (String)req.getParameter("1mname");
+		String mmprice = (String)req.getParameter("1price");
 		int mtprice = Integer.parseInt(mmprice);
 		
 		paVO.setAmname(mname);
