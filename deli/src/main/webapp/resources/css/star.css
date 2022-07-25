@@ -31,3 +31,9 @@ fieldset label:hover ~ label {
 	font-size: 25px;
 	font-weight: bold;
 }
+
+.jackpot {
+	width: 170px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
