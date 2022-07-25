@@ -36,7 +36,6 @@ public class YonghyunController {
 	// 게시판 리스트 불러오는 함수
 	@RequestMapping("/boardList.dlv")
 	public ModelAndView getBoardList(ModelAndView mv, PageUtil page) {
-
 		if(page.getCcheck() != null && !page.getCcheck().equals("")) {
 			if(!page.getCcheck().equals("writer")) {
 				page.setSearch("%" + page.getSearch() + "%");
@@ -45,7 +44,6 @@ public class YonghyunController {
 		int total = yDao.getBoardTotal(page);
 		page.setPage(page.getNowPage(), total);
 		List<YonghyunVO> list = yDao.getBoardList(page);
-		
 		mv.addObject("PAGE", page);
 		mv.addObject("LIST", list);
 		mv.setViewName("board/boardList");
