@@ -1,0 +1,17 @@
+-- coupon
+CREATE TABLE coupon(
+    cpcode VARCHAR2(8 CHAR)
+        CONSTRAINT CP_CODE_NN NOT NULL,
+    cpname VARCHAR2(20 CHAR)
+        CONSTRAINT CP_NAME_NN NOT NULL,
+    cpdt VARCHAR2(30 CHAR)
+        CONSTRAINT CP_DT_NN NOT NULL,
+    cpowner VARCHAR2(10 CHAR)
+        CONSTRAINT CP_OWN_NN NOT NULL
+        CONSTRAINT CP_OWN_FK REFERENCES member(id),
+    cpexp DATE default(sysdate + 3)
+        CONSTRAINT CP_EXP_NN NOT NULL,
+    cpshow CHAR(1) DEFAULT 'Y'
+        CONSTRAINT CP_SHOW_NN NOT NULL
+        CONSTRAINT CP_SHOW_CK CHECK(cpshow IN('Y','N'))
+);

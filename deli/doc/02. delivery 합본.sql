@@ -2565,7 +2565,37 @@ CREATE TABLE estitable(
         CONSTRAINT ETB_SHOW_CK CHECK(isshow IN('Y','N'))
 );
 
+-- 쿠폰
+CREATE TABLE coupon(
+    cpcode VARCHAR2(8 CHAR)
+        CONSTRAINT CP_CODE_NN NOT NULL,
+    cpname VARCHAR2(20 CHAR)
+        CONSTRAINT CP_NAME_NN NOT NULL,
+    cpdt VARCHAR2(30 CHAR)
+        CONSTRAINT CP_DT_NN NOT NULL,
+    cpowner VARCHAR2(10 CHAR)
+        CONSTRAINT CP_OWN_NN NOT NULL
+        CONSTRAINT CP_OWN_FK REFERENCES member(id),
+    cpexp DATE default(sysdate + 3)
+        CONSTRAINT CP_EXP_NN NOT NULL,
+    cpshow CHAR(1) DEFAULT 'Y'
+        CONSTRAINT CP_SHOW_NN NOT NULL
+        CONSTRAINT CP_SHOW_CK CHECK(cpshow IN('Y','N'))
+);
 
+-- 게시글 픽업장소
+CREATE TABLE boardpickup(
+    bpno number(4)
+        CONSTRAINT BP_BPNO_PK PRIMARY KEY
+        CONSTRAINT BP_BPNO_NN NOT NULL,
+    bno number(4)
+        CONSTRAINT BP_BNO_FK REFERENCES board(bno)
+        CONSTRAINT BP_BNO_NN NOT NULL,
+    placeName VARCHAR2(4000)
+        CONSTRAINT BP_PLACENAME_NN NOT NULL,
+    parea VARCHAR2(4000)
+        CONSTRAINT BP_PAREA_NN NOT NULL
+);
 
 commit;
 

@@ -22,7 +22,7 @@
 			            AND b.sarea = s.code
 			            AND b.isshow = 'Y'
 			            AND bmno = mno
-		            <if test="city neq ''">
+		            <if test="city neq null">
 			            AND LAREA = (
 			                        SELECT
 			                            code
@@ -60,7 +60,7 @@
 		    board
 		WHERE
 		    isshow = 'Y'
-		    <if test="!city.equals('')">
+		    <if test="city neq null">
 		    AND larea = (
 		                SELECT
 		                    code
@@ -493,4 +493,16 @@
           SELECT abno, aid, isshow, wdate, ddate FROM regimem
    </insert>
 	 -->
+	 
+	 <!-- 쿠폰 조회 질의명령 -->
+	 <select id="couponSel" resultType="yVO">
+		SELECT
+		    cpname, cpexp, mail
+		FROM
+		    member, coupon
+		WHERE
+		    cpowner = id
+		    AND cpexp BETWEEN sysdate + 2 AND sysdate + 3
+		    AND cpshow = 'Y'
+	 </select>
 </mapper>

@@ -33,19 +33,20 @@ public class YonghyunController {
 	@Autowired
 	YonghyunService ySrvc;
 	
+	
 	// 게시판 리스트 불러오는 함수
 	@RequestMapping("/boardList.dlv")
 	public ModelAndView getBoardList(ModelAndView mv, PageUtil page) {
-
 		if(page.getCcheck() != null && !page.getCcheck().equals("")) {
 			if(!page.getCcheck().equals("writer")) {
 				page.setSearch("%" + page.getSearch() + "%");
 			}
 		}
+		
+		System.out.println(page);
 		int total = yDao.getBoardTotal(page);
 		page.setPage(page.getNowPage(), total);
 		List<YonghyunVO> list = yDao.getBoardList(page);
-		
 		mv.addObject("PAGE", page);
 		mv.addObject("LIST", list);
 		mv.setViewName("board/boardList");
@@ -83,7 +84,7 @@ public class YonghyunController {
 		return mv;
 	}
 
-	// 게시판 공구신청 처리요청 함수
+	// 게시판 공구신청 & 취소 처리요청 함수
 	@RequestMapping("/applyProc.dlv")
 	public ModelAndView regiMem(ModelAndView mv, YonghyunVO yVO, HttpSession session) {
 		yVO.setId((String) session.getAttribute("SID"));
@@ -291,13 +292,7 @@ public class YonghyunController {
 		return mv;
 	}
 	
-	// 메일발송
-	@RequestMapping("/mailSend.dlv")
-	public ModelAndView mailsend(ModelAndView mv) {
-		String[] mail = {"dktldkgoddh@naver.com", "galaxysuser@gmail.com"};
-		ySrvc.joinEmail(mail);
-		mv.setViewName("remain");
-		return mv;
-	}
+
+
 	
 }

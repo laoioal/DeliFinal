@@ -148,7 +148,9 @@
 				</select>
 				<input type="text" class="w3-border w250" id="content" name="content">
 				<input type="hidden" name="nowPage" id="nowPage" value="${PAGE.nowPage}">
+			<c:if test="${not empty param.city}">
 				<input type="hidden" name="city" id="city" value="${param.city}">
+			</c:if>
 				<input type="hidden" name="search" id="search" value="${param.search}">
 				<%-- <input type="hidden" name="check" id="check" value="${param.check}"> --%>
 				<input type="hidden" name="ccheck" id="ccheck" value="${param.ccheck}">
