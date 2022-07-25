@@ -56,6 +56,7 @@ public class YonghyunService {
 	
 	
 	public void mailsend() {
+		
 		List<YonghyunVO> list = yDao.couponSel();
 		joinEmail(list);
 	}
