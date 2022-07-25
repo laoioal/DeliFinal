@@ -176,4 +176,9 @@ System.out.println(yVO);
 		return sqlSession.insert("ySQL.insEtableB", yVO);
 	}
 	
+	// 쿠폰 조회 함수
+	public List<YonghyunVO> couponSel(){
+		return sqlSession.selectList("ySQL.couponSel");
+	}
+	
 }

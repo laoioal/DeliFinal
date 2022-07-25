@@ -3,16 +3,16 @@ package com.githrd.deli.scheduler;
 import org.quartz.*;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 
-public class CountUpJob extends QuartzJobBean {
-	private CountUp upSal;
+public class sendMail extends QuartzJobBean {
+	private SelectCoupon selCp;
 	
 	@Override
 	protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
-		upSal.upSal();
+		selCp.upSal();
 	}
 	
-	public void setUpSal(CountUp upSal) {
-		this.upSal = upSal;
+	public void setUpSal(SelectCoupon upSal) {
+		this.selCp = upSal;
 	}
 	
 }

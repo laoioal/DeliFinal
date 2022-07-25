@@ -17,7 +17,7 @@ import java.util.Date;
 public class YonghyunVO {
 	private int rno, bno, bmno, click, end, restno, mprice, fno, myno, frino, mno, nowPage, ck, res, upno;
 	private double endalert, esti, pesti;
-	private String title, body, sdate, larea, marea, sarea, category, id, endtime, rname, mname, city, area, search, check, aid, kid, name;
+	private String title, body, sdate, larea, marea, sarea, category, id, endtime, rname, mname, city, area, search, check, aid, kid, name, cpname, cpexp, mail;
 	private Date wdate, wenddate;
 	public int getRes() {
 		return res;
@@ -246,6 +246,24 @@ public class YonghyunVO {
 	public Date getWdate() {
 		return wdate;
 	}
+	public String getCpname() {
+		return cpname;
+	}
+	public void setCpname(String cpname) {
+		this.cpname = cpname;
+	}
+	public String getCpexp() {
+		return cpexp;
+	}
+	public void setCpexp(String cpexp) {
+		this.cpexp = cpexp;
+	}
+	public String getMail() {
+		return mail;
+	}
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
 	public void setWdate(Date wdate) {
 		this.wdate = wdate;
 		setSdate();
@@ -267,7 +285,23 @@ public class YonghyunVO {
 				+ body + ", sdate=" + sdate + ", larea=" + larea + ", marea=" + marea + ", sarea=" + sarea
 				+ ", category=" + category + ", id=" + id + ", endtime=" + endtime + ", rname=" + rname + ", mname="
 				+ mname + ", city=" + city + ", area=" + area + ", search=" + search + ", check=" + check + ", aid="
-				+ aid + ", kid=" + kid + ", name=" + name + ", wdate=" + wdate + ", wenddate=" + wenddate + "]";
+				+ aid + ", kid=" + kid + ", name=" + name + ", cpname=" + cpname + ", cpexp=" + cpexp + ", wdate="
+				+ wdate + ", wenddate=" + wenddate + ", getRes()=" + getRes() + ", getRno()=" + getRno() + ", getBno()="
+				+ getBno() + ", getBmno()=" + getBmno() + ", getClick()=" + getClick() + ", getEnd()=" + getEnd()
+				+ ", getRestno()=" + getRestno() + ", getMprice()=" + getMprice() + ", getFno()=" + getFno()
+				+ ", getMyno()=" + getMyno() + ", getFrino()=" + getFrino() + ", getMno()=" + getMno()
+				+ ", getNowPage()=" + getNowPage() + ", getCk()=" + getCk() + ", getUpno()=" + getUpno()
+				+ ", getEsti()=" + getEsti() + ", getEndalert()=" + getEndalert() + ", getPesti()=" + getPesti()
+				+ ", getTitle()=" + getTitle() + ", getBody()=" + getBody() + ", getSdate()=" + getSdate()
+				+ ", getLarea()=" + getLarea() + ", getMarea()=" + getMarea() + ", getSarea()=" + getSarea()
+				+ ", getCategory()=" + getCategory() + ", getId()=" + getId() + ", getEndtime()=" + getEndtime()
+				+ ", getRname()=" + getRname() + ", getMname()=" + getMname() + ", getCity()=" + getCity()
+				+ ", getArea()=" + getArea() + ", getSearch()=" + getSearch() + ", getCheck()=" + getCheck()
+				+ ", getAid()=" + getAid() + ", getKid()=" + getKid() + ", getName()=" + getName() + ", getWdate()="
+				+ getWdate() + ", getCpname()=" + getCpname() + ", getCpexp()=" + getCpexp() + ", getWenddate()="
+				+ getWenddate() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
 	}
+
 
 }

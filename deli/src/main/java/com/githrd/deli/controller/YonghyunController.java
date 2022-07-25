@@ -83,7 +83,7 @@ public class YonghyunController {
 		return mv;
 	}
 
-	// 게시판 공구신청 처리요청 함수
+	// 게시판 공구신청 & 취소 처리요청 함수
 	@RequestMapping("/applyProc.dlv")
 	public ModelAndView regiMem(ModelAndView mv, YonghyunVO yVO, HttpSession session) {
 		yVO.setId((String) session.getAttribute("SID"));
@@ -291,13 +291,15 @@ public class YonghyunController {
 		return mv;
 	}
 	
-	// 메일발송
+	/**
+	 *  메일발송
+	 * @param mv
+	 * @return
+	 */
 	@RequestMapping("/mailSend.dlv")
-	public ModelAndView mailsend(ModelAndView mv) {
-		String[] mail = {"dktldkgoddh@naver.com", "galaxysuser@gmail.com"};
-		ySrvc.joinEmail(mail);
-		mv.setViewName("remain");
-		return mv;
+	public void mailsend() {
+		List<YonghyunVO> list = yDao.couponSel();
+		ySrvc.joinEmail(list);
 	}
 	
 }

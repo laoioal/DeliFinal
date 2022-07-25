@@ -24,9 +24,6 @@
 <link rel="stylesheet" type="text/css" href="/deli/resources/css/user.css">
 <link rel="stylesheet" type="text/css" href="/deli/resources/css/w3.css">
 <script type="text/javascript" src="/deli/resources/js/member/myInfo.js"></script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
 <script type="text/javascript" src="/deli/resources/js/board/main.js"></script>
 <script type="text/javascript">
 </script>
