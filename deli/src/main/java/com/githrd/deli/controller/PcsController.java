@@ -146,7 +146,7 @@ public class PcsController {
 */	
 	// 글쓰기 등록 요청
 	@RequestMapping("/boardWriteProc.dlv")
-	public ModelAndView boardWrietProc(ModelAndView mv, PcsVO pcVO, HttpSession session, String nowPage) {
+	public ModelAndView boardWrietProc(ModelAndView mv, PcsVO pcVO, HttpSession session, String nowPage, String vw) {
 		String view = "/deli/board/boardForm.dlv";
 		String sid = (String) session.getAttribute("SID");
 		
@@ -155,14 +155,12 @@ public class PcsController {
 		int cnt = PcDao.addBoard(pcVO);
 		System.out.println(pcVO);
 		if(cnt == 1) {
-			System.out.println("pcVO : " + pcVO);
 			PcDao.addRegimem(pcVO);
 			PcDao.addPickUp(pcVO);
 			nowPage = "1";
-			
-			System.out.println(pcVO);
+			vw = view;
 			mv.addObject("NOWPAGE", nowPage);
-			mv.addObject("VIEW", view);
+			mv.addObject("VIEW", vw);
 			mv.setViewName("member/redirect");
 		} else {
 			mv.setViewName("member/boardWrite");

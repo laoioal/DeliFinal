@@ -269,7 +269,7 @@
 		        WHEN TRIM(substr(address, 1, INSTR(address, ' ') - 1)) = '서울' THEN '서울특별시'
 		        ELSE TRIM(substr(address, 1, INSTR(address, ' ') - 1))
 		        END larea,
-		    TRIM(substr(address, INSTR(address, ' ') + 1, INSTR(address, ' ') + 1)) marea
+		    TRIM(substr(address, INSTR(address, ' ') + 1, INSTR(address, ' '))) marea
 		FROM
 		    pickup
 		WHERE
@@ -289,7 +289,7 @@
 		        WHERE
 		            city = (
 		                        SELECT
-		                            TRIM(substr(address, INSTR(address, ' ') + 1, INSTR(address, ' ') + 1)) marea
+		                            TRIM(substr(address, INSTR(address, ' ') + 1, INSTR(address, ' '))) marea
 		                        FROM
 		                            pickup
 		                        WHERE

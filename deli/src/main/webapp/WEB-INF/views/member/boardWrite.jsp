@@ -61,7 +61,8 @@ function save(){
 		<div class="w3-col ">
 		<form method="POST" action="/deli/member/boardWriteProc.dlv" id="bfrm" name="bfrm"
 			class="w3-border w3-margin-top w3-margin-bottom">
-						
+				<input type="hidden" name="nowPage" id="nowPage" value="${param.nowPage}">
+				<input type="hidden" name="vw" id="vw" value="${param.vw}">
 				<div class="w3-col w3-margin-top">
 					<div class="w3-col">
 						<div class=" w3-left-align w3-padding">
@@ -75,12 +76,12 @@ function save(){
 						<div class="w3-third mgb10">
 							<label>지역(대)</label>
 							<input type="text" id="lcity" value="${CITY.larea}" disabled/>
-							<input type="text" name="larea" id="large" value="${LAREA.code}" readonly/>
+							<input type="hidden" name="larea" id="large" value="${LAREA.code}" readonly/>
 						</div>
 						<div class="w3-third mgb10">
 							<label>지역(중)</label>
 							<input type="text" id="middle" value="${CITY.marea}" disabled/>
-							<input type="text" name="marea" id="middle" value="${MAREA.code}" readonly/>
+							<input type="hidden" name="marea" id="middle" value="${MAREA.code}" readonly/>
 						</div>
 						<div class="w3-third mgb10">
 							<label>지역(소)</label>
