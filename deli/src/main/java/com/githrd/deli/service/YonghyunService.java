@@ -55,6 +55,11 @@ public class YonghyunService {
 	}
 	
 	
+	public void mailsend() {
+		List<YonghyunVO> list = yDao.couponSel();
+		joinEmail(list);
+	}
+	
 	//이메일 보낼 양식!
 	public void joinEmail(List<YonghyunVO> list) {
 		String setFrom = "dktldkgoddh@naver.com"; // email-config에 설정한 자신의 이메일 주소를 입력 

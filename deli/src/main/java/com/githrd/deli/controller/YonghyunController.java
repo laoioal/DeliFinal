@@ -291,15 +291,7 @@ public class YonghyunController {
 		return mv;
 	}
 	
-	/**
-	 *  메일발송
-	 * @param mv
-	 * @return
-	 */
-	@RequestMapping("/mailSend.dlv")
-	public void mailsend() {
-		List<YonghyunVO> list = yDao.couponSel();
-		ySrvc.joinEmail(list);
-	}
+
+
 	
 }

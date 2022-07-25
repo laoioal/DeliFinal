@@ -37,8 +37,8 @@
    <beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
       <beans:property name="host" value="smtp.naver.com" />
       <beans:property name="port" value="465" />
-      <beans:property name="username" value="dktldkgoddh@naver.com" />
-      <beans:property name="password" value="skqldi12#" />
+      <beans:property name="username" value="[ID입력]" />
+      <beans:property name="password" value="[PW입력]" />
       <beans:property name="javaMailProperties">
          <beans:props>
                 <beans:prop key="mail.transport.protocol">smtp</beans:prop>
@@ -61,8 +61,8 @@
 	
 	<!-- bean 설정파일 읽어오기 -->
 	<beans:import resource="bean-context.xml" />
-	<beans:import resource="deliInter-context.xml" />
 	<beans:import resource="scheduler-context.xml" />
+	<beans:import resource="deliInter-context.xml" />
 	
 	<context:component-scan base-package="com.githrd.deli" />
 	

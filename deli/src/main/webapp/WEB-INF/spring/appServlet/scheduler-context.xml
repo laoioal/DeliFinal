@@ -12,23 +12,23 @@
 						http://www.springframework.org/schema/context
 						https://www.springframework.org/schema/context/spring-context.xsd">
 						
-	<bean id="selsectCoupon" class="com.githrd.deli.scheduler.SelectCoupon" />
+	<bean id="countupTask" class="com.githrd.deli.scheduler.SelectCoupon" />
 	
-	<bean name="countJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean"
-		p:jobClass="com.githrd.deli.scheduler.sendMail"
+	<bean name="sendMail1" class="org.springframework.scheduling.quartz.JobDetailFactoryBean"
+		p:jobClass="com.githrd.deli.scheduler.SendMail1"
 		p:durability="true">
 		<property name="jobDataAsMap">
 			<map>
-				<entry key="selCp" value-ref="selsectCoupon" />
+				<entry key="upSal" value-ref="countupTask" />
 			</map>
 		</property>	
 	</bean>
 	
 	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean"
-		p:jobDetail-ref="countJob"
+		p:jobDetail-ref="sendMail1"
 		p:startDelay="1000"
-		p:cronExpression="0 0/1 * * * ?">
-		<!-- p:cronExpression="0 0 2 * * ?" -->
+		p:cronExpression="0 0/1 * * * ?"><!-- 매년 7월 12일 오후 2시에서 3시사이에 -->
+<!-- 		p:cronExpression="0 0/1 * * * ?"> --> <!-- 1분마다 -->
 	</bean>
 	
 	<bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">

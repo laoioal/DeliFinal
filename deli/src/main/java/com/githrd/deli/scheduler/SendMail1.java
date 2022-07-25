@@ -1,18 +1,18 @@
 package com.githrd.deli.scheduler;
 
 import org.quartz.*;
-import org.springframework.scheduling.quartz.QuartzJobBean;
+import org.springframework.scheduling.quartz.*;
 
-public class sendMail extends QuartzJobBean {
-	private SelectCoupon selCp;
+public class SendMail1 extends QuartzJobBean {
+	private SelectCoupon upSal;
 	
 	@Override
 	protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
-		selCp.upSal();
+		upSal.upSal();
 	}
 	
 	public void setUpSal(SelectCoupon upSal) {
-		this.selCp = upSal;
+		this.upSal = upSal;
 	}
 	
 }

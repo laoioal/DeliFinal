@@ -12,13 +12,11 @@ import com.githrd.deli.service.YonghyunService;
 
 public class SelectCoupon {
 	@Autowired
-	YonghyunDao yDao;
-	@Autowired
-	YonghyunController yCon;
+	YonghyunService ySrvc;
 	
 	
 	public void upSal() {
-		yCon.mailsend();
+		ySrvc.mailsend();
 		System.out.println("성공");
 	}
 }
