@@ -42,6 +42,8 @@ public class YonghyunController {
 				page.setSearch("%" + page.getSearch() + "%");
 			}
 		}
+		
+		System.out.println(page);
 		int total = yDao.getBoardTotal(page);
 		page.setPage(page.getNowPage(), total);
 		List<YonghyunVO> list = yDao.getBoardList(page);

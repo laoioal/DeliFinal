@@ -24,7 +24,9 @@
 	<div class="w3-top">
 	  	<div class="w3-row w3-padding w3-black">
 			<div class="w3-col s1">
-		    	<div class="w3-button w3-block w3-black citytitle" id="">전체</div>
+				<form method="POST" action="/deli/board/boardList.dlv" id="frm1" name="frm1">
+			    	<div class="w3-button w3-block w3-black" id="total">전체</div>
+			    </form>
 		    </div>
 		    <div class="w3-col s1">
 		    	<div class="w3-button w3-block w3-black" id="faq">FAQ</div>

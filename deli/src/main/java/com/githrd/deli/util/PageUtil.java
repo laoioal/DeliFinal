@@ -184,4 +184,12 @@ public class PageUtil {
 	public void setSearch(String search) {
 		this.search = search;
 	}
+	@Override
+	public String toString() {
+		return "PageUtil [nowPage=" + nowPage + ", totalCount=" + totalCount + ", pageRow=" + pageRow + ", pageGroup="
+				+ pageGroup + ", startPage=" + startPage + ", endPage=" + endPage + ", startCont=" + startCont
+				+ ", endCont=" + endCont + ", totalPage=" + totalPage + ", city=" + city + ", ccheck=" + ccheck
+				+ ", search=" + search + "]";
+	}
+	
 }

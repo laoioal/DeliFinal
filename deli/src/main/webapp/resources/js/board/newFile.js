@@ -16,6 +16,11 @@ $(document).ready(function(){
 		$('#frm').submit();
 	});
 	
+	$('#total').click(function(){
+		$('#frm1').submit();
+		
+	});
+	
 	$('#obtn').click(function(){
 		$(location).attr('href', '/deli/member/logout.dlv');
 	});
