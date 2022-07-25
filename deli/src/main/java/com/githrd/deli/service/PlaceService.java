@@ -16,8 +16,7 @@ public class PlaceService {
 	public String substrPickupPlace(placeVO place) {
 		String strName;
 			String address = place.getAddress();
-			String[] temp = address.split(" ");
-			strName = temp[1];
+			strName = address.split(" ")[1];
 		return strName;
 	}
 	
