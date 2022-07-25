@@ -29,10 +29,10 @@
 	 </form>
 
 	 <form method="POST" action="/deli/member/boardWrite.dlv" id="pfrm" name="pfrm">
-		<input type="hidden" name="placeName" value="고척근린공원"/>
+		<input type="hidden" name="placeName" value="경복궁역"/>
 		<input type="hidden" name="category" value="치킨"/>
 		<input type="hidden" name="rest" value="11"/>
-		<input type="hidden" name="parea" value="서울 구로구 고척로 47길"/>
+		<input type="hidden" name="parea" value="서울 종로구 사직로 지하 130"/>
 	 </form>
 
 

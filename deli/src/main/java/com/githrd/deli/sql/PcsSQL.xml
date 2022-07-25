@@ -235,28 +235,67 @@
 	</select>
 	<!-- 픽업 테이블 -->
 	<insert id="insertPickUp" parameterType="pcVO">
+		<selectKey keyProperty="bpno" resultType="int" order="BEFORE">
+ 			SELECT NVL(max(bpno) + 1, 1) FROM boardpickup
+ 		</selectKey>
 		INSERT INTO
-			pickupplace(cusname, cusid)
+			boardpickup(bpno, bno, placeName, parea)
 		VALUES(
-			#{placeName}, #{id}
+			#{bpno}, #{bno}, #{placeName}, #{parea}
 		)
 	</insert>
 	<!-- 지역(대)분류 이름으로 코드 뽑기 -->
-	<select id="getLCode" parameterType="pcVO">
+	<select id="getLCode" resultType="pcVO" parameterType="pcVO">
 		SELECT
 			code
 		FROM
 			largearea
 		WHERE
-			city = #{city}
+			city = #{larea}
 	</select>
 	<!-- 지역(중)분류 이름으로 코드 뽑기 -->
-	<select id="getMCode" parameterType="pcVO">
+	<select id="getMCode" resultType="pcVO" parameterType="pcVO">
 		SELECT
 			code
 		FROM
 			middlearea
 		WHERE
-			city = #{city}
+			city = #{marea}
 	</select>
+	<!-- 받은 pickup 주소 area city 값으로 나누는 질의명령 -->
+	<select id="getCity" resultType="pcVO" parameterType="pcVO">
+		SELECT
+		    CASE 
+		        WHEN TRIM(substr(address, 1, INSTR(address, ' ') - 1)) = '서울' THEN '서울특별시'
+		        ELSE TRIM(substr(address, 1, INSTR(address, ' ') - 1))
+		        END larea,
+		    TRIM(substr(address, INSTR(address, ' ') + 1, INSTR(address, ' ') + 1)) marea
+		FROM
+		    pickup
+		WHERE
+		    address = #{parea}
+	</select>
+	<select id="getSarea" resultType="pcVO" parameterType="pcVO">
+		SELECT
+		    city, code
+		FROM
+		    smallarea
+		WHERE
+		    mcode = (
+		        SELECT
+		            code
+		        FROM
+		            middlearea
+		        WHERE
+		            city = (
+		                        SELECT
+		                            TRIM(substr(address, INSTR(address, ' ') + 1, INSTR(address, ' ') + 1)) marea
+		                        FROM
+		                            pickup
+		                        WHERE
+		                            address = #{parea}
+		                    )
+		    )
+	</select>
+	
 </mapper>

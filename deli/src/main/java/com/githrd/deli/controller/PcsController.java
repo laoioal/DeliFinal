@@ -100,12 +100,21 @@ public class PcsController {
 	//	List<PcsVO> llist = PcDao.largeArea();
 	//	List<PcsVO> menu = PcDao.menuCate();
 		PcsVO pcVO1 = PcDao.getRest(pcVO);
-		pcVO.setRname(pcVO1.getRname());
+		PcsVO pcVO2 = PcDao.getCity(pcVO);
+		PcsVO pcVO3 = PcDao.getLcode(pcVO2);
+		PcsVO pcVO4 = PcDao.getMcode(pcVO2);
 		
-		System.out.println(pcVO);
+		pcVO2.setParea(pcVO.getParea());
+		pcVO.setRname(pcVO1.getRname());
+		List<PcsVO> small = PcDao.getSarea(pcVO2);
+		
 	//	mv.addObject("MENU", menu);
 	//	mv.addObject("LARGE", llist);
 		mv.addObject("PICK", pcVO);
+		mv.addObject("CITY", pcVO2);
+		mv.addObject("LAREA", pcVO3);
+		mv.addObject("MAREA", pcVO4);
+		mv.addObject("SAREA", small);
 		mv.setViewName("member/boardWrite");		
 		return mv;
 	}
@@ -144,11 +153,14 @@ public class PcsController {
 		pcVO.setMno(PcDao.getMno(sid));
 		
 		int cnt = PcDao.addBoard(pcVO);
+		System.out.println(pcVO);
 		if(cnt == 1) {
 			System.out.println("pcVO : " + pcVO);
 			PcDao.addRegimem(pcVO);
 			PcDao.addPickUp(pcVO);
 			nowPage = "1";
+			
+			System.out.println(pcVO);
 			mv.addObject("NOWPAGE", nowPage);
 			mv.addObject("VIEW", view);
 			mv.setViewName("member/redirect");

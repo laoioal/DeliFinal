@@ -19,7 +19,7 @@ import java.util.List;
 import org.springframework.web.multipart.MultipartFile;
 
 public class PcsVO {
-	private int bno, mno, mmno, code, end, rest;
+	private int bpno, bno, mno, mmno, code, end, rest;
 	private double esti;
 	private String id, name, kakaoid, pw, mail, tel, addr, dti_addr, oriname, dir, savename, placeName,
 		city, foodtype, authkey, title, body, parea, larea, marea, sarea, category, rname, sdate;
@@ -27,6 +27,12 @@ public class PcsVO {
 	private MultipartFile[] file;
 	private List<FileVO> list;
 	
+	public int getBpno() {
+		return bpno;
+	}
+	public void setBpno(int bpno) {
+		this.bpno = bpno;
+	}
 	public int getBno() {
 		return bno;
 	}
@@ -238,14 +244,14 @@ public class PcsVO {
 	}
 	@Override
 	public String toString() {
-		return "PcsVO [bno=" + bno + ", mno=" + mno + ", mmno=" + mmno + ", code=" + code + ", end=" + end + ", rest="
-				+ rest + ", esti=" + esti + ", id=" + id + ", name=" + name + ", kakaoid=" + kakaoid + ", pw=" + pw
-				+ ", mail=" + mail + ", tel=" + tel + ", addr=" + addr + ", dti_addr=" + dti_addr + ", oriname="
-				+ oriname + ", dir=" + dir + ", savename=" + savename + ", placeName=" + placeName + ", city=" + city
-				+ ", foodtype=" + foodtype + ", authkey=" + authkey + ", title=" + title + ", body=" + body + ", parea="
-				+ parea + ", larea=" + larea + ", marea=" + marea + ", sarea=" + sarea + ", category=" + category
-				+ ", rname=" + rname + ", sdate=" + sdate + ", jdate=" + jdate + ", file=" + Arrays.toString(file)
-				+ ", list=" + list + "]";
+		return "PcsVO [bpno=" + bpno + ", bno=" + bno + ", mno=" + mno + ", mmno=" + mmno + ", code=" + code + ", end="
+				+ end + ", rest=" + rest + ", esti=" + esti + ", id=" + id + ", name=" + name + ", kakaoid=" + kakaoid
+				+ ", pw=" + pw + ", mail=" + mail + ", tel=" + tel + ", addr=" + addr + ", dti_addr=" + dti_addr
+				+ ", oriname=" + oriname + ", dir=" + dir + ", savename=" + savename + ", placeName=" + placeName
+				+ ", city=" + city + ", foodtype=" + foodtype + ", authkey=" + authkey + ", title=" + title + ", body="
+				+ body + ", parea=" + parea + ", larea=" + larea + ", marea=" + marea + ", sarea=" + sarea
+				+ ", category=" + category + ", rname=" + rname + ", sdate=" + sdate + ", jdate=" + jdate + ", file="
+				+ Arrays.toString(file) + ", list=" + list + "]";
 	}
 
 }

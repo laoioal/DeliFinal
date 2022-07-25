@@ -71,27 +71,37 @@ function save(){
 					</div>
 						<input type="hidden" name="id" value="${SID}">
 			<c:if test="${not empty PICK}">
-					<input type="hidden" value="${PICK.parea}" id="parea" disabled>
 					<div class="w3-center">
 						<div class="w3-third mgb10">
 							<label>지역(대)</label>
-							<input type="text" name="larea" id="large" value="" readonly/>
+							<input type="text" id="lcity" value="${CITY.larea}" disabled/>
+							<input type="text" name="larea" id="large" value="${LAREA.code}" readonly/>
 						</div>
 						<div class="w3-third mgb10">
 							<label>지역(중)</label>
-							<input type="text" name="marea" id="middle" value="" readonly/>
+							<input type="text" id="middle" value="${CITY.marea}" disabled/>
+							<input type="text" name="marea" id="middle" value="${MAREA.code}" readonly/>
 						</div>
 						<div class="w3-third mgb10">
-							<label>지역(소) </label>
-							<input type="text" name="sarea" id="small" value="" readonly/>
+							<label>지역(소)</label>
+							<select class="w3-border w3-center" name="sarea" id="small">
+								<option disabled selected>## 선택 ##</option>
+						<c:forEach var="data" items="${SAREA}" varStatus="st">		
+								<option value="${data.code}" class="w3-text-blue">${data.city}</option>
+						</c:forEach>		
+							</select>
 						</div>
 					</div>
 			</c:if>
 				<div>
 			<c:if test="${not empty PICK}">
 						<div class="w3-quarter w3-margin-left">
-							<label class="w3-left">픽업 장소 : </label>
-							<input class="w3-left" type="text" name="placeName" id="small" value="${PICK.placeName}" readonly/>
+							<label>픽업 장소</label>
+							<input class="w3-left" type="text" name="placeName" id="placeName" value="${PICK.placeName}" readonly/>
+						</div>
+						<div class="w3-quarter w3-margin-left">
+							<label>픽업 주소</label>
+							<input type="text" name="parea" value="${PICK.parea}" id="parea" readonly>
 						</div>
 			</c:if>
 					<div class="w3-quarter w3-margin-bottom w3-margin-left w3-margin-right w3-right">
