@@ -33,6 +33,7 @@ public class YonghyunController {
 	@Autowired
 	YonghyunService ySrvc;
 	
+	
 	// 게시판 리스트 불러오는 함수
 	@RequestMapping("/boardList.dlv")
 	public ModelAndView getBoardList(ModelAndView mv, PageUtil page) {
