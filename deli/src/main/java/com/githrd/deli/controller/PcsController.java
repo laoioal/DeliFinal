@@ -99,23 +99,31 @@ public class PcsController {
 	public ModelAndView boardWrite(ModelAndView mv, HttpSession session, RedirectView rv, PcsVO pcVO) {
 	//	List<PcsVO> llist = PcDao.largeArea();
 	//	List<PcsVO> menu = PcDao.menuCate();
-		PcsVO pcVO1 = PcDao.getRest(pcVO);
-		PcsVO pcVO2 = PcDao.getCity(pcVO);
-		PcsVO pcVO3 = PcDao.getLcode(pcVO2);
-		PcsVO pcVO4 = PcDao.getMcode(pcVO2);
-		
-		pcVO2.setParea(pcVO.getParea());
-		pcVO.setRname(pcVO1.getRname());
-		List<PcsVO> small = PcDao.getSarea(pcVO2);
-		
-	//	mv.addObject("MENU", menu);
-	//	mv.addObject("LARGE", llist);
-		mv.addObject("PICK", pcVO);
-		mv.addObject("CITY", pcVO2);
-		mv.addObject("LAREA", pcVO3);
-		mv.addObject("MAREA", pcVO4);
-		mv.addObject("SAREA", small);
-		mv.setViewName("member/boardWrite");		
+		try {
+			PcsVO pcVO1 = PcDao.getRest(pcVO);
+			PcsVO pcVO2 = PcDao.getCity(pcVO);
+			PcsVO pcVO3 = PcDao.getLcode(pcVO2);
+			PcsVO pcVO4 = PcDao.getMcode(pcVO2);
+			
+			pcVO2.setParea(pcVO.getParea());
+			pcVO.setRname(pcVO1.getRname());
+			List<PcsVO> small = PcDao.getSarea(pcVO2);
+			
+			//	mv.addObject("MENU", menu);
+			//	mv.addObject("LARGE", llist);
+			mv.addObject("PICK", pcVO);
+			mv.addObject("CITY", pcVO2);
+			mv.addObject("LAREA", pcVO3);
+			mv.addObject("MAREA", pcVO4);
+			mv.addObject("SAREA", small);
+			mv.setViewName("member/boardWrite");		
+			
+		} catch(Exception e) {
+			e.printStackTrace();		
+			System.out.println("###### 비 정상적인 접근 #####");
+			rv.setUrl("/deli/main.dlv");
+			mv.setView(rv);
+		}
 		return mv;
 	}
 	
