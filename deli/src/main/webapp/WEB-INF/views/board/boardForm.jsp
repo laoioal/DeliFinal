@@ -28,8 +28,6 @@
 
 </script>
 <style type="text/css">
-
-
 </style>
 </head>
 <body>
@@ -103,8 +101,8 @@
 			<div class="count" id="count">
 				<div class="w3-col">
 					<div class="w3-left maintext area"><small>${MAIN.area} &gt;</small></div>
-					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="boardpic">픽업장소</div>
-					<input type="hidden" value="${MAIN.parea}">
+					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="boardpic" onclick="relayout()">픽업장소</div>
+					<input type="hidden" id="boardpicaddr" value="${MAIN.parea}">
 					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="canclebtn">지원취소</div>
 					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="conbtn">신청현황</div>
 					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="subbtn">신청</div>
@@ -234,7 +232,7 @@
 			</header>
 			<div class="w3-container">
 			<div id="mapset">
-				<div id="map" style="width:100%;height:700px;"></div>
+				<div id="map" style=""></div>
 			</div>
 			</div>
 		</div>
@@ -251,52 +249,55 @@
 	
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d6fb471c69858a04f22e5ff56c302f30&libraries=services"></script>
 <script>
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-mapOption = {
-    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-    level: 3 // 지도의 확대 레벨
-};  
+	var cen;
+	var addr = document.getElementById('boardpicaddr').value;
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	mapOption = {
+	    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+	    level: 3 // 지도의 확대 레벨
+	};  
+	
+	//지도를 생성합니다    
+	var map = new kakao.maps.Map(mapContainer, mapOption); 
+	
+	//주소-좌표 변환 객체를 생성합니다
+	var geocoder = new kakao.maps.services.Geocoder();
+	
+	//주소로 좌표를 검색합니다
+	geocoder.addressSearch(addr, function(result, status) {
+		map.relayout();
+	// 정상적으로 검색이 완료됐으면 
+	if (status === kakao.maps.services.Status.OK) {
+	
+		var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+		cen = coords;
+		   // 결과값으로 받은 위치를 마커로 표시합니다
+		   var marker = new kakao.maps.Marker({
+		       map: map,
+		       position: coords
+		   });
+		
+		   // 인포윈도우로 장소에 대한 설명을 표시합니다
+		   var infowindow = new kakao.maps.InfoWindow({
+		       content: '<div style="width:150px;text-align:center;">PickUp</div>'
+		   });
+		   infowindow.open(map, marker);
+		
+		   // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+		   map.relayout(coords);
+		} 
+	});    
 
-//지도를 생성합니다    
-var map = new kakao.maps.Map(mapContainer, mapOption); 
-
-//주소-좌표 변환 객체를 생성합니다
-var geocoder = new kakao.maps.services.Geocoder();
-
-//주소로 좌표를 검색합니다
-geocoder.addressSearch('신풍로 77', function(result, status) {
-
-// 정상적으로 검색이 완료됐으면 
- if (status === kakao.maps.services.Status.OK) {
-
-    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
-    // 결과값으로 받은 위치를 마커로 표시합니다
-    var marker = new kakao.maps.Marker({
-        map: map,
-        position: coords
-    });
-
-    // 인포윈도우로 장소에 대한 설명을 표시합니다
-    var infowindow = new kakao.maps.InfoWindow({
-        content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
-    });
-    infowindow.open(map, marker);
-
-    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-    map.setCenter(coords);
-} 
-});    
-	
-</script>
-	
-	
-	
-	
-	
-	
-	
-	
-	
+function relayout() {    
+    document.getElementById('id01').style.display='block';
+    document.getElementById('map').style.width='100%';
+    document.getElementById('map').style.height='700px';
+    // 지도를 표시하는 div 크기를 변경한 이후 지도가 정상적으로 표출되지 않을 수도 있습니다
+    // 크기를 변경한 이후에는 반드시  map.relayout 함수를 호출해야 합니다 
+    // window의 resize 이벤트에 의한 크기변경은 map.relayout 함수가 자동으로 호출됩니다
+    map.relayout();
+    map.setCenter(cen);
+}
+</script>	
 </body>
 </html>
