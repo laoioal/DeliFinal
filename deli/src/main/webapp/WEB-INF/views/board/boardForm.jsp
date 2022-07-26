@@ -298,7 +298,6 @@ function relayout() {
     map.relayout();
     map.setCenter(cen);
 }
-		
 </script>	
 </body>
 </html>
