@@ -1,6 +1,36 @@
 #btn2{
 	position: absolute;	
-	margin-top:-25px;
-	margin-left:30px;
-	float: left;
+	margin-top:-29px;
+	margin-left:10px;
+	float: top;
+	background-color:black;
+	color:white;
+	font-size:15px;
+	font-weight:bold;
+	width:80px;
+	height:30px;
+	border-radius: 10px;
+	outline:0px;	
+	cursor:pointer;
+	border:0px;
+}
+
+#space{
+	width:500px;
+	height:300px;
+	border: dashed 4px;
+	border-radius:1px;
+}
+#submitbtn{
+	background-color:black;
+	color:white;
+	font-size:15px;
+	font-weight:bold;
+	margin-right:70px;
+	width:50px;
+	height:30px;
+	border-radius: 10px;
+	outline:0px;	
+	cursor:pointer;
+	border:0px;
 }
