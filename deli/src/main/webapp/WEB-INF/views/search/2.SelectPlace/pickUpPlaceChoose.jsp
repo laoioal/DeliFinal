@@ -11,18 +11,17 @@
 </head>
 
 <body>
-               
              <div id="map"></div>
+               <h2 id = "h2top">장소 선택</h2>
                     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8800e7024fb23ec08385f1384cbd3f73&libraries=services"></script>
                       <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8800e7024fb23ec08385f1384cbd3f73"></script>
                  
                   <table id="tableInfo">
-                  <tr class="trstyle"/>
-                  <tr class="trstyle"/>
                         <th>선택</th>                    
                         <th>장소</th>
                         <th>거리</th>
                         <th>주소</th>
+                  <tr class="trstyle"/>
                	 </tr>
               	 <tr>
                         <c:forEach items="${cal}" var="cal">
@@ -34,11 +33,11 @@
                          </c:forEach>
                       <tr class="trstyle"/>
                             <input type="hidden" id = "url" value=""/>
-                      		<h2 id="h2style">픽업 장소 
-                            <input type="submit" value="선택" name="check" onclick="onClick()"/></h2>
+                      		<h2 id="h2style">
+                            <input type="submit" value="다음페이지" id = "submitbtn" name="check" onclick="onClick()"/></h2>
                 </table>
                       		<h2 style="margin-top:380px;position:absolute;left:1070px">픽업 장소 
-                            <input type="submit" value="선택" name="check" style="margin-top:0px" onclick="onClick()"/></h2>
+                            <input type="submit" value="선택"  name="check" style="margin-top:0px" onclick="onClick()"/></h2>
                             
                <script type = "text/javascript">
                
@@ -46,7 +45,7 @@
                let mapContainer = document.getElementById('map'), // 지도를 표시할 div 
                 mapOption = {
                  center: new kakao.maps.LatLng('${lon}','${lat}'), // 지도의 중심좌표
-                    level: 4 // 지도의 확대 레벨
+                    level: 3 // 지도의 확대 레벨
                      };
                
                let map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
@@ -99,6 +98,8 @@
               </script>
           
             
+            	<script src="<c:url value="/js/faq/urlDelete.js"/>" type="text/javascript"></script>
+            <script src="<c:url value="/js/map/submitbtn.js"/>" type="text/javascript"></script>
             
     </body>
 </html>
