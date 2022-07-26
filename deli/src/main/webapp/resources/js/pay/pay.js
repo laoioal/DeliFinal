@@ -2,18 +2,17 @@ $(document).ready(function(){
 //	버튼 클릭하면 실행
 
 	$("#pbtn").click(function(){
-		var minPrice = $('#minPrice').val();
-		var Aprice = $('#Aprice').val();
+		let minPrice = $('#minPrice').val();
+		let Aprice = $('#Aprice').val();
 		var msg = '';
+		
 		if(minPrice > Aprice){
 			msg = '최소주문 금액에 도달하지 못했습니다';
 			$('#id02').append('<p>'+ msg +'</p>');
 			$('#id01').slideDown(500);
-			
 			return;	
-		}
-		
-		
+		};
+
 		
 		let m_email = $('#mail').val();
 		let s_name = $('#name').val();;
