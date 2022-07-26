@@ -49,7 +49,7 @@ public class FileService {
 		String path = this.getClass().getResource("").getPath();
 		path = path.substring(0, path.indexOf("/WEB-INF")) + "/resources" + dir;
 		
-		fVO.setDir("/resources" + dir + "/");
+		fVO.setDir("/resources" + dir);
 		
 		// 파일 크기
 		long len = file.getSize();

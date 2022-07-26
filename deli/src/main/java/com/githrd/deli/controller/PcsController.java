@@ -228,7 +228,7 @@ public class PcsController {
 			// 정상적으로 등록작업에 성공한 경우
 			session.setAttribute("SID", pcVO.getId());
 			
-			rv.setUrl("/deli/member/myInfo.dlv");
+			rv.setUrl("/deli/main.dlv");
 		} catch(Exception e) {
 			// 게시글 등록에 실패한 경우
 			// 결과적으로 롤백된 경우....
@@ -245,7 +245,7 @@ public class PcsController {
 	}
 
 	// 이메일 인증
-	@GetMapping("/mailCertified")
+	@GetMapping("/mailSertified")
 	@ResponseBody
 	public String mailCertified(String email) {
 		System.out.println("이메일 인증 요청이 들어옴!");
@@ -300,7 +300,7 @@ public class PcsController {
 	}
 	
 	// 회원정보 수정 처리 함수
-	@RequestMapping("editProc")
+	@RequestMapping("editProc.dlv")
 	public ModelAndView editProc(ModelAndView mv, HttpSession session, RedirectView rv, PcsVO pcVO) {
 		/*
 		String sid = (String) session.getAttribute("SID");
