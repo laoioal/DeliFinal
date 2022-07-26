@@ -185,7 +185,7 @@ public class PayController {
 		int aprice = 0;
 		for(int i = 0 ; i < mVO.size() ; i ++) {
 			if(cnt != 1) {
-			aprice = aprice + mVO.get(i).getMprice();
+				aprice = aprice + mVO.get(i).getMprice();
 			} else {
 				aprice = 0;
 			}
