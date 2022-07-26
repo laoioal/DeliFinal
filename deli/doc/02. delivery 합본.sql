@@ -2614,6 +2614,25 @@ UPDATE RESTAURANT SET ADDR='서울특별시 중구 신당동 349-201' WHERE ADDR
 UPDATE RESTAURANT SET ADDR='서울특별시 중구 다산로8길' WHERE ADDR='서울특별시 중구 세종대로2길 6-1';
 UPDATE RESTAURANT SET ADDR='서울특별시 중구 동호로15길 50' WHERE ADDR='서울특별시 중구 서소문동 134-6';
 
+-- 식당 최소주문 금액 및 배달비 변경
+UPDATE restaurant SET delpay = 3000, minprice = 30000 WHERE restno = 200;
+
+-- 식당 메뉴 추가
+INSERT INTO 
+    MENU(mno, rno, mname, mprice, mintro,mimg)    
+VALUES(
+    (SELECT NVL(MAX(mno) +1, 1) FROM menu),
+    200, '삼겹살', 8000, '이것은 삼겹살인가 목살인가 그만큼 담백하고 맛있는 삼겹살', 1021
+);
+
+INSERT INTO 
+    MENU(mno, rno, mname, mprice, mintro,mimg)    
+VALUES(
+    (SELECT NVL(MAX(mno) +1, 1) FROM menu),
+    200, '양념갈비', 12000, '특제양념이 싹 베인 갈비 이거 안 먹어보면 후회할지도?', 1022
+);
+
+
 commit;
 
 
