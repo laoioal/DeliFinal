@@ -1998,6 +1998,11 @@ ALTER TABLE regimem DROP COLUMN estishow;
 INSERT INTO
     regimem(abno, aid)
 VALUES(
+    1, 'YHLEE'
+);
+INSERT INTO
+    regimem(abno, aid)
+VALUES(
     2, 'hui'
 );
 INSERT INTO

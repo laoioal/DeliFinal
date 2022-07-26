@@ -17,6 +17,11 @@ CREATE TABLE regimem (
         CONSTRAINT REGIMEM_ESTI_NN NOT NULL
         CONSTRAINT REGIMEM_ESTI_CK CHECK(estishow IN('Y','N'))
 );
+INSERT INTO
+    regimem(abno, aid)
+VALUES(
+    1, 'YHLEE'
+);
 
 INSERT INTO
     regimem(abno, aid)

@@ -437,7 +437,7 @@
 	<!-- 내 상세주소 가져오기 -->
 	<select id="myAddr" resultType="yVO" parameterType="string">
 		SELECT
-		     substr(addr, 1, instr(addr,' ', 1, 2)) marea, SUBSTR(addr, instr(addr,' ', -1, 2) + 1) sarea
+		     substr(addr, 1, instr(addr,' ', 1, 2)) marea, substr(addr, instr(addr, ' ', 1, 2)) sarea
 		FROM
 		    member
 		WHERE
