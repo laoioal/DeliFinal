@@ -209,7 +209,8 @@ $(document).ready(function(){
 		var pw = $('#pw').val();
 		var mail = $('#mail').val();
 		var tel = $('#tel').val();
-		var addr = $('#sample6_address') + $('#sample6_detailAddress');
+		var addr = $('#sample6_address').val()
+		var dti_addr = $('#sample6_detailAddress').val();
 		var oriname = $('#proimg').val();
 		
 		
@@ -235,7 +236,7 @@ $(document).ready(function(){
 			return;
 		}
 		
-		var el = $('#name, #id, #kakaoid, #pw, #mail, #tel, #addr, intput[type="file"]');
+		var el = $('#name, #id, #kakaoid, #pw, #mail, #tel, #sample6_address, #sample6_detailAddress, intput[type="file"]');
 		
 		for(var i = 0; i < el.length; i++){
 			var txt = $(el).eq(i).val();

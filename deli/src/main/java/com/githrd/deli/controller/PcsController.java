@@ -314,7 +314,7 @@ public class PcsController {
 		
 		try {
 			fSrvc.editMemberData(pcVO);
-			rv.setUrl("/deli/member/myInfo.dlv");
+			rv.setUrl("/deli/main.dlv");
 		} catch(Exception e) {
 			rv.setUrl("/deli/member/editInfo.dlv");
 			System.out.println(pcVO);
