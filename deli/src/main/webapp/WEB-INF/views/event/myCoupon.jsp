@@ -85,7 +85,7 @@
 					</div>
           		</div>
           		<div class="h20 ft12">
-					<div class="w3-center w3-left w3-button w3-round-large w3-black w3-margin lbbtn">Back</div>
+
 				</div>
         	</div>
     	</div>

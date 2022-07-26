@@ -59,7 +59,7 @@ function stop2() {
 
 function stop3() {
 	box3 = false;
-	result();
+	setTimeout("result()", 100);
 }
 
 function result() {
