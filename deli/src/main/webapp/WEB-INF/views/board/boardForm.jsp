@@ -103,7 +103,8 @@
 			<div class="count" id="count">
 				<div class="w3-col">
 					<div class="w3-left maintext area"><small>${MAIN.area} &gt;</small></div>
-					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="">픽업장소</div>
+					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="boardpic">픽업장소</div>
+					<input type="hidden" value="${MAIN.parea}">
 					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="canclebtn">지원취소</div>
 					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="conbtn">신청현황</div>
 					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="subbtn">신청</div>
@@ -221,7 +222,81 @@
 		<input type="hidden" name="body" id="body">
 		<input type="hidden" name="1mname" id="1mname">
 		<input type="hidden" name="1price" id="1price">
-		
+		<input type="hidden" name="pickup" value="${MAIN.parea}">
 	</form>
+	
+	
+	<div id="id01" class="w3-modal">
+		<div class="w3-modal-content w3-animate-top w3-card-4">
+			<header class="w3-container w3-teal"> 
+				<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+				<h2>PickUp 장소</h2>
+			</header>
+			<div class="w3-container">
+			<div id="mapset">
+				<div id="map" style="width:100%;height:700px;"></div>
+			</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d6fb471c69858a04f22e5ff56c302f30&libraries=services"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+mapOption = {
+    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+    level: 3 // 지도의 확대 레벨
+};  
+
+//지도를 생성합니다    
+var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+//주소-좌표 변환 객체를 생성합니다
+var geocoder = new kakao.maps.services.Geocoder();
+
+//주소로 좌표를 검색합니다
+geocoder.addressSearch('신풍로 77', function(result, status) {
+
+// 정상적으로 검색이 완료됐으면 
+ if (status === kakao.maps.services.Status.OK) {
+
+    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+    // 결과값으로 받은 위치를 마커로 표시합니다
+    var marker = new kakao.maps.Marker({
+        map: map,
+        position: coords
+    });
+
+    // 인포윈도우로 장소에 대한 설명을 표시합니다
+    var infowindow = new kakao.maps.InfoWindow({
+        content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
+    });
+    infowindow.open(map, marker);
+
+    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+    map.setCenter(coords);
+} 
+});    
+	
+</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </body>
 </html>

@@ -26,7 +26,7 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 //주소-좌표 변환 객체를 생성합니다
 var geocoder = new kakao.maps.services.Geocoder();
 
-geocoder.addressSearch('신풍로 77' , function(result, status) {
+geocoder.addressSearch('서울 중구 다산로 지하 122' , function(result, status) {
 	// 정상적으로 검색이 완료됐으면 
 	if (status === kakao.maps.services.Status.OK) {
 		var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
@@ -38,7 +38,7 @@ geocoder.addressSearch('신풍로 77' , function(result, status) {
 		});
 		// 인포윈도우로 장소에 대한 설명을 표시합니다
 		var infowindow = new kakao.maps.InfoWindow({
-			content: '<div style="width:150px;text-align:center;padding:6px 0;" class="mk">우리집</div>'
+			content: '<div style="width:150px;text-align:center;padding:6px 0;" class="mk">pick up</div>'
 		});
 		infowindow.open(map, marker);
 		// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
