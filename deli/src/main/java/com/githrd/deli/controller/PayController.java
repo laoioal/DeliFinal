@@ -167,7 +167,7 @@ public class PayController {
 		String mname = (String)req.getParameter("1mname");
 		String pickup = (String) req.getParameter("pickup");
 		int mtprice = Integer.parseInt(req.getParameter("1price"));
-		
+		 
 		paVO.setAmname(mname);
 		paVO.setMyprice(mtprice);		
 		paVO.setPickup(pickup);
