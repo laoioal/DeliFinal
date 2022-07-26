@@ -181,7 +181,7 @@
 	<!-- 메인페이지 내정보 불러오기 -->
 	<select id="myInfo" resultType="yVO" parameterType="string">
 		SELECT
-		    name, id, kakaoid kid, SUBSTR(addr, instr(addr,' ', -1, 1) + 1) marea, oriname aid, (esti * 100 / 5) esti, res, (res * 20) ck
+		    name, id, kakaoid kid, substr(addr, instr(addr, ' ', 1, 2)) marea, oriname aid, (esti * 100 / 5) esti, res, (res * 20) ck
 		FROM
 		    member, imgfile, (
 		                        SELECT

@@ -236,17 +236,7 @@
 			</div>
 			</div>
 		</div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	</div>	
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d6fb471c69858a04f22e5ff56c302f30&libraries=services"></script>
 <script>
 	var cen;
