@@ -1,0 +1,21 @@
+#submitbtn{
+	background-color:black;
+	color:white;
+	font-size:15px;
+	font-weight:bold;
+	width:100px;
+	height:30px;
+	border-radius: 10px;
+	outline:0px;	
+	cursor:pointer;
+	border:0px;
+	margin-top:80px;
+}
+
+
+#space{
+	width:480px;
+	height:580px;
+	border: dashed 4px;
+	border-radius:1px;
+}
