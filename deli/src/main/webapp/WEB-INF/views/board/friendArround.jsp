@@ -82,7 +82,6 @@
 		    level: 4
 		}
 	}
-	
 	var cen;
 	var markers = [];
 	
