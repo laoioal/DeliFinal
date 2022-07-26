@@ -18,7 +18,6 @@ $(document).ready(function(){
 	
 	$('#total').click(function(){
 		$('#frm1').submit();
-		
 	});
 	
 	$('#obtn').click(function(){
@@ -142,7 +141,7 @@ $(document).ready(function(){
 	$('.hotbtn').click(function(){
 		var bno = $(this).attr('id');
 		$('#bno').val(bno);
-		$('#frm1').submit();
+		$('#frm2').submit();
 	});
 	
 	$('#mail').click(function(){

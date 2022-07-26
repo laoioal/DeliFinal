@@ -38,10 +38,10 @@
 <c:if test="${empty SID}">
 		<button class="w3-right-align mg0 w3-right mg0 pdAll0 w3-button mgt10 member" id="lbtn">로그인</button>
 </c:if>
+		<div class="w3-col mgt0">
 		<form method="POST" action="/deli/board/boardList.dlv" id="frm" name="frm">
 			<input type="hidden" id="maincity" name="city" value="${param.city}">
 		
-		<div class="w3-col mgt0">
 			<h1 class="mgb10 w3-border pdAll10"><strong>Delivery Project</strong></h1>
 			<hr>
 			<button class="w3-col w3-button w3-left citytitle" value="서울특별시">서울</button>
@@ -54,10 +54,12 @@
 			<button class="w3-col w3-button w3-left citytitle" value="전라남도">전라남도</button>
 			<button class="w3-col w3-button w3-left citytitle" value="전라북도">전라북도</button>
 			<button class="w3-col w3-button w3-left citytitle" value="제주도">제주도</button>
-			<button class="w3-col w3-button w3-left citytitle" value="">전체</button>
+		</form>
+		<form method="POST" action="/deli/board/boardList.dlv" id="frm1" name="frm1">
+			<button class="w3-col w3-button w3-left citytitle1" id="total">전체</button>
+		</form>
 		<hr class="w3-col mg0 w3-card-2">
 		</div>
-		</form>
 
 		<div class="w3-col w3-white w3-padding w3-card-4 mgt20">
 			

@@ -26,6 +26,10 @@ $(document).ready(function(){
 		$('#maincity').val(city);
 		$('#frm').submit();
 	});
+		
+	$('#total').click(function(){
+		$('#frm1').submit();
+	});
 	
 	$('#searchbtn').click(function(){
 		var check = $('#check option:selected').val();

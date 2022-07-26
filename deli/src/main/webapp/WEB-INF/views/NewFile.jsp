@@ -63,7 +63,7 @@
 				<h3 class="mt50">핫게시물</h3>
 				<div class="w3-col hotclick w3-border mgl10 w3-card-4" >
 					<div class="w3-col">
-						<form method="POST" action="/deli/board/boardForm.dlv" id="frm1" name="frm1">
+						<form method="POST" action="/deli/board/boardForm.dlv" id="frm2" name="frm2">
 							<input type=hidden id="bno" name="bno">
 	<c:forEach var="data" items="${TLIST}" varStatus="st">
 								<div class="w3-col w3-button hotbtn w3-left-align" id="${data.bno}">
