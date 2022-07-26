@@ -88,12 +88,13 @@
 	<!-- 게시물 내용 -->
 	<select id="boardForm" resultType="yVO" parameterType="yVO">
 		SELECT
-		    bno, bmno, id, title, body, wdate, click, larea, marea, sarea, end, (wdate + (end/24)) endtime, category, ((wdate + (end/24)) - sysdate) endalert, a.city area
+		    b.bno, bmno, id, title, body, wdate, click, larea, marea, sarea, end, (wdate + (end/24)) endtime, category, ((wdate + (end/24)) - sysdate) endalert, a.city area, parea
 		FROM
-		    board b, member m, middlearea a
+		    board b, member m, middlearea a, boardpickup p
 		WHERE
 		    bmno = mno
-		    AND bno = #{bno}
+		    AND p.bno = b.bno
+		    AND b.bno = #{bno}
             AND marea = a.code
 	</select>
 	

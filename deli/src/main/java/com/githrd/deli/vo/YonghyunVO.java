@@ -17,7 +17,7 @@ import java.util.Date;
 public class YonghyunVO {
 	private int rno, bno, bmno, click, end, restno, mprice, fno, myno, frino, mno, nowPage, ck, res, upno;
 	private double endalert, esti, pesti;
-	private String title, body, sdate, larea, marea, sarea, category, id, endtime, rname, mname, city, area, search, check, aid, kid, name, cpname, cpexp, mail;
+	private String title, body, sdate, larea, marea, sarea, category, id, endtime, rname, mname, city, area, search, check, aid, kid, name, cpname, cpexp, mail, parea;
 	private Date wdate, wenddate;
 	public int getRes() {
 		return res;
@@ -263,6 +263,12 @@ public class YonghyunVO {
 	}
 	public void setMail(String mail) {
 		this.mail = mail;
+	}
+	public String getParea() {
+		return parea;
+	}
+	public void setParea(String parea) {
+		this.parea = parea;
 	}
 	public void setWdate(Date wdate) {
 		this.wdate = wdate;

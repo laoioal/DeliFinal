@@ -240,4 +240,5 @@ $(document).ready(function(){
 		$(location).attr('href', '/deli/faq/board.dlv');
 	});
 	
+	
 });
