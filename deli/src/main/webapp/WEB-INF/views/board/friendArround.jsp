@@ -7,8 +7,46 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="/deli/resources/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/deli/resources/css/NewFile.css">
+<link rel="stylesheet" type="text/css" href="/deli/resources/css/base.css">
+<link rel="stylesheet" type="text/css" href="/deli/resources/css/user.css">
+<link rel="stylesheet" type="text/css" href="/deli/resources/css/w3.css">
+
 </head>
 <body>
+
+
+	<div class="w3-top">
+	  	<div class="w3-row w3-padding w3-black">
+			<div class="w3-col s1">
+				<form method="POST" action="/deli/board/boardList.dlv" id="frm1" name="frm1">
+			    	<div class="w3-button w3-block w3-black" id="total">전체</div>
+			    </form>
+		    </div>
+		    <div class="w3-col s1">
+		    	<div class="w3-button w3-block w3-black" id="faq">FAQ</div>
+		    </div>
+		    <div class="w3-col s1">
+		    	<div class="w3-button w3-block w3-black" id="hbtn">HOME</div>
+		    </div>
+		    <div class="w3-col s6">
+		      	<div class="w3-block w3-black w3-center ft18">Delivery Project</div>
+		    </div>
+<c:if test="${empty SID}">
+			<div class="w3-col s1 w3-right">
+		    	<div class="w3-button w3-block w3-black" id="jbtn">JOIN</div>
+		    </div>
+		    <div class="w3-col s1 w3-right">
+		      	<div class="w3-button w3-block w3-black" id="lbtn">LOGIN</div>
+	    	</div>
+</c:if>
+<c:if test="${not empty SID}">
+		    <div class="w3-col s1 w3-right">
+		      	<div class="w3-button w3-block w3-black" id="obtn">LOGOUT</div>
+	    	</div>
+</c:if>
+	  	</div>
+	</div>
 
     <input type="hidden" id="myaddr" value="${MYADDR.sarea}">
 	
