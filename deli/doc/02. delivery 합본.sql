@@ -1808,19 +1808,6 @@ VALUES(
     4, '짬뽕', '둘이 먹다가 하나가 죽어도 모르는 짬뽕!', 1002, 6000
 );
 
-INSERT INTO 
-    MENU(mno, rno, mname, mprice, mintro,mimg)    
-VALUES(
-    (SELECT NVL(MAX(mno) +1, 1) FROM menu),
-    200, '삼겹살', 12000, '이것은 삼겹살인가 목살인가 그만큼 담백하고 맛있는 삼겹살', 1021
-);
-
-INSERT INTO 
-    MENU(mno, rno, mname, mprice, mintro,mimg)    
-VALUES(
-    (SELECT NVL(MAX(mno) +1, 1) FROM menu),
-    200, '갈비', 12000, '양념이 싹 베인 양념갈비 이거 안 먹어보면 후회할지도?', 1022
-);
 commit;
 
 CREATE TABLE board(
