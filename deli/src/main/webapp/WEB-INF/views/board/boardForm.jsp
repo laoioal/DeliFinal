@@ -102,7 +102,7 @@
 				<div class="w3-col">
 					<div class="w3-left maintext area"><small>${MAIN.area} &gt;</small></div>
 					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="boardpic" onclick="relayout()">픽업장소</div>
-					<input type="hidden" value="${MAIN.parea}">
+					<input type="hidden" id="boardpicaddr" value="${MAIN.parea}">
 					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="canclebtn">지원취소</div>
 					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="conbtn">신청현황</div>
 					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="subbtn">신청</div>
@@ -250,6 +250,7 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d6fb471c69858a04f22e5ff56c302f30&libraries=services"></script>
 <script>
 var cen;
+var addr = document.getElementById('boardpicaddr').value;
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 mapOption = {
     center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
@@ -263,7 +264,7 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 var geocoder = new kakao.maps.services.Geocoder();
 
 //주소로 좌표를 검색합니다
-geocoder.addressSearch('신풍로 77', function(result, status) {
+geocoder.addressSearch(addr, function(result, status) {
 	map.relayout();
 // 정상적으로 검색이 완료됐으면 
  if (status === kakao.maps.services.Status.OK) {
