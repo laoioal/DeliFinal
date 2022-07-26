@@ -4,6 +4,20 @@ $(document).ready(function(){
 		$('#vw').val('/deli/member/boardWrite.dlv');
 		$('#pcsfrm').submit();
 	});
+	$('#faq').click(function(){
+		$(location).attr('href', '/deli/faq/board.dlv');
+	});
+	$('#hbtn').click(function(){
+		$(location).attr('href', '/deli/main.dlv');
+	});
+	$('#total').click(function(){
+		$('#frm1').submit();
+	});
+	$('#pbtn').click(function(){
+		$(location).attr('href', '/deli/member/insertId.dlv');
+	});
+	
+	// 리셋 버튼 클릭 이벤트
 	$('#rbtn').click(function(){
 		$('#bfrm').each(function() {
 			this.reset();

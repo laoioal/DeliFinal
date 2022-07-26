@@ -5,6 +5,16 @@ $(document).ready(function(){
 	}
 	$('#id01').css('display', 'block');
 	
+	$('#faq').click(function(){
+		$(location).attr('href', '/deli/faq/board.dlv');
+	});
+	$('#hbtn').click(function(){
+		$(location).attr('href', '/deli/main.dlv');
+	});
+	$('#total').click(function(){
+		$('#frm1').submit();
+	});
+	
 	$('#lbtn').click(function(){
 		var sid = $('#id').val();
 		var spw = $('#pw').val();

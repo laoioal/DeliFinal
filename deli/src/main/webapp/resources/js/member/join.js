@@ -11,6 +11,12 @@ $(document).ready(function(){
 			$('#repwmsg').parent().stop().slideUp(500).stop().slideDown(500);
 		}
 	});
+	$('#total').click(function(){
+		$('#frm1').submit();
+	});
+	$('#faq').click(function(){
+		$(location).attr('href', '/deli/faq/board.dlv');
+	});
 
 	// 아이디 체크
 	$('#id').change(function(){
