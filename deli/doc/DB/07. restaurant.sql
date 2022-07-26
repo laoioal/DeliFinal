@@ -742,4 +742,12 @@ INSERT INTO RESTAURANT(restno,rname,cname,addr,tel,rotime,rctime,mcode) VALUES((
 WHERE SUBSTR('서울특별시 용산구 두텁바위로38길 29-17',INSTR('서울특별시 용산구 두텁바위로38길 29-17', ' ',1,1)+1, INSTR('서울특별시 용산구 두텁바위로38길 29-17',' ',1,2)-INSTR('서울특별시 용산구 두텁바위로38길 29-17',' ',1,1)-1)= middlearea.city));
 
 
+
+UPDATE RESTAURANT SET ADDR='서울특별시 중구 신당동 349-201' WHERE ADDR='서울특별시 중구 남대문로5가 21-2';
+UPDATE RESTAURANT SET ADDR='서울특별시 중구 다산로8길' WHERE ADDR='서울특별시 중구 세종대로2길 6-1';
+UPDATE RESTAURANT SET ADDR='서울특별시 중구 동호로15길 50' WHERE ADDR='서울특별시 중구 서소문동 134-6';
+
+UPDATE restaurant SET delpay = 3000, minprice = 40000 WHERE restno = 200;
+
+
 commit;

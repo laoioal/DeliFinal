@@ -103,6 +103,7 @@
 			<div class="count" id="count">
 				<div class="w3-col">
 					<div class="w3-left maintext area"><small>${MAIN.area} &gt;</small></div>
+					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="">픽업장소</div>
 					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="canclebtn">지원취소</div>
 					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="conbtn">신청현황</div>
 					<div class="w3-col w3-button w3-border subbtn m1 w3-right" id="subbtn">신청</div>

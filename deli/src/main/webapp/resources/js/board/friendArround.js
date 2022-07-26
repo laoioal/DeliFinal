@@ -20,10 +20,10 @@ $(document).ready(function(){
 		$(location).attr('href', '/deli/member/login.dlv');
 	});
 	
-	$('.w3-button').click(function(){
+	$('.distbtn').click(function(){
 		var dist = $(this).find('input').val();
 		$('#dist').val(dist);
-		document.frm.submit();
+		$('#frm').submit();
 	});
 
 });

@@ -61,4 +61,8 @@ $(document).ready(function(){
 	$('#faq').click(function(){
 		$(location).attr('href', '/deli/faq/board.dlv');
 	});
+	
+	$('#jbtn').click(function(){
+		$(location).attr('href', '/deli/member/join.dlv');
+	});
 });

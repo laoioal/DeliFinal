@@ -296,7 +296,11 @@ public class YonghyunController {
 		return mv;
 	}
 	
-
+	@RequestMapping("/test.dlv")
+	public ModelAndView test(ModelAndView mv) {
+		mv.setViewName("board/pickup");
+		return mv;
+	}
 
 	
 }

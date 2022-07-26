@@ -59,8 +59,8 @@
 		<div id="map" style="width:60%;height:450px;"></div>
 	</div>
 	<div class="w3-center">
-		<button class="w3-border w3-button w3-margin-right">200m<input type="hidden" value="200"></button>
-		<button class="w3-border w3-button">500m<input type="hidden" value="500"></button>
+		<button class="w3-border w3-button w3-margin-right distbtn">200m<input type="hidden" value="200"></button>
+		<button class="w3-border w3-button distbtn">500m<input type="hidden" value="500"></button>
 	</div>
 	<form method="POST" action="/deli/board/friendArround.dlv" name="frm" id="frm">
 		<input type="hidden" id="dist" name="dist" value="${DIST}">
