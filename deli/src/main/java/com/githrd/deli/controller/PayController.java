@@ -200,7 +200,7 @@ public class PayController {
 		mv.addObject("MENU", mVO);
 		mv.addObject("MEMBER", kVO);		
 		mv.addObject("APRICE", aprice);
-		
+		 
 		mv.setViewName("payment/beforePay");
 		
 		return mv;
