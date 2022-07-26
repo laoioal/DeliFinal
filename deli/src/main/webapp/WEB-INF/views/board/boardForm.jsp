@@ -75,18 +75,11 @@
 
 
 	<div class="mxw980 w3-content w3-center">
-		<button class="w3-right-align mg0 w3-left mg0 pdAll0 w3-button mgt10 member" id="hbtn">HOME</button>
-<c:if test="${not empty SID}">
-		<button class="w3-right-align mg0 w3-right mg0 pdAll0 w3-button mgt10 member" id="obtn">로그아웃</button>
-</c:if>
-<c:if test="${empty SID}">
-		<button class="w3-right-align mg0 w3-right mg0 pdAll0 w3-button mgt10 member" id="lbtn">로그인</button>
-</c:if>
 		<div class="w3-col mgt0">
 			<form method="POST" action="/deli/board/boardList.dlv" id="frm" name="frm">
 				<input type="hidden" id="maincity" name="city" value="${param.city}">
 			
-				<h1 class="mgb10 w3-border pdAll10"><strong>Delivery Project</strong></h1>
+				<h1 class="mgb10 w3-border pdAll10"><strong></strong></h1>
 				<hr>
 				<button class="w3-col w3-button w3-left citytitle" value="서울특별시">서울</button>
 				<button class="w3-col w3-button w3-left citytitle" value="경기도">경기도</button>

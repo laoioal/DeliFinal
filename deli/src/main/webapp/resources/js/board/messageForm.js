@@ -19,7 +19,10 @@ $(document).ready(function(){
 		$('#maincity').val(city);
 		$('#frm').submit();
 	});
-	
+		
+	$('#total').click(function(){
+		$('#frm1').submit();
+	});
 	
 	$('#obtn').click(function(){
 		$(location).attr('href', '/deli/member/logout.dlv');
@@ -68,8 +71,10 @@ $(document).ready(function(){
 			$('#id01').css('display', 'block');
 			return false;
 		}
-
 		$('#mesfrm').submit();
-
+	});
+		
+	$('#faq').click(function(){
+		$(location).attr('href', '/deli/faq/board.dlv');
 	});
 });

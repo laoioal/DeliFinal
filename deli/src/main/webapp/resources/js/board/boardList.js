@@ -57,4 +57,8 @@ $(document).ready(function(){
 	$('#writebtn').click(function(){
 		$(location).attr('href', '/deli/member/insertId.dlv');
 	});
+		
+	$('#faq').click(function(){
+		$(location).attr('href', '/deli/faq/board.dlv');
+	});
 });
