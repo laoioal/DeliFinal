@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="/deli/resources/css/base.css">
 <link rel="stylesheet" type="text/css" href="/deli/resources/css/user.css">
 <link rel="stylesheet" type="text/css" href="/deli/resources/css/w3.css">
-
+<script type="text/javascript" src="/deli/resources/js/board/friendArround.js"></script>
 </head>
 <body>
 
