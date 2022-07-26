@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="/deli/resources/css/base.css">
 <link rel="stylesheet" type="text/css" href="/deli/resources/css/user.css">
 <link rel="stylesheet" type="text/css" href="/deli/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/deli/resources/js/board/friendArround.css">
 <script type="text/javascript" src="/deli/resources/js/board/friendArround.js"></script>
 </head>
 <body>
@@ -54,8 +55,10 @@
     <input type="hidden" class="address" value="${data.sarea}">
     <input type="hidden" class="name" value="${data.id}">
 </c:forEach>
+	<div class="w3-center" id="mapset">
+		<div id="map" style="width:60%;height:350px;"></div>
+	</div>
 
-<div id="map" style="width:60%;height:350px;"></div>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d6fb471c69858a04f22e5ff56c302f30&libraries=services"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d6fb471c69858a04f22e5ff56c302f30"></script>
 <script>
