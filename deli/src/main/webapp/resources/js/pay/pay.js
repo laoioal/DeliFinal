@@ -5,7 +5,7 @@ $(document).ready(function(){
 		let minPrice = $('#minPrice').val();
 		let Aprice = $('#Aprice').val();
 		var msg = '';
-		
+		 
 		if(minPrice > Aprice){
 			msg = '최소주문 금액에 도달하지 못했습니다';
 			$('#id02').append('<p>'+ msg +'</p>');

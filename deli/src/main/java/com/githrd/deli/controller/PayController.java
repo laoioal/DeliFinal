@@ -175,13 +175,15 @@ public class PayController {
 			
 		int delpay = (paVO.getDelpay() != 0) ? paVO.getDelpay() / cnt : 0;
 		paVO.setMtprice(mtprice + delpay);
-		
+		 
 		
 		List<YonghyunVO> mVO = yDao.getMenu(yVO);
 		
 		
 		List<YonghyunVO> kVO = yDao.selRegimem(yVO);
 		System.out.println(kVO);
+		
+		
 		int aprice = 0;
 		for(int i = 0 ; i < mVO.size() ; i ++) {
 			if(cnt != 1) {
