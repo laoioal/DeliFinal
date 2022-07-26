@@ -2752,6 +2752,11 @@ VALUES(
     19, '약수역', '서울 중구 다산로 지하 122'
 );
 
+-- odl pickup 추가
+ALTER TABLE ORDERLIST ADD pickup VARCHAR2(100 CHAR) CONSTRAINT OL_PICKUP_NN NOT NULL
+;
+
+
 commit;
 
 
