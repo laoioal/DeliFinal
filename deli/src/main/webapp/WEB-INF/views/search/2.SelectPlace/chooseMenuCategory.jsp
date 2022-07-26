@@ -19,7 +19,7 @@
                [ ${place.name} ] 주변 원하는 메뉴를 골라주세요
               <form action="<c:url value='/place/restaurant.dlv'/>" name="childForm" target="popupName"> 
                <!--  <form name="childForm">-->
-                   <input type="text" id="cInput" value=""/>
+                   <input type="hidden" id="cInput" value=""/>
                 <input type = "hidden" name = "place_name" value="${place.name}" readonly/>
                     <br>
                <c:forEach items="${category}" var="category" >
