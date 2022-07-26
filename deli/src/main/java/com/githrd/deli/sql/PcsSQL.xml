@@ -83,9 +83,16 @@
  			SELECT NVL(max(mno) + 1, 1001) FROM member
  		</selectKey>
  		INSERT INTO
- 			MEMBER(mno, name, id, kakaoid, pw, mail, tel, addr, dti_addr)
+ 			MEMBER(mno, name, id, kakaoid, pw, mail, tel, addr
+ 		<if test="dti_addr neq null">
+ 			, dti_addr
+ 		</if>
+ 			)
  		VALUES(
- 			#{mno}, #{name}, #{id}, #{kakaoid}, #{pw}, #{mail}, #{tel}, #{addr}, #{dti_addr}
+ 			#{mno}, #{name}, #{id}, #{kakaoid}, #{pw}, #{mail}, #{tel}, #{addr}
+ 		<if test="dti_addr neq null">
+ 			, #{dti_addr}
+ 		</if>
  		)
  	</insert>
  	

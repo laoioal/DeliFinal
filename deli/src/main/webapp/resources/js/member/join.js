@@ -10,6 +10,9 @@ $(document).ready(function(){
 			$('#newpw').css('background-color', 'white').prop('readonly', false);
 			$('#repwmsg').parent().stop().slideUp(500).stop().slideDown(500);
 		}
+		if($('#sample6_detailAddress').prop('disabled', true)){
+			$('#sample6_detailAddress').prop('disabled', false);
+		}
 	});
 	$('#total').click(function(){
 		$('#frm1').submit();
@@ -213,7 +216,9 @@ $(document).ready(function(){
 		var dti_addr = $('#sample6_detailAddress').val();
 		var oriname = $('#proimg').val();
 		
-		
+		if(!dti_addr){
+			$('#sample6_detailAddress').prop('disabled', true);
+		}
 		if(!oriname){
 			$('#imgmsg').html('파일을 선택하세요!');
 			$('#imgmsg').removeClass('w3-text-green w3-text-red').addClass('w3-text-red');
@@ -236,7 +241,7 @@ $(document).ready(function(){
 			return;
 		}
 		
-		var el = $('#name, #id, #kakaoid, #pw, #mail, #tel, #sample6_address, #sample6_detailAddress, intput[type="file"]');
+		var el = $('#name, #id, #kakaoid, #pw, #mail, #tel, #sample6_address, intput[type="file"]');
 		
 		for(var i = 0; i < el.length; i++){
 			var txt = $(el).eq(i).val();
