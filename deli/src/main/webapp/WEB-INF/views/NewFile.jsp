@@ -16,7 +16,11 @@
 <script type="text/javascript">
 </script>
 <style type="text/css">
-
+	body {
+		background-image: url("/deli/img/main/test.png");
+		background-size: auto 100%;
+		background-repeat: repeat;
+	}
 </style>
 </head>
 <body>
@@ -52,21 +56,21 @@
 		<div class="w75p mt100">
 		<div class="w3-center">
 			<div class="w3-col m3">
-				<textarea class="w3-card-4 w3-padding" id="chatbox" rows="13" cols="25" readonly></textarea>	
+				<textarea class="w3-card-4 w3-padding mgl10" id="chatbox" rows="13" cols="30" readonly></textarea>	
 				<form class="w3-margin-bottom">
 					<input id="chatid" type="text" value="${SID}" disabled>
 					<input id="textMessage" type="text">
 					<input value="Send" type="button" id="sendbtn">
 				</form>
 				
-				<h3 class="mt50">핫게시물</h3>
-				<div class="w3-col hotclick w3-border mgl10 w3-card-4" >
+				<h3 class="mt50"><b>핫게시물</b></h3>
+				<div class="w3-col hotclick w3-border w3-card-4" >
 					<div class="w3-col">
 						<form method="POST" action="/deli/board/boardForm.dlv" id="frm2" name="frm2">
 							<input type=hidden id="bno" name="bno">
 	<c:forEach var="data" items="${TLIST}" varStatus="st">
 								<div class="w3-col w3-button hotbtn w3-left-align" id="${data.bno}">
-									<div><span class="w3-text-red">best. ${st.count}</span>
+									<div><span class="w3-text-red"><b>best. ${st.count}</b></span>
 										<div><small>&lt; ${data.city} &gt;</small></div>
 										<div class="titleFont">${data.title}</div>
 									</div>
@@ -80,34 +84,37 @@
 			<form method="POST" action="/deli/board/boardList.dlv" id="frm" name="frm">
 				<input type="hidden" id="maincity" name="city" value="">
 				<div class="w3-col m6 mt75">
-					<img src="/deli/img/main/total.png" style="width: 450px;">
-						<h3 style="position: relative; top: -560px; right: 91px;"><b class="selArea citytitle" id="서울특별시">서울</b></h3>
-						<h3 style="position: relative; top: -557px; right: 58px;"><b class="selArea citytitle" id="경기도">경기/인천</b></h3>
-						<h3 style="position: relative; top: -675px; right: -60px;"><b class="selArea citytitle" id="강원도">강원</b></h3>
+					<img src="/deli/img/main/total.png" style="width: 450px; margin-right:20px;">
+						<h3 style="position: relative; top: -560px; right: 101px;"><b class="selArea citytitle" id="서울특별시">서울</b></h3>
+						<h3 style="position: relative; top: -557px; right: 70px;"><b class="selArea citytitle" id="경기도">경기/인천</b></h3>
+						<h3 style="position: relative; top: -675px; right: -50px;"><b class="selArea citytitle" id="강원도">강원</b></h3>
 						<h3 style="position: relative; top: -599px; right: -4px;"><b class="selArea citytitle" id="충청북도">충북</b></h3>
-						<h3 style="position: relative; top: -588px; right: 102px;"><b class="selArea citytitle" id="충청남도">충남/대전</b></h3>
-						<h3 style="position: relative; top: -516px; right: 70px;"><b class="selArea citytitle" id="전라북도">전북</b></h3>
-						<h3 style="position: relative; top: -443px; right: 79px;"><b class="selArea citytitle" id="전라남도">전남/광주</b></h3>
-						<h3 style="position: relative; top: -695px; right: -115px;"><b class="selArea citytitle" id="경상북도">경북/대구</b></h3>
-						<h3 style="position: relative; top: -600px; right: -90px;"><b class="selArea citytitle" id="경상남도">경남/부산/울산</b></h3>
-						<h3 style="position: relative; top: -470px; right: -117px;"><b class="selArea citytitle" id="제주도">제주</b></h3>
+						<h3 style="position: relative; top: -588px; right: 115px;"><b class="selArea citytitle" id="충청남도">충남/대전</b></h3>
+						<h3 style="position: relative; top: -516px; right: 80px;"><b class="selArea citytitle" id="전라북도">전북</b></h3>
+						<h3 style="position: relative; top: -443px; right: 90px;"><b class="selArea citytitle" id="전라남도">전남/광주</b></h3>
+						<h3 style="position: relative; top: -695px; right: -105px;"><b class="selArea citytitle" id="경상북도">경북/대구</b></h3>
+						<h3 style="position: relative; top: -600px; right: -80px;"><b class="selArea citytitle" id="경상남도">경남/부산/울산</b></h3>
+						<h3 style="position: relative; top: -470px; right: -107px;"><b class="selArea citytitle" id="제주도">제주</b></h3>
 				</div>
 			</form>
 		</div>
 		<c:if test="${not empty SID}">			
 			<div class="w3-col m3">
 				<div class="w3-white w3-text-grey w3-card-4">
-					<div class="w3-display-container">
-						<img src="/deli/resources/upload/${MYINFO.aid}" style="width:100%" alt="Avatar">
-						<div class="w3-display-bottomleft w3-container w3-text-black">
-						</div>
+					<div class="w3-display-container pdt10">
+						<img src="/deli/resources/upload/${MYINFO.aid}" style="width:80px; margin-top:10px; margin-left:50px;"
+								alt="Avatar" class="w3-left w3-circle">
+						<h3 style="margin-top:30px; margin-right:30px;"><b>${MYINFO.id}</b></h3>
 					</div>
+					
 					<div class="w3-container">
-						<h2>${MYINFO.id}</h2>
+						<hr>
+						<p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>기본정보</b></p>
 						<p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>이름 : ${MYINFO.name}</p>
 						<p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>지역 : ${MYINFO.marea}</p>
 						<p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>카카오ID : ${MYINFO.kid}</p>
 						<hr>
+						
 						
 						<p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>평점</b></p>
 						<p>나의 매너점수</p>
