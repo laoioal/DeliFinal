@@ -56,7 +56,6 @@ public class YonghyunController {
 	// 게시판 세부내용 불러오는 함수
 	@RequestMapping("/boardForm.dlv")
 	public ModelAndView getBoard(ModelAndView mv, YonghyunVO yVO, HttpSession session) {
-
 		if(yVO.getCk() != 1) {
 			int cnt = yDao.upClick(yVO);
 			if(cnt != 1) {
