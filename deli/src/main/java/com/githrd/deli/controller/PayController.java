@@ -165,12 +165,12 @@ public class PayController {
 		String sid = (String) session.getAttribute("SID");
 		paVO = paDao.selPays(paVO);
 		String mname = (String)req.getParameter("1mname");
-		String mmprice = (String)req.getParameter("1price");
-		int mtprice = Integer.parseInt(mmprice);
+		String pickup = (String) req.getParameter("pickup");
+		int mtprice = Integer.parseInt(req.getParameter("1price"));
 		
 		paVO.setAmname(mname);
 		paVO.setMyprice(mtprice);		
-		
+		paVO.setPickup(pickup);
 		int cnt = paDao.abnoCnt(paVO.getBno());
 			
 		int delpay = (paVO.getDelpay() != 0) ? paVO.getDelpay() / cnt : 0;
@@ -272,19 +272,21 @@ public class PayController {
 		Map result = new HashMap<String, String>();
 
 		String sid = (String) session.getAttribute("SID");
+		String pickup = (String) req.getParameter("addr");
 		membVO = paDao.selMinfo(sid);
 		paVO = paDao.selPays(paVO);
 		String amname = (String) req.getParameter("mname1");
-		String mmprice = (String)req.getParameter("price1");
+		// String mmprice = (String)req.getParameter("price1");
 		String imp_uid = (String)req.getParameter("imp_uid");
 		String merchant_uid = (String)req.getParameter("merchant_uid");
 		String token = (String)req.getParameter("token");
 		String rq = (String)req.getParameter("rq");
 		// System.out.println(token);
-		int mtprice = Integer.parseInt(mmprice);
+		int mtprice = Integer.parseInt(req.getParameter("price1"));
 		
 		paVO.setAmname(amname);
 		paVO.setMyprice(mtprice);
+		paVO.setPickup(pickup);
 		
 		int cnt = paDao.abnoCnt(paVO.getBno());
 		
@@ -304,6 +306,7 @@ public class PayController {
 		//	각 메뉴 이름 및 가격, 수량(후에 수정 필요)
 		paVO.setOmenu(amname);
 		paVO.setOmprice(paVO.getMtprice());
+		
 		
 		try {
 			paSrvc.insertAllM(paVO);

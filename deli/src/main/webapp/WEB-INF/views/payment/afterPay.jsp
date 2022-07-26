@@ -46,7 +46,7 @@
 				<h4 class="w3-center w3-col">식당 이름 : <span id="rsname">${PO.rname}</span></h4><br><br>
 			</div>
 			<div class="w3-col w3-border-bottom mgl10" align="left">
-				<h4 class="w3-left w3-col">배달 장소 : <span id="addr">${MPO.addr}</span></h4>
+				<h4 class="w3-left w3-col">배달 장소 : <span id="addr">${PO.pickup}</span></h4>
 			</div>
 			<div class="w3-col w3-border-bottom" align="left" >
 				<h4 class="mgl10">${SID} 님이 선택하신 메뉴</h4>

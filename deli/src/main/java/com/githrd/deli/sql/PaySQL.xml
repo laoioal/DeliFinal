@@ -17,10 +17,10 @@
 	<insert id="insertOdl" parameterType="paVO">
 	
 		INSERT INTO
-			orderlist(olno, ono, rno, oprice, paym, requests, olmenu)
+			orderlist(olno, ono, rno, oprice, paym, requests, olmenu, pickup)
 		VALUES(
 			(SELECT NVL(MAX(olno) +1, 1) FROM orderlist),
-			#{ono}, #{rno}, #{oprice}, #{paym}, NVL(#{request}, '없음'), #{olmenu}
+			#{ono}, #{rno}, #{oprice}, #{paym}, NVL(#{request}, '없음'), #{olmenu}, #{pickup}
 		)
 		
 	</insert>

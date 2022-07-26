@@ -10,7 +10,7 @@ import com.githrd.deli.util.PageUtil;
 
 public class PayVO {
 	private int membmno, mno, rno, mimg, mprice, mino, olno,  oprice, omprice, quantity, esti, cname, omno, gorder, delpay, cnt, mtprice, myprice, bno, restno, minprice;
-	private String oodate, mname1, result, membname, membmail, mname, mintro, miname, sname, dir, omenu, rname, addr, tel, stime, ono, sdate, paym, request, amname, id, membaddr, membtel, olmenu;
+	private String oodate, mname1, result, membname, membmail, mname, mintro, miname, sname, dir, omenu, rname, addr, tel, stime, ono, sdate, paym, request, amname, id, membaddr, membtel, olmenu, pickup;
 	private List<PayVO> menu;
 	private PageUtil page;
 	private List<PayVO>[] mmenu;
@@ -111,8 +111,14 @@ public class PayVO {
 	public void setMmenu(List<PayVO>[] mmenu) {
 		this.mmenu = mmenu;
 	}
-
 	
+	
+	public String getPickup() {
+		return pickup;
+	}
+	public void setPickup(String pickup) {
+		this.pickup = pickup;
+	}
 	public int getMno() {
 		return mno;
 	}
@@ -376,33 +382,35 @@ public class PayVO {
 				+ ", mino=" + mino + ", olno=" + olno + ", oprice=" + oprice + ", omprice=" + omprice + ", quantity="
 				+ quantity + ", esti=" + esti + ", cname=" + cname + ", omno=" + omno + ", gorder=" + gorder
 				+ ", delpay=" + delpay + ", cnt=" + cnt + ", mtprice=" + mtprice + ", myprice=" + myprice + ", bno="
-				+ bno + ", restno=" + restno + ", minprice=" + minprice + ", mname1=" + mname1 + ", result=" + result
-				+ ", membname=" + membname + ", membmail=" + membmail + ", mname=" + mname + ", mintro=" + mintro
-				+ ", miname=" + miname + ", sname=" + sname + ", dir=" + dir + ", omenu=" + omenu + ", rname=" + rname
-				+ ", addr=" + addr + ", tel=" + tel + ", stime=" + stime + ", ono=" + ono + ", sdate=" + sdate
-				+ ", paym=" + paym + ", request=" + request + ", amname=" + amname + ", id=" + id + ", membaddr="
-				+ membaddr + ", membtel=" + membtel + ", olmenu=" + olmenu + ", menu=" + menu + ", page=" + page
-				+ ", mmenu=" + Arrays.toString(mmenu) + ", orprice=" + Arrays.toString(orprice) + ", ormname="
-				+ Arrays.toString(ormname) + ", orq=" + Arrays.toString(orq) + ", rtime=" + rtime + ", rdate=" + rdate
-				+ ", getPage()=" + getPage() + ", getMinprice()=" + getMinprice() + ", getMname1()=" + getMname1()
-				+ ", getOrprice()=" + Arrays.toString(getOrprice()) + ", getOrmname()=" + Arrays.toString(getOrmname())
-				+ ", getOrq()=" + Arrays.toString(getOrq()) + ", getResult()=" + getResult() + ", getMenu()="
-				+ getMenu() + ", getMembname()=" + getMembname() + ", getMembmail()=" + getMembmail() + ", getOlmenu()="
-				+ getOlmenu() + ", getMmenu()=" + Arrays.toString(getMmenu()) + ", getMno()=" + getMno() + ", getRno()="
-				+ getRno() + ", getMimg()=" + getMimg() + ", getMprice()=" + getMprice() + ", getMino()=" + getMino()
-				+ ", getMembmno()=" + getMembmno() + ", getMembaddr()=" + getMembaddr() + ", getMembtel()="
-				+ getMembtel() + ", getId()=" + getId() + ", getRestno()=" + getRestno() + ", getOlno()=" + getOlno()
-				+ ", getOno()=" + getOno() + ", getOprice()=" + getOprice() + ", getOmprice()=" + getOmprice()
-				+ ", getQuantity()=" + getQuantity() + ", getEsti()=" + getEsti() + ", getCname()=" + getCname()
-				+ ", getMname()=" + getMname() + ", getMintro()=" + getMintro() + ", getMiname()=" + getMiname()
-				+ ", getSname()=" + getSname() + ", getDir()=" + getDir() + ", getOmenu()=" + getOmenu()
-				+ ", getRname()=" + getRname() + ", getAddr()=" + getAddr() + ", getTel()=" + getTel() + ", getRtime()="
-				+ getRtime() + ", getStime()=" + getStime() + ", getSdate()=" + getSdate() + ", getRdate()="
-				+ getRdate() + ", getPaym()=" + getPaym() + ", getRequest()=" + getRequest() + ", getOmno()="
-				+ getOmno() + ", getBno()=" + getBno() + ", getGorder()=" + getGorder() + ", getDelpay()=" + getDelpay()
-				+ ", getCnt()=" + getCnt() + ", getMyprice()=" + getMyprice() + ", getMtprice()=" + getMtprice()
-				+ ", getAmname()=" + getAmname() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+				+ bno + ", restno=" + restno + ", minprice=" + minprice + ", oodate=" + oodate + ", mname1=" + mname1
+				+ ", result=" + result + ", membname=" + membname + ", membmail=" + membmail + ", mname=" + mname
+				+ ", mintro=" + mintro + ", miname=" + miname + ", sname=" + sname + ", dir=" + dir + ", omenu=" + omenu
+				+ ", rname=" + rname + ", addr=" + addr + ", tel=" + tel + ", stime=" + stime + ", ono=" + ono
+				+ ", sdate=" + sdate + ", paym=" + paym + ", request=" + request + ", amname=" + amname + ", id=" + id
+				+ ", membaddr=" + membaddr + ", membtel=" + membtel + ", olmenu=" + olmenu + ", pickup=" + pickup
+				+ ", menu=" + menu + ", page=" + page + ", mmenu=" + Arrays.toString(mmenu) + ", orprice="
+				+ Arrays.toString(orprice) + ", ormname=" + Arrays.toString(ormname) + ", orq=" + Arrays.toString(orq)
+				+ ", rtime=" + rtime + ", rdate=" + rdate + ", odate=" + odate + ", getOodate()=" + getOodate()
+				+ ", getOdate()=" + getOdate() + ", getPage()=" + getPage() + ", getMinprice()=" + getMinprice()
+				+ ", getMname1()=" + getMname1() + ", getOrprice()=" + Arrays.toString(getOrprice()) + ", getOrmname()="
+				+ Arrays.toString(getOrmname()) + ", getOrq()=" + Arrays.toString(getOrq()) + ", getResult()="
+				+ getResult() + ", getMenu()=" + getMenu() + ", getMembname()=" + getMembname() + ", getMembmail()="
+				+ getMembmail() + ", getOlmenu()=" + getOlmenu() + ", getMmenu()=" + Arrays.toString(getMmenu())
+				+ ", getPickup()=" + getPickup() + ", getMno()=" + getMno() + ", getRno()=" + getRno() + ", getMimg()="
+				+ getMimg() + ", getMprice()=" + getMprice() + ", getMino()=" + getMino() + ", getMembmno()="
+				+ getMembmno() + ", getMembaddr()=" + getMembaddr() + ", getMembtel()=" + getMembtel() + ", getId()="
+				+ getId() + ", getRestno()=" + getRestno() + ", getOlno()=" + getOlno() + ", getOno()=" + getOno()
+				+ ", getOprice()=" + getOprice() + ", getOmprice()=" + getOmprice() + ", getQuantity()=" + getQuantity()
+				+ ", getEsti()=" + getEsti() + ", getCname()=" + getCname() + ", getMname()=" + getMname()
+				+ ", getMintro()=" + getMintro() + ", getMiname()=" + getMiname() + ", getSname()=" + getSname()
+				+ ", getDir()=" + getDir() + ", getOmenu()=" + getOmenu() + ", getRname()=" + getRname()
+				+ ", getAddr()=" + getAddr() + ", getTel()=" + getTel() + ", getRtime()=" + getRtime() + ", getStime()="
+				+ getStime() + ", getSdate()=" + getSdate() + ", getRdate()=" + getRdate() + ", getPaym()=" + getPaym()
+				+ ", getRequest()=" + getRequest() + ", getOmno()=" + getOmno() + ", getBno()=" + getBno()
+				+ ", getGorder()=" + getGorder() + ", getDelpay()=" + getDelpay() + ", getCnt()=" + getCnt()
+				+ ", getMyprice()=" + getMyprice() + ", getMtprice()=" + getMtprice() + ", getAmname()=" + getAmname()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
 	}
 	
 	

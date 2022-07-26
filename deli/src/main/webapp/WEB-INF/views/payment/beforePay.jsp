@@ -42,7 +42,7 @@ $(document).ready(function(){
 			<input type="hidden" id="mail" name="mail" value="${MPO.mail}">
 			<input type="hidden" id="name" name="name" value="${MPO.name}">
 			<input type="hidden" id="myid" name="myid" value="${SID}">
-			<input type="hidden" id="addr" name="addr" value="${MPO.addr}">
+			<input type="hidden" id="addr" name="addr" value="${PO.pickup}">
 			<input type="hidden" id="mymno" name="mymno" value="${MPO.mno}">
 			<input type="hidden" id="mymenu" name="mymenu" value="${PO.amname}">
 			<input type="hidden" id="amount" name="amount" value="${PO.mtprice}">
@@ -59,7 +59,7 @@ $(document).ready(function(){
 				<h4 class="w3-center w3-col mgl10">식당 이름 : <span id="rsname">${PO.rname}</span></h4><br><br>
 			</div>
 			<div class="w3-col w3-border-bottom " align="left">
-				<h4 class="w3-left w3-col mgl10">배달 장소 : <span id="addr">${MPO.addr}</span></h4>
+				<h4 class="w3-left w3-col mgl10">배달 장소 : <span id="addr">${PO.pickup}</span></h4>
 			</div>
 			<div class="w3-col w3-border-bottom " align="left" >
 				<h4 class="mgl10">${SID} 님이 선택하신 메뉴</h4>
