@@ -11,7 +11,7 @@ $(document).ready(function(){
 			$('#id02').append('<p>'+ msg +'</p>');
 			$('#id01').slideDown(500);
 			return;	
-		};
+		}; 
 
 		
 		let m_email = $('#mail').val();
