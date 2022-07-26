@@ -32,13 +32,14 @@
 		<beans:property name="maxInMemorySize" value="50000000"	/>
 		<beans:property name="defaultEncoding" value="UTF-8" />		
 	</beans:bean>
-
+ 
+ 
 	<!-- 회원가입 메일 인증 -->
    <beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
       <beans:property name="host" value="smtp.naver.com" />
       <beans:property name="port" value="465" />
-      <beans:property name="username" value="[인증메일id]" />
-      <beans:property name="password" value="[인증메일pw]" />
+      <beans:property name="username" value="[ID입력]" />
+      <beans:property name="password" value="[PW입력]" />
       <beans:property name="javaMailProperties">
          <beans:props>
                 <beans:prop key="mail.transport.protocol">smtp</beans:prop>
@@ -62,7 +63,7 @@
 	<!-- bean 설정파일 읽어오기 -->
 	<beans:import resource="bean-context.xml" />
 	<beans:import resource="deliInter-context.xml" />
-	<beans:import resource="scheduler-context.xml" />
+	
 	
 	<context:component-scan base-package="com.githrd.deli" />
 	

@@ -41,7 +41,7 @@
 		    	<div class="w3-button w3-block w3-black" id="hbtn">HOME</div>
 		    </div>
 		    <div class="w3-col s8">
-		      	<div class="w3-block w3-black w3-center ft18">Delivery Project</div>
+		      	<div class="w3-block w3-black w3-center ft22">Delivery Project</div>
 		    </div>
 <c:if test="${SID eq null}">
 		    <div class="w3-col s2">

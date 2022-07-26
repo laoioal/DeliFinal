@@ -34,16 +34,19 @@
 		    	<div class="w3-button w3-block w3-black" id="hbtn">HOME</div>
 		    </div>
 		    <div class="w3-col s8">
-		      	<div class="w3-block w3-black w3-center">&nbsp;</div>
+		      	<div class="w3-block w3-black w3-center ft22">Delivery Project</div>
 		    </div>
+<c:if test="${SID eq null}">
 		    <div class="w3-col s2">
 		      	<div class="w3-button w3-block w3-black libtn">LOGIN</div>
 	    	</div>
+</c:if>
+<c:if test="${SID ne null}">
+		    <div class="w3-col s2">
+		      	<div class="w3-button w3-block w3-black" id="lobtn">LOGOUT</div>
+	    	</div>
+</c:if>
 	  	</div>
-	</div>
-	
-	<div class="w80p w3-display-middle border3px" style="position: relative; top: 95px;">
-		<h1 class="w3-center"><b>Delivery Project</b></h1>
 	</div>
 	
 	<div class="w3-display-middle w3-border w3-padding w3-col m6">

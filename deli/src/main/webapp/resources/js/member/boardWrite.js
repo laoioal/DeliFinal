@@ -17,6 +17,7 @@ $(document).ready(function(){
 //	$('.w3-select').not('#large').css('display', 'none');
 //	$('#menu').css('display', 'block');
 	$('#end').css('display', 'block');
+	
 /*	
 	// 지역 중분류
 	$('#large').change(function(){
@@ -96,19 +97,6 @@ $(document).ready(function(){
 		});
 	});
 */	
-	// 지역 구분
-	var parea = $('#parea').val();
-	var large = parea.substring(0, parea.indexOf(' '));
-	if(large == '서울'){
-		large = '서울특별시';
-	}
-	var middle = parea.substring(parea.indexOf(' ')+1, parea.indexOf(' ', parea.indexOf(' ') + 1));
-	var small = parea.substring(parea.indexOf(' ', parea.indexOf(' ') + 1) + 1);
-	
-	$('#large').val(large);
-	$('#middle').val(middle);
-	$('#small').val(small);
-	
 	
 	// 글 등록 버튼 클릭
 	$('#wbtn').click(function(){
@@ -119,7 +107,9 @@ $(document).ready(function(){
 		var end = $('#end').val();
 		var category = $('#menu').val();
 		var rest = $('#rest').val();
-		var pickName = $('#placeName').val();
+		var placeName = $('#placeName').val();
+		var parea = $('#parea').val();
+		// 
 		
 		oEditors.getById['ir1'].exec('UPDATE_CONTENTS_FIELD', []);
 		let content = $('#ir1').val();
@@ -143,7 +133,7 @@ $(document).ready(function(){
 			alert("입력가능한 글자수를 초과 하였거나, 또는 비 정상적인 접근입니다.");
 			return;
 		}
-		var el = $('#title, #large, #middle, #small, #end, #menu, #rest, #placeName, #ir1');
+		var el = $('#title, #large, #middle, #small, #end, #menu, #rest, #placeName, #parea, #ir1');
 		
 		for(var i = 0; i < el.length; i++){
 			var txt = $(el).eq(i).val();

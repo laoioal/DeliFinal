@@ -37,6 +37,10 @@ $(document).ready(function(){
 		$('#maincity').val(city);
 		$('#frm').submit();
 	});
+		
+	$('#total').click(function(){
+		$('#frm1').submit();
+	});
 	
 	$('#searchbtn').click(function(){
 		$('#check option:selected').val();
@@ -230,6 +234,10 @@ $(document).ready(function(){
 		$('#body').val(body);
 		$('#pageFrm').attr('action', '/deli/board/reboard.dlv');
 		$('#pageFrm').submit();
+	});
+		
+	$('#faq').click(function(){
+		$(location).attr('href', '/deli/faq/board.dlv');
 	});
 	
 });

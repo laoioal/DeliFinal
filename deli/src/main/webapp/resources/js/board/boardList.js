@@ -26,6 +26,10 @@ $(document).ready(function(){
 		$('#maincity').val(city);
 		$('#frm').submit();
 	});
+		
+	$('#total').click(function(){
+		$('#frm1').submit();
+	});
 	
 	$('#searchbtn').click(function(){
 		var check = $('#check option:selected').val();
@@ -52,5 +56,9 @@ $(document).ready(function(){
 	
 	$('#writebtn').click(function(){
 		$(location).attr('href', '/deli/member/insertId.dlv');
+	});
+		
+	$('#faq').click(function(){
+		$(location).attr('href', '/deli/faq/board.dlv');
 	});
 });

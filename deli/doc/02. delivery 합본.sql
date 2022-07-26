@@ -2438,11 +2438,47 @@ CREATE TABLE reboard(
         CONSTRAINT RBRD_SHOW_NN NOT NULL
     );
 
+INSERT INTO
+    reboard(rbno, brdno, rbmno, body)
+VALUES(
+    (SELECT NVL(MAX(rbno) + 1, 1) FROM reboard),
+    19, 1001, '저도 먹고싶네요'
+);
+
+INSERT INTO
+    reboard(rbno, brdno, rbmno, body)
+VALUES(
+    (SELECT NVL(MAX(rbno) + 1, 1) FROM reboard),
+    19, 1003, '시간 좀만 늦춰주세요 ㅠㅠ'
+);
+
+INSERT INTO
+    reboard(rbno, upno, brdno, rbmno, body)
+VALUES(
+    (SELECT NVL(MAX(rbno) + 1, 1) FROM reboard),
+    1, 19, 1004, '콜??'
+);
+
+INSERT INTO
+    reboard(rbno, upno, brdno, rbmno, body)
+VALUES(
+    (SELECT NVL(MAX(rbno) + 1, 1) FROM reboard),
+    3, 19, 1001, '결제가시죠'
+);
+
+INSERT INTO
+    reboard(rbno, upno, brdno, rbmno, body)
+VALUES(
+    (SELECT NVL(MAX(rbno) + 1, 1) FROM reboard),
+    1, 19, 1005, '왜 안드세요?'
+);
+commit;
+    
 -- faq
 CREATE TABLE FAQ
 (NO NUMBER CONSTRAINT NO_FAQ_PK PRIMARY KEY,
-ID VARCHAR2(20 char) CONSTRAINT ID_FAQ_NN NOT NULL,
-PW VARCHAR2(20 char) CONSTRAINT PW_FAQ_NN NOT NULL,
+ID VARCHAR2(10 char) CONSTRAINT ID_FAQ_NN NOT NULL,
+PW VARCHAR2(15 char) CONSTRAINT PW_FAQ_NN NOT NULL,
 TITLE VARCHAR2(50 CHAR) CONSTRAINT TITLE_FAQ_NN NOT NULL,
 CONTENT VARCHAR2(1000 CHAR) CONSTRAINT CONTENT_FAQ_NN NOT NULL,
 WDATE DATE DEFAULT SYSDATE);
@@ -2458,14 +2494,14 @@ Insert into FAQ (NO,ID,PW,TITLE,CONTENT,WDATE) values (FAQ_SEQ.NEXTVAL,'admin1',
 Insert into FAQ (NO,ID,PW,TITLE,CONTENT,WDATE) values (FAQ_SEQ.NEXTVAL,'admin1','1111','접속 오류시 방법','안녕하세요 접속오류시 방법에 대해서 설명드립니다.<br> 당사 cs팀에 연락(02-000-0000) 후 원격서비스를 신청하십시오. <br> 감사합니다. ',to_date('22/07/18','RR/MM/DD'));
 
 --pickup
+
 create table pickup (
     name varchar2(10 char) constraint name_pickup_pk primary key,
-    address varchar2(30 char)constraint address_pickup_nn not null constraint address_pickup_uk unique,
+    address varchar2(60 char)constraint address_pickup_nn not null,
     pickuplat number constraint lat_pickup_nn not null,
     pickuplon number constraint lon_pickup_nn not null
 );
-
-
+   
 Insert into PICKUP (NAME,ADDRESS,PICKUPLAT,PICKUPLON) values ('경복궁역','서울 종로구 사직로 지하 130',37.57557082171,126.97330778814);
 Insert into PICKUP (NAME,ADDRESS,PICKUPLAT,PICKUPLON) values ('광화문우체국','서울 종로구 종로 6',37.570013917406,126.9780542555);
 Insert into PICKUP (NAME,ADDRESS,PICKUPLAT,PICKUPLON) values ('대방역','서울 영등포구 여의대방로 300',37.513379538688,126.92652335463);
@@ -2502,7 +2538,7 @@ Insert into PICKUP (NAME,ADDRESS,PICKUPLAT,PICKUPLON) values ('약수동 주민�
 
 -- admin
 CREATE TABLE ADMIN
-(ID VARCHAR2(15 CHAR) CONSTRAINT ID_ADMIN_PK PRIMARY KEY,
+(ID VARCHAR2(10 CHAR) CONSTRAINT ID_ADMIN_PK PRIMARY KEY,
 PW VARCHAR2(15 char) CONSTRAINT PW_ADMIN_NN NOT NULL);
 
 INSERT INTO ADMIN VALUES('ADMIN1','1111');
@@ -2510,6 +2546,7 @@ INSERT INTO ADMIN VALUES('ADMIN2','2222');
 INSERT INTO ADMIN VALUES('ADMIN3','3333');
 INSERT INTO ADMIN VALUES('ADMIN4','4444');
 INSERT INTO ADMIN VALUES('ADMIN5','5555');
+commit;
 
 
 -- estitable
@@ -2528,7 +2565,37 @@ CREATE TABLE estitable(
         CONSTRAINT ETB_SHOW_CK CHECK(isshow IN('Y','N'))
 );
 
+-- 쿠폰
+CREATE TABLE coupon(
+    cpcode VARCHAR2(8 CHAR)
+        CONSTRAINT CP_CODE_NN NOT NULL,
+    cpname VARCHAR2(20 CHAR)
+        CONSTRAINT CP_NAME_NN NOT NULL,
+    cpdt VARCHAR2(30 CHAR)
+        CONSTRAINT CP_DT_NN NOT NULL,
+    cpowner VARCHAR2(10 CHAR)
+        CONSTRAINT CP_OWN_NN NOT NULL
+        CONSTRAINT CP_OWN_FK REFERENCES member(id),
+    cpexp DATE default(sysdate + 3)
+        CONSTRAINT CP_EXP_NN NOT NULL,
+    cpshow CHAR(1) DEFAULT 'Y'
+        CONSTRAINT CP_SHOW_NN NOT NULL
+        CONSTRAINT CP_SHOW_CK CHECK(cpshow IN('Y','N'))
+);
 
+-- 게시글 픽업장소
+CREATE TABLE boardpickup(
+    bpno number(4)
+        CONSTRAINT BP_BPNO_PK PRIMARY KEY
+        CONSTRAINT BP_BPNO_NN NOT NULL,
+    bno number(4)
+        CONSTRAINT BP_BNO_FK REFERENCES board(bno)
+        CONSTRAINT BP_BNO_NN NOT NULL,
+    placeName VARCHAR2(4000)
+        CONSTRAINT BP_PLACENAME_NN NOT NULL,
+    parea VARCHAR2(4000)
+        CONSTRAINT BP_PAREA_NN NOT NULL
+);
 
 commit;
 

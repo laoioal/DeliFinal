@@ -33,40 +33,70 @@
 </style>
 </head>
 <body>
+	<div class="w3-top">
+	  	<div class="w3-row w3-padding w3-black">
+			<div class="w3-col s1">
+				<form method="POST" action="/deli/board/boardList.dlv" id="frm1" name="frm1">
+			    	<div class="w3-button w3-block w3-black" id="total">전체</div>
+			    </form>
+		    </div>
+		    <div class="w3-col s1">
+		    	<div class="w3-button w3-block w3-black" id="faq">FAQ</div>
+		    </div>
+		    <div class="w3-col s1">
+		    	<div class="w3-button w3-block w3-black" id="hbtn">HOME</div>
+		    </div>
+		    <div class="w3-col s6">
+		      	<div class="w3-block w3-black w3-center ft18">Delivery Project</div>
+		    </div>
+<c:if test="${empty SID}">
+			<div class="w3-col s1 w3-right">
+		    	<div class="w3-button w3-block w3-black" id="jbtn">JOIN</div>
+		    </div>
+		    <div class="w3-col s1 w3-right">
+		      	<div class="w3-button w3-block w3-black" id="lbtn">LOGIN</div>
+	    	</div>
+</c:if>
+<c:if test="${not empty SID}">
+		    <div class="w3-col s1 w3-right">
+		      	<div class="w3-button w3-block w3-black" id="obtn">LOGOUT</div>
+	    	</div>
+</c:if>
+	  	</div>
+	</div>
+
+
 <c:if test="${not empty param.result}">
 	<input type="hidden" id="result" value="${param.result}">
 </c:if>
 <c:if test="${not empty param.cancleresult}">
 	<input type="hidden" id="cancleresult" value="${param.cancleresult}">
 </c:if>
+
+
 	<div class="mxw980 w3-content w3-center">
-		<button class="w3-right-align mg0 w3-left mg0 pdAll0 w3-button mgt10 member" id="hbtn">HOME</button>
-<c:if test="${not empty SID}">
-		<button class="w3-right-align mg0 w3-right mg0 pdAll0 w3-button mgt10 member" id="obtn">로그아웃</button>
-</c:if>
-<c:if test="${empty SID}">
-		<button class="w3-right-align mg0 w3-right mg0 pdAll0 w3-button mgt10 member" id="lbtn">로그인</button>
-</c:if>
-		<form method="POST" action="/deli/board/boardList.dlv" id="frm" name="frm">
-			<input type="hidden" id="maincity" name="city" value="${param.city}">
-		
 		<div class="w3-col mgt0">
-			<h1 class="mgb10 w3-border pdAll10"><strong>Delivery Project</strong></h1>
-			<hr>
-			<button class="w3-col w3-button w3-left citytitle" value="서울특별시">서울</button>
-			<button class="w3-col w3-button w3-left citytitle" value="경기도">경기도</button>
-			<button class="w3-col w3-button w3-left citytitle" value="강원도">강원도</button>
-			<button class="w3-col w3-button w3-left citytitle" value="충청남도">충청남도</button>
-			<button class="w3-col w3-button w3-left citytitle" value="충청북도">충청북도</button>
-			<button class="w3-col w3-button w3-left citytitle" value="경상남도">경상남도</button>
-			<button class="w3-col w3-button w3-left citytitle" value="경상북도">경상북도</button>
-			<button class="w3-col w3-button w3-left citytitle" value="전라남도">전라남도</button>
-			<button class="w3-col w3-button w3-left citytitle" value="전라북도">전라북도</button>
-			<button class="w3-col w3-button w3-left citytitle" value="제주도">제주도</button>
-			<button class="w3-col w3-button w3-left citytitle" value="">전체</button>
-		<hr class="w3-col mg0 w3-card-2">
+			<form method="POST" action="/deli/board/boardList.dlv" id="frm" name="frm">
+				<input type="hidden" id="maincity" name="city" value="${param.city}">
+			
+				<h1 class="mgb10 w3-border pdAll10"><strong></strong></h1>
+				<hr>
+				<button class="w3-col w3-button w3-left citytitle" value="서울특별시">서울</button>
+				<button class="w3-col w3-button w3-left citytitle" value="경기도">경기도</button>
+				<button class="w3-col w3-button w3-left citytitle" value="강원도">강원도</button>
+				<button class="w3-col w3-button w3-left citytitle" value="충청남도">충청남도</button>
+				<button class="w3-col w3-button w3-left citytitle" value="충청북도">충청북도</button>
+				<button class="w3-col w3-button w3-left citytitle" value="경상남도">경상남도</button>
+				<button class="w3-col w3-button w3-left citytitle" value="경상북도">경상북도</button>
+				<button class="w3-col w3-button w3-left citytitle" value="전라남도">전라남도</button>
+				<button class="w3-col w3-button w3-left citytitle" value="전라북도">전라북도</button>
+				<button class="w3-col w3-button w3-left citytitle" value="제주도">제주도</button>
+			</form>
+			<form method="POST" action="/deli/board/boardList.dlv" id="frm1" name="frm1">
+				<button class="w3-col w3-button w3-left citytitle1" id="total">전체</button>
+			</form>
+			<hr class="w3-col mg0 w3-card-2">
 		</div>
-		</form>
 		<!-- 접수가능 게시글 -->
 <c:if test="${MAIN.endalert > 0}">		
 		<div class="w3-col w3-padding w3-left-align w3-border w3-card-4 w3-margin-top ctdw" id="${MAIN.endtime}">

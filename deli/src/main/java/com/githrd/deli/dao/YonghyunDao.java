@@ -167,12 +167,19 @@ public class YonghyunDao {
 	
 	// 후기 작성 가능하게 공구 신청한 대상 db에 넣는 함수1
 	public int insEtableA(YonghyunVO yVO) {
+System.out.println(yVO);
 		return sqlSession.insert("ySQL.insEtableA", yVO);
 	}
 
 	// 후기 작성 가능하게 공구 신청한 대상 db에 넣는 함수2
 	public int insEtableB(YonghyunVO yVO) {
 		return sqlSession.insert("ySQL.insEtableB", yVO);
+	}
+	
+	// 쿠폰 조회 함수
+	public List<YonghyunVO> couponSel(){
+	System.out.println("작동하니?");
+		return sqlSession.selectList("ySQL.couponSel");
 	}
 	
 }

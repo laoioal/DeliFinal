@@ -1,0 +1,12 @@
+CREATE TABLE boardpickup(
+    bpno number(4)
+        CONSTRAINT BP_BPNO_PK PRIMARY KEY
+        CONSTRAINT BP_BPNO_NN NOT NULL,
+    bno number(4)
+        CONSTRAINT BP_BNO_FK REFERENCES board(bno)
+        CONSTRAINT BP_BNO_NN NOT NULL,
+    placeName VARCHAR2(4000)
+        CONSTRAINT BP_PLACENAME_NN NOT NULL,
+    parea VARCHAR2(4000)
+        CONSTRAINT BP_PAREA_NN NOT NULL
+);

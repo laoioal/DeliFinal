@@ -6,7 +6,7 @@
 						https://maven.apache.org/maven-v4_1_0.xsd">
 	<modelVersion>4.1.0</modelVersion>
 	<groupId>com.githrd</groupId>
-	<artifactId>www</artifactId>
+	<artifactId>deli</artifactId>
 	<name>githrd</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
@@ -18,6 +18,8 @@
 	</properties>
 	
 	<!-- jitpack -->
+	<!--  
+	-->
 	<repositories>
 		<repository>
 		    <id>jitpack.io</id>
@@ -61,18 +63,21 @@
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support 메일 관련]-->
+		<!-- 
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-context-support</artifactId>
 		    <version>5.3.9</version>
 		</dependency>
-				
+		 -->		
 		<!-- Quartz -->
+		  
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+		
 		
 		<!-- Quartz Bean -->
 		<dependency>
@@ -256,12 +261,16 @@
 		    <artifactId>jackson-databind</artifactId>
 		    <version>2.13.3</version>
 		</dependency>
+		
 		<!-- iamport rest client -->	
+		<!--  
+		-->
 		<dependency>
 		 	<groupId>com.github.iamport</groupId>
 		 	<artifactId>iamport-rest-client-java</artifactId>
 		 	<version>0.2.17</version>
 		</dependency>
+		
 		<!-- retrofit -->
 		<dependency>
 		    <groupId>com.squareup.retrofit2</groupId>

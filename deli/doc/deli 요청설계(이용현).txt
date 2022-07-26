@@ -40,13 +40,6 @@
 처리함수	:	upFriend()
 뷰			:	ajax
 ----------------------------------------------------------------------------------
-# 친구 추가 신청
-요청내용	:	/deli/board/friend.dlv
-파라미터	:	mno
-컨트롤러	:	com.githrd.deli.controller.YonghyunController
-처리함수	:	upFriend()
-뷰			:	ajax
-----------------------------------------------------------------------------------
 # 메인페이지에서 친구요청 수락
 요청내용	:	/deli/board/apFriend.dlv
 파라미터	:	mno
@@ -89,10 +82,31 @@
 처리함수	:	sendMessage()
 뷰			:	/WEB-INF/views/board/message.jsp
 ----------------------------------------------------------------------------------
+# 메세지 읽음 처리 요청
+요청내용	:	/deli/board/msRead.dlv
+파라미터	:	bno
+컨트롤러	:	com.githrd.deli.controller.YonghyunController
+처리함수	:	msRead()
+뷰			:	ajax
+----------------------------------------------------------------------------------
+# 메세지 읽음 처리 요청
+요청내용	:	/deli/board/recordLog.dlv
+파라미터	:	id, body
+컨트롤러	:	com.githrd.deli.controller.YonghyunController
+처리함수	:	recordLog()
+뷰			:	ajax
+----------------------------------------------------------------------------------
 # 게시판 댓글달기 처리 요청
 요청내용	:	/deli/board/reboard.dlv
 파라미터	:	bno, mno, body[, upno]
 컨트롤러	:	com.githrd.deli.controller.YonghyunController
 처리함수	:	reboardProc()
 뷰			:	/WEB-INF/views/board/boardForm.jsp
+----------------------------------------------------------------------------------
+# 게시판 댓글달기 처리 요청
+요청내용	:	/deli/board/friendArround.dlv
+파라미터	:	x
+컨트롤러	:	com.githrd.deli.controller.YonghyunController
+처리함수	:	friendtest
+뷰			:	/WEB-INF/views/board/friendArround.jsp
 ----------------------------------------------------------------------------------

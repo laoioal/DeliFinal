@@ -337,6 +337,11 @@
 	font-size: 16pt;
 }
 
+.ft22{
+	font-size: 22px;
+	font-weight: bold;
+}
+
 .contBox {
 	width: 100%;
 	height: 250px;;
