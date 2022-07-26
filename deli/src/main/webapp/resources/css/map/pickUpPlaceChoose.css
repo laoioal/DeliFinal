@@ -1,7 +1,7 @@
 #tableInfo {
 	position: absolute;
 	margin-left: 30px;
-	margin-top:500px;
+	margin-top:550px;
 	width: 25%;
 	border-top: 1px solid #dddddd;
 	border-collapse: collapse;
@@ -15,15 +15,50 @@
 	padding: 5px;
 }
 
+#h2top{
+	margin-top: 50px;
+	width:200px;
+	color:black;
+	background: #fff;
+	background: rgba(255, 255, 255, 0.5);
+	text-align:center;
+	margin-left:700px;
+	position: absolute;
+		top:-30px;
+	z-index:100;
+	border-radius:10px;
+}
+
+
+
+
+
 .trstyle {
-	border-bottom: 2px solid #dddddd;
-	  padding: 10px;
+	border-bottom: 1px solid #dddddd;
 }
 
 #h2style {
-	margin-top: 650px;
+	margin-top: 630px;
 	text-align:center;
 	margin-left:700px;
+	position: absolute;
+		top:20px;
+	z-index:100;
+
+}
+
+
+#submitbtn{
+	background-color:black;
+	color:white;
+	font-size:15px;
+	font-weight:bold;
+	width:100px;
+	height:30px;
+	border-radius: 10px;
+	outline:0px;
+	cursor:pointer;
+	border:0px;
 	position: absolute;
 }
 
@@ -90,7 +125,6 @@
 	border-radius: 20px;
 	width: 7px;
 }
-
 .label2 .center2 {
 	display: inline-block;
 	height: 24px;
@@ -109,6 +143,7 @@
 
 #map {
 	width: 1500px;
-	height: 650px;
+	height: 700px;
 	float: left;
+	text-align: center;
 }
