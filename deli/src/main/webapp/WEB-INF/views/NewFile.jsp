@@ -105,6 +105,9 @@
 						<img src="/deli/resources/upload/${MYINFO.aid}" style="width:80px; margin-top:10px; margin-left:50px;"
 								alt="Avatar" class="w3-left w3-circle">
 						<h3 style="margin-top:30px; margin-right:30px;"><b>${MYINFO.id}</b></h3>
+						
+						<div class="w3-display-bottomleft w3-container w3-text-black">
+						</div>
 					</div>
 					
 					<div class="w3-container">
