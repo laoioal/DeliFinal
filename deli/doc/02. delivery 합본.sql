@@ -36,7 +36,7 @@ ADD(
 INSERT INTO
     member(mno, name, id, kakaoid, pw, mail, tel, addr)
 VALUES(
-    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), '이용현', 'YHLEE', 'YHLEE12', '12345', 'YH@githrd.com', '010-0000-0000', '서울시 영등포구 신풍로 77'
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), '이용현', 'YHLEE', 'YHLEE12', '12345', 'YH@githrd.com', '010-0000-0000', '서울시 중구 신당동 821-1'
 );
 
 INSERT INTO
@@ -66,37 +66,37 @@ VALUES(
 INSERT INTO
     member(mno, name, id, kakaoid, pw, mail, tel, addr)
 VALUES(
-    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), '제니', 'jennie', 'jennie12', '12345', 'jennie@githrd.com', '010-5555-5555', '서울시 중구 다산동'
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), '제니', 'jennie', 'jennie12', '12345', 'jennie@githrd.com', '010-5555-5555', '서울시 중구 다산로11길 13'
 );
 
 INSERT INTO
     member(mno, name, id, kakaoid, pw, mail, tel, addr)
 VALUES(
-    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), '안은비', 'aeb320', '320aeb', '12345', 'dksdmsql320@gmail.com', '010-3232-3232', '서울시 영등포구 신길동'
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), '안은비', 'aeb320', '320aeb', '12345', 'dksdmsql320@gmail.com', '010-3232-3232', '서울시 중구 신당동 369-47'
 );
 
 INSERT INTO
     member(mno, name, id, kakaoid, pw, mail, tel, addr)
 VALUES(
-    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), '박찬슬', 'pcs', 'pcs', '12345', 'pcs@githrd.com', '010-8784-8874', '서울시 영등포구 신풍로 80'
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), '박찬슬', 'pcs', 'pcs', '12345', 'pcs@githrd.com', '010-8784-8874', '서울시 중구 신당동 826-15'
 );
 
 INSERT INTO
     member(mno, name, id, kakaoid, pw, mail, tel, addr)
 VALUES(
-    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), '이형준', 'lhj', 'lhj', '12345', 'lhj@githrd.com', '010-8111-5484', '서울시 영등포구 신길로 89'
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), '이형준', 'lhj', 'lhj', '12345', 'lhj@githrd.com', '010-8111-5484', '서울시 중구 신당동 824'
 );
 
 INSERT INTO
     member(mno, name, id, kakaoid, pw, mail, tel, addr)
 VALUES(
-    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), '고하늘', 'khn', 'khn', '12345', 'khn@githrd.com', '010-8420-1548', '서울시 영등포구 신풍로 46-1'
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), '고하늘', 'khn', 'khn', '12345', 'khn@githrd.com', '010-8420-1548', '서울시 중구 신당동 432-1153'
 );
 
 INSERT INTO
     member(mno, name, id, kakaoid, pw, mail, tel, addr)
 VALUES(
-    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), '김수미', 'ksm', 'ksm', '12345', 'ksm@githrd.com', '010-4520-1548', '서울시 영등포구 신풍로 74'
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), '김수미', 'ksm', 'ksm', '12345', 'ksm@githrd.com', '010-4520-1548', '서울시 중구 신당동 346-421'
 );
 
 commit;
@@ -1808,19 +1808,6 @@ VALUES(
     4, '짬뽕', '둘이 먹다가 하나가 죽어도 모르는 짬뽕!', 1002, 6000
 );
 
-INSERT INTO 
-    MENU(mno, rno, mname, mprice, mintro,mimg)    
-VALUES(
-    (SELECT NVL(MAX(mno) +1, 1) FROM menu),
-    200, '삼겹살', 12000, '이것은 삼겹살인가 목살인가 그만큼 담백하고 맛있는 삼겹살', 1021
-);
-
-INSERT INTO 
-    MENU(mno, rno, mname, mprice, mintro,mimg)    
-VALUES(
-    (SELECT NVL(MAX(mno) +1, 1) FROM menu),
-    200, '갈비', 12000, '양념이 싹 베인 양념갈비 이거 안 먹어보면 후회할지도?', 1022
-);
 commit;
 
 CREATE TABLE board(
@@ -1995,6 +1982,11 @@ CREATE TABLE regimem (
 
 ALTER TABLE regimem DROP COLUMN estishow;
 
+INSERT INTO
+    regimem(abno, aid)
+VALUES(
+    1, 'YHLEE'
+);
 INSERT INTO
     regimem(abno, aid)
 VALUES(
@@ -2197,6 +2189,20 @@ VALUES(
     (SELECT NVL(MAX(fno) +1, 1) FROM friend), (SELECT mno FROM member WHERE id = 'hui'), 1001, 'Y', sysdate
 );
 
+INSERT INTO
+    friend(fno, myno, frino, agree, adate)
+VALUES(
+    (SELECT NVL(MAX(fno) + 1, 1) FROM friend),
+    1003, 1006, 'Y', '2022/07/26'
+);
+
+INSERT INTO
+    friend(fno, myno, frino, agree, adate)
+VALUES(
+    (SELECT NVL(MAX(fno) + 1, 1) FROM friend),
+    1006, 1003, 'Y', '2022/07/26'
+);
+
 commit;
 
 CREATE TABLE estimate(
@@ -2234,6 +2240,35 @@ CREATE TABLE message (
     isshow CHAR(1) DEFAULT 'Y'
         CONSTRAINT MESSAGE_ISSHOW_NOT NULL
         CONSTRAINT MESSAGE_ISSHOW_CK CHECK(isshow IN('Y', 'N'))
+);
+
+INSERT INTO
+    message(msno, writerno, myno, mstitle, msbody)
+VALUES(
+    (SELECT NVL(MAX(msno) + 1, 1) FROM message),
+    1001, 1006, '제니야', '제니야 우리 족발시켜먹을래?'
+);
+
+
+INSERT INTO
+    message(msno, writerno, myno, mstitle, msbody)
+VALUES(
+    (SELECT NVL(MAX(msno) + 1, 1) FROM message),
+    1003, 1006, '제니님', '드시고 싶으신 메뉴 있으신가요??'
+);
+
+INSERT INTO
+    message(msno, writerno, myno, mstitle, msbody, wdate)
+VALUES(
+    (SELECT NVL(MAX(msno) + 1, 1) FROM message),
+    1002, 1006, '오늘은 뭐 안시켜드세요?', '시간 맞으시면 같이 시켜먹을래요???', '2022/07/26'
+);
+
+INSERT INTO
+    message(msno, writerno, myno, mstitle, msbody, wdate)
+VALUES(
+    (SELECT NVL(MAX(msno) + 1, 1) FROM message),
+    1002, 1006, '왜왜왜왜왜', '왜 제 쪽지에 답 안해주세요 왜왜', '2022/07/27'
 );
 
 CREATE TABLE RCOORDI(
@@ -2631,6 +2666,125 @@ VALUES(
     (SELECT NVL(MAX(mno) +1, 1) FROM menu),
     200, '양념갈비', 12000, '특제양념이 싹 베인 갈비 이거 안 먹어보면 후회할지도?', 1022
 );
+
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    1, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    2, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    3, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    4, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    5, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    6, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    7, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    8, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    9, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    10, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    11, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    12, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    13, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    14, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    15, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    16, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    17, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    18, '약수역', '서울 중구 다산로 지하 122'
+);
+INSERT INTO
+    boardpickup(bpno, bno, placename, parea)
+VALUES(
+    (SELECT NVL(max(bpno) + 1, 1) FROM boardpickup),
+    19, '약수역', '서울 중구 다산로 지하 122'
+);
+
+-- odl pickup 추가
+ALTER TABLE ORDERLIST ADD pickup VARCHAR2(100 CHAR) CONSTRAINT OL_PICKUP_NN NOT NULL
+;
 
 
 commit;

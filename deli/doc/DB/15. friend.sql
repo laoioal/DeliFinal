@@ -39,5 +39,18 @@ INSERT INTO
 VALUES(
     (SELECT NVL(MAX(fno) +1, 1) FROM friend), (SELECT mno FROM member WHERE id = 'hui'), 1001, 'Y', sysdate
 );
+INSERT INTO
+    friend(fno, myno, frino, agree, adate)
+VALUES(
+    (SELECT NVL(MAX(fno) + 1, 1) FROM friend),
+    1003, 1006, 'Y', '2022/07/26'
+);
+
+INSERT INTO
+    friend(fno, myno, frino, agree, adate)
+VALUES(
+    (SELECT NVL(MAX(fno) + 1, 1) FROM friend),
+    1006, 1003, 'Y', '2022/07/26'
+);
 
 commit;

@@ -45,7 +45,7 @@
 		    	<div class="w3-button w3-block w3-black" id="hbtn">HOME</div>
 		    </div>
 		    <div class="w3-col s6">
-		      	<div class="w3-block w3-black w3-center ft18">Delivery Project</div>
+		      	<div class="w3-block w3-black w3-center ft22">Delivery Project</div>
 		    </div>
 <c:if test="${empty SID}">
 			<div class="w3-col s1 w3-right">
@@ -236,17 +236,7 @@
 			</div>
 			</div>
 		</div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	</div>	
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d6fb471c69858a04f22e5ff56c302f30&libraries=services"></script>
 <script>
 	var cen;

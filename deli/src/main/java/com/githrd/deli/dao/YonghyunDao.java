@@ -47,6 +47,7 @@ public class YonghyunDao {
 	}
 	// 게시물 내 공구신청한 사람 조회 함수
 	public List<YonghyunVO> selRegimem(YonghyunVO yVO) {
+	System.out.println(yVO.getBno());
 		return sqlSession.selectList("ySQL.selRegimem", yVO);
 	}
 	
