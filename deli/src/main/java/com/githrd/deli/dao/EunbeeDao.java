@@ -76,5 +76,13 @@ public class EunbeeDao {
 	public int upEsti(EunbeeVO eVO) {
 		return sqlSession.update("eSQL.upEsti", eVO);
 	}
+	
+	public int insCoupon(EunbeeVO eVO) {
+		return sqlSession.insert("eSQL.insCoupon", eVO);
+	}
+	
+	public List<EunbeeVO> getClist(String id) {
+		return sqlSession.selectList("eSQL.selClist", id);
+	}
 
 }

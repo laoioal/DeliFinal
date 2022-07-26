@@ -6,7 +6,8 @@ import java.text.SimpleDateFormat;
 public class EunbeeVO {
 	private int ano, cpts;
 	private double esti, nesti, point, spts;
-	private String bno, id, idb, mail, pw, npw, dir, savename, title, sdate, show, eshow;
+	private String bno, id, idb, mail, pw, npw, dir, savename, title, sdate, show, eshow,
+					cpcode, cpname, cpdt, cpexp;
 	private Date wdate;
 	
 
@@ -167,13 +168,46 @@ public class EunbeeVO {
 	public void setEshow(String eshow) {
 		this.eshow = eshow;
 	}
+	
+	public String getCpcode() {
+		return cpcode;
+	}
+
+	public void setCpcode(String cpcode) {
+		this.cpcode = cpcode;
+	}
+
+	public String getCpname() {
+		return cpname;
+	}
+
+	public void setCpname(String cpname) {
+		this.cpname = cpname;
+	}
+
+	public String getCpdt() {
+		return cpdt;
+	}
+
+	public void setCpdt(String cpdt) {
+		this.cpdt = cpdt;
+	}
+
+	public String getCpexp() {
+		return cpexp;
+	}
+
+	public void setCpexp(String cpexp) {
+		this.cpexp = cpexp;
+	}
 
 	@Override
 	public String toString() {
 		return "EunbeeVO [ano=" + ano + ", cpts=" + cpts + ", esti=" + esti + ", nesti=" + nesti + ", point=" + point
 				+ ", spts=" + spts + ", bno=" + bno + ", id=" + id + ", idb=" + idb + ", mail=" + mail + ", pw=" + pw
 				+ ", npw=" + npw + ", dir=" + dir + ", savename=" + savename + ", title=" + title + ", sdate=" + sdate
-				+ ", show=" + show + ", eshow=" + eshow + ", wdate=" + wdate + "]";
+				+ ", show=" + show + ", eshow=" + eshow + ", cpcode=" + cpcode + ", cpname=" + cpname + ", cpdt=" + cpdt
+				+ ", cpexp=" + cpexp + ", wdate=" + wdate + "]";
 	}
 
 }

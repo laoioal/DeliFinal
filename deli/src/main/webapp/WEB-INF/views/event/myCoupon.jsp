@@ -2,11 +2,11 @@
 
 /** 참여 내역 리스트
  * @author	안은비
- * @since	2022/05/27
+ * @since	2022/07/26
  * @version	v.1.0
  * 
  * 			작업이력 ]
- * 				2022.05.28	-	클래스제작
+ * 				2022.07.26	-	클래스제작
  * 								담당자 : 안은비
  */
 --%>
@@ -16,12 +16,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>이벤트 페이지</title>
+<title>내 쿠폰함</title>
 <link rel="stylesheet" type="text/css" href="/deli/resources/css/w3.css">
 <link rel="stylesheet" type="text/css" href="/deli/resources/css/user.css">
-<link rel="stylesheet" type="text/css" href="/deli/resources/css/star.css">
 <script type="text/javascript" src="/deli/resources/js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/deli/resources/js/deli/event.js"></script>
+<script type="text/javascript" src="/deli/resources/js/deli/review.js"></script>
 <style type="text/css">
 	.rlist {
 		cursor: pointer;
@@ -53,27 +52,40 @@
 	  	</div>
 	</div>
 	
-	<form method="POST" action="/deli/event/evtProc.dlv" name="rstfrm" id="rstfrm">
-		<input type="hidden" name="cpcode" id="cpcode">
-		<input type="hidden" name="cpname" id="cpname">
-		<input type="hidden" name="cpdt" id="cpdt">
-	</form>
 	<div class="w3-display-middle w3-border w3-padding w3-col m8">
     	<div class="w3-container mgt10 mgb20 w3-black">
-      		<h3 class="w3-margin-right"><strong>🎰 이벤트를 통해 쿠폰을 획득해보세요! 🎰</strong></h3>
+      		<h3 class="w3-margin-right"><strong>🎫 My COUPON 🎫</strong></h3>
     	</div>
     	<div class="w3-container w3-padding-16 mgt20">
         	<div class="w3-row-padding" style="margin:0 -16px;">
-          		<div class="w3-center w3-margin-bottom pb20">
-	          		<form name="jpfrm">
-	          			<img src="/deli/img/evt/7.png" class="jackpot" name="first">
-	          			<img src="/deli/img/evt/7.png" class="jackpot" name="second">
-	          			<img src="/deli/img/evt/7.png" class="jackpot" name="third">
-	          		</form>
+          		<div class="w3-margin-bottom pb20">
+          			<div class="w3-col w3-white w3-round-large pd15">
+						<div class="w3-col w3-grey w3-center w3-border">
+							<div class="w3-col">
+								<div class="w3-col m4"><b>쿠폰명</b></div>
+								<div class="w3-col m5 w3-border-left w3-border-right"><b>쿠폰 내용</b></div>
+								<div class="w3-col m3"><b>만료일자</b></div>
+							</div>
+						</div>
+<c:forEach var="cdata" items="${CLIST}">
+						<div class="w3-col w3-white w3-center w3-border w3-hover-lime" id="${cdata.id}">
+							<div class="w3-col mgt10 mgb10">
+								<div class="w3-col m4">
+									<b>${cdata.cpname}</b>
+								</div>
+								<div class="w3-col m5 w3-border-left w3-border-right">
+									<b>${cdata.cpdt}</b>
+								</div>
+								<div class="w3-col m3">
+									<b>${cdata.cpexp}</b>
+								</div>
+							</div>
+						</div>
+</c:forEach>
+					</div>
           		</div>
           		<div class="h20 ft12">
-					<div class="w3-left w3-button w3-round-large w3-black w3-margin lbbtn">Back</div>
-					<div class="w3-center w3-button w3-round-large w3-lime w3-margin sbtn" onclick="start()">START</div>
+					<div class="w3-center w3-left w3-button w3-round-large w3-black w3-margin lbbtn">Back</div>
 				</div>
         	</div>
     	</div>
