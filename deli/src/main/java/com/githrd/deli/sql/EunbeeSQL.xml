@@ -136,4 +136,22 @@
 		    id = #{idb}
 	</update>
 	
+	<insert id="insCoupon" parameterType="eVO">
+		INSERT INTO
+		    coupon(cpcode, cpname, cpdt, cpowner)
+		VALUES(
+		    #{cpcode}, #{cpname}, #{cpdt}, #{id}
+		)
+	</insert>
+	
+	<select id="selClist" resultType="eVO" parameterType="string">
+		SELECT
+		    cpname, cpdt, cpexp
+		FROM
+		    coupon
+		WHERE
+		    cpshow = 'Y'
+		    AND cpowner = #{id}
+	</select>
+	
 </mapper>

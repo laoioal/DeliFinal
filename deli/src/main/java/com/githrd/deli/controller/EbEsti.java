@@ -22,7 +22,7 @@ public class EbEsti {
 	@RequestMapping("/rvList.dlv")
 	public ModelAndView rvList(ModelAndView mv, HttpSession session, RedirectView rv, String id) {
 		if(session.getAttribute("SID") == null) {
-			rv.setUrl("/deli/main.dlv");
+			rv.setUrl("/deli//member/login.dlv");
 			mv.setView(rv);
 			return mv;
 		}
@@ -38,7 +38,7 @@ public class EbEsti {
 	@RequestMapping("/rvWrite.dlv")
 	public ModelAndView rvWrite(ModelAndView mv, HttpSession session, RedirectView rv, EunbeeVO eVO) {
 		if(session.getAttribute("SID") == null) {
-			rv.setUrl("/deli/main.dlv");
+			rv.setUrl("/deli//member/login.dlv");
 			mv.setView(rv);
 			return mv;
 		}
@@ -54,7 +54,7 @@ public class EbEsti {
 	}
 	
 	@RequestMapping("/rvWriteProc.dlv")
-	public RedirectView rvWriteProc(ModelAndView mv, HttpSession session, RedirectView rv, EunbeeVO eVO) {
+	public RedirectView rvWriteProc(HttpSession session, RedirectView rv, EunbeeVO eVO) {
 		String id = (String)session.getAttribute("SID");
 		eVO.setId(id);
 		
