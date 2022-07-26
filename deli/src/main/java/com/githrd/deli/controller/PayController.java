@@ -167,7 +167,7 @@ public class PayController {
 		String mname = (String)req.getParameter("1mname");
 		String pickup = (String) req.getParameter("pickup");
 		int mtprice = Integer.parseInt(req.getParameter("1price"));
-		 
+		
 		paVO.setAmname(mname);
 		paVO.setMyprice(mtprice);		
 		paVO.setPickup(pickup);
@@ -178,14 +178,20 @@ public class PayController {
 		
 		
 		List<YonghyunVO> mVO = yDao.getMenu(yVO);
+		
+		
+		List<YonghyunVO> kVO = yDao.selRegimem(yVO);
+		System.out.println(kVO);
 		int aprice = 0;
 		for(int i = 0 ; i < mVO.size() ; i ++) {
+			if(cnt != 1) {
 			aprice = aprice + mVO.get(i).getMprice();
+			} else {
+				aprice = 0;
+			}
 		}
 		
 		aprice = aprice + paVO.getMyprice();
-		
-		List<YonghyunVO> kVO = yDao.selRegimem(yVO);
 		
 		MembVO membVO = paDao.selMinfo(sid);
 		mv.addObject("DLP", delpay);
