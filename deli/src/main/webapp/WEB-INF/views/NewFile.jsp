@@ -155,6 +155,8 @@
 						<hr>	
 						<p class="memText mainBtn" id="friarr">주변친구보기</p>
 						<hr>	
+						<p class="memText mainBtn" id="coupon">나의쿠폰</p>
+						<hr>
 						<p class="memText mainBtn" id="editbtn">회원정보수정</p>
 						<br>
 					</div>

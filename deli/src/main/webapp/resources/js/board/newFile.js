@@ -160,4 +160,8 @@ $(document).ready(function(){
 		$(location).attr('href', '/deli/faq/board.dlv');
 	});
 	
+	$('#coupon').click(function(){
+		$(location).attr('href', '/deli/event/slot.dlv');
+	});
+	
 });
