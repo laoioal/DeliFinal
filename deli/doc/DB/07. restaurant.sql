@@ -747,5 +747,7 @@ UPDATE RESTAURANT SET ADDR='서울특별시 중구 신당동 349-201' WHERE ADDR
 UPDATE RESTAURANT SET ADDR='서울특별시 중구 다산로8길' WHERE ADDR='서울특별시 중구 세종대로2길 6-1';
 UPDATE RESTAURANT SET ADDR='서울특별시 중구 동호로15길 50' WHERE ADDR='서울특별시 중구 서소문동 134-6';
 
+UPDATE restaurant SET delpay = 3000, minprice = 30000 WHERE restno = 200;
+
 
 commit;
