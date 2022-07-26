@@ -101,6 +101,13 @@
 처리함수	:	mailSertified()
 뷰			:	json
 --------------------------------------------------------------
+# 글쓰기 폼보기 요청 
+요청내용	: 	/deli/member/boardWrite.dlv
+파라미터	:	rest, placeName, parea, category
+컨트롤러	: 	com.githrd.deli.controller.PcsController
+처리함수	:	boardWrite()
+뷰			:	/WEB-INF/views/deli/member/boardWrite.jsp
+--------------------------------------------------------------
 # 글쓰기 처리 요청
 요청내용	:	/deli/member/boardWriteProc.dlv
 파라미터	:	무
@@ -109,3 +116,4 @@
 뷰			:	redirect ]
 					성공 : /deli/board/boardForm.dlv
 					실패 : /deli/member/boardWrite.dlv
+--------------------------------------------------------------

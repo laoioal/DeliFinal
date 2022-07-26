@@ -1,6 +1,6 @@
 #tableInfo {
 	position: absolute;
-	margin-left: 100px;
+	margin-left: 30px;
 	margin-top:500px;
 	width: 25%;
 	border-top: 1px solid #dddddd;
@@ -111,5 +111,4 @@
 	width: 1500px;
 	height: 650px;
 	float: left;
-	margin-left: 80px;
 }

@@ -7,8 +7,47 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="/deli/resources/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/deli/resources/css/NewFile.css">
+<link rel="stylesheet" type="text/css" href="/deli/resources/css/base.css">
+<link rel="stylesheet" type="text/css" href="/deli/resources/css/user.css">
+<link rel="stylesheet" type="text/css" href="/deli/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/deli/resources/js/board/friendArround.css">
+<script type="text/javascript" src="/deli/resources/js/board/friendArround.js"></script>
 </head>
 <body>
+
+
+	<div class="w3-top">
+	  	<div class="w3-row w3-padding w3-black">
+			<div class="w3-col s1">
+				<form method="POST" action="/deli/board/boardList.dlv" id="frm1" name="frm1">
+			    	<div class="w3-button w3-block w3-black" id="total">전체</div>
+			    </form>
+		    </div>
+		    <div class="w3-col s1">
+		    	<div class="w3-button w3-block w3-black" id="faq">FAQ</div>
+		    </div>
+		    <div class="w3-col s1">
+		    	<div class="w3-button w3-block w3-black" id="hbtn">HOME</div>
+		    </div>
+		    <div class="w3-col s6">
+		      	<div class="w3-block w3-black w3-center ft18">Delivery Project</div>
+		    </div>
+<c:if test="${empty SID}">
+			<div class="w3-col s1 w3-right">
+		    	<div class="w3-button w3-block w3-black" id="jbtn">JOIN</div>
+		    </div>
+		    <div class="w3-col s1 w3-right">
+		      	<div class="w3-button w3-block w3-black" id="lbtn">LOGIN</div>
+	    	</div>
+</c:if>
+<c:if test="${not empty SID}">
+		    <div class="w3-col s1 w3-right">
+		      	<div class="w3-button w3-block w3-black" id="obtn">LOGOUT</div>
+	    	</div>
+</c:if>
+	  	</div>
+	</div>
 
     <input type="hidden" id="myaddr" value="${MYADDR.sarea}">
 	
@@ -16,17 +55,33 @@
     <input type="hidden" class="address" value="${data.sarea}">
     <input type="hidden" class="name" value="${data.id}">
 </c:forEach>
-
-<div id="map" style="width:60%;height:350px;"></div>
+	<div class="w3-center" id="mapset">
+		<div id="map" style="width:60%;height:450px;"></div>
+	</div>
+	<div class="w3-center">
+		<button class="w3-border w3-button w3-margin-right">200m<input type="hidden" value="200"></button>
+		<button class="w3-border w3-button">500m<input type="hidden" value="500"></button>
+	</div>
+	<form method="POST" action="/deli/board/friendArround.dlv" name="frm" id="frm">
+		<input type="hidden" id="dist" name="dist" value="${DIST}">
+	</form>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d6fb471c69858a04f22e5ff56c302f30&libraries=services"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d6fb471c69858a04f22e5ff56c302f30"></script>
 <script>
-	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-	mapOption = {
-	    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-	    level: 4 // 지도의 확대 레벨
-	};  
-	
+	var dist = document.getElementById('dist').value;
+	if(dist == 200){
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		mapOption = {
+		    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+		    level: 3
+		}
+	} else {
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		mapOption = {
+		    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+		    level: 4
+		}
+	}
 	var cen;
 	var markers = [];
 	
@@ -87,10 +142,11 @@
 	
 
 	var cir = function(cen) {
+		var dist = document.getElementById('dist').value;
 		var circle = new kakao.maps.Circle({
 			map: map,
 			center : cen,
-			radius: 500,	// m단위
+			radius: dist,	// m단위
 			strokeWeight: 2,
 			strokeColor: '#FF00FF',
 			strokeOpacity: 0.8,

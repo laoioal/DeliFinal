@@ -17,6 +17,12 @@ $(document).ready(function(){
 	$('#hbtn').click(function(){
 		$(location).attr('href','/deli/main.dlv');
 	});
+	$('#total').click(function(){
+		$('#frm1').submit();
+	});
+	$('#faq').click(function(){
+		$(location).attr('href', '/deli/faq/board.dlv');
+	});
 	
 	// 비밀번호 입력 이벤트
 	$('#repw').keyup(function(){

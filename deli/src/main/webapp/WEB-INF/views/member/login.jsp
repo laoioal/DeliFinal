@@ -36,11 +36,29 @@
 </style>
 </head>
 <body>
+	<div class="w3-top">
+	  	<div class="w3-row w3-padding w3-black">
+			<div class="w3-col l1">
+				<form method="POST" action="/deli/board/boardList.dlv" id="frm1" name="frm1">
+			    	<div class="w3-button w3-block w3-black" id="total">전체</div>
+			    </form>
+		    </div>
+		    <div class="w3-col l1">
+		    	<div class="w3-button w3-block w3-black" id="faq">FAQ</div>
+		    </div>
+		    <div class="w3-col l8">
+		      	<div class="w3-block w3-black w3-center ft18">Delivery Project</div>
+		    </div>
+		    <div class="w3-col w3-right l1">
+		      	<div class="w3-button w3-block w3-black" id="hbtn">HOME</div>
+	    	</div>
+	  	</div>
+	</div>
 <c:if test="${not empty FAIL}">
 	<input type="hidden" id="fail" value="${FAIL}">
 </c:if>
-	<div class="w3-content w3-center mxw500">
-		<h1 class="w3-black w3-padding w3-card-4" id="hbtn">Delivery</h1>
+	<div class="w3-content w3-center mxw500" id="logvw">
+		<h1 class="w3-black w3-padding mgt150 w3-card-4" id="hbtn">Delivery</h1>
 		<div class="w3-col w3-padding w3-card-4 w3-margin-top">
 		<form method="POST" action="" id="pcsfrm" name="pcsfrm">
 			<input type="hidden" name="nowPage" id="nowPage" value="${param.nowPage}">

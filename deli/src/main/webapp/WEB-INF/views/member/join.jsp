@@ -30,9 +30,26 @@ h5 > label{
 </script>
 </head>
 <body>
+	<div class="w3-top">
+	  	<div class="w3-row w3-padding w3-black">
+			<div class="w3-col l1">
+				<form method="POST" action="/deli/board/boardList.dlv" id="frm1" name="frm1">
+			    	<div class="w3-button w3-block w3-black" id="total">전체</div>
+			    </form>
+		    </div>
+		    <div class="w3-col l1">
+		    	<div class="w3-button w3-block w3-black" id="faq">FAQ</div>
+		    </div>
+		    <div class="w3-col l8">
+		      	<div class="w3-block w3-black w3-center ft18">Delivery Project</div>
+		    </div>
+	  	</div>
+	</div>
 	<div class="w3-content w3-margin-top mxw600">
 		<div class="w3-center w3-margin">
-			<h1>Deli 회원가입</h1>
+			<div class='w3-col'>
+				<h1 class="mgt50 w3-box w3-padding w3-black">Deli 회원가입</h1>
+			</div>
 			<form method="POST" action="" name="pcsfrm" id="pcsfrm" encType="multipart/form-data"
 				class="w3-col w3-margin-top w3-margin-bottom w3-padding w3-card-4">
 				<div class="w3-padding mgb10">
@@ -111,10 +128,10 @@ h5 > label{
 				</div>
 			</form>
 		</div>
-		<div class="w3-col w3-margin-top mgl10">
-			<div class="w3-third w3-hover-orange w3-button w3-border" id="rbtn">reset</div> 
-			<div class="w3-third w3-hover-lime w3-button w3-border" id="hbtn">home</div> 
-			<div class="w3-third w3-hover-aqua w3-button w3-border" id="jbtn">join</div> 
+		<div class="w3-col w3-margin-top w3-container">
+			<div class="w3-third w3-black w3-hover-orange w3-button w3-border" id="rbtn">reset</div> 
+			<div class="w3-third w3-black w3-hover-lime w3-button w3-border" id="hbtn">home</div> 
+			<div class="w3-third w3-black w3-hover-aqua w3-button w3-border" id="jbtn">join</div> 
 		</div>
 	</div>
 <!-- 주소 api -->
