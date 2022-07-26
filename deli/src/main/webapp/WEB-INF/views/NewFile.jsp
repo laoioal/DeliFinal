@@ -32,7 +32,7 @@
 		    	<div class="w3-button w3-block w3-black" id="faq">FAQ</div>
 		    </div>
 		    <div class="w3-col s8">
-		      	<div class="w3-block w3-black w3-center ft18">Delivery Project</div>
+		      	<div class="w3-block w3-black w3-center ft22">Delivery Project</div>
 		    </div>
 <c:if test="${empty SID}">
 			<div class="w3-col s1">
@@ -99,7 +99,7 @@
 			<div class="w3-col m3">
 				<div class="w3-white w3-text-grey w3-card-4">
 					<div class="w3-display-container">
-						<img src="/deli/img/avatar/${MYINFO.aid}" style="width:100%" alt="Avatar">
+						<img src="/deli/resources/upload/${MYINFO.aid}" style="width:100%" alt="Avatar">
 						<div class="w3-display-bottomleft w3-container w3-text-black">
 						</div>
 					</div>

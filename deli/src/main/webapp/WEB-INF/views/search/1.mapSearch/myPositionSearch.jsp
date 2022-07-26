@@ -69,11 +69,14 @@
 	         <input type="hidden" name="lat" id="lat" value="" readonly /> 
 	         <input type="hidden" name="lon" id="lon" value="" readonly /> 
       			<span>주소 : ${member.addr}
-	         <input type="submit" id = "pickup" value='픽업가능 위치' />
+	         <input type="submit" id = "submitbtn" value='확인' />
 	      </form>
       	</span>
       </span>
  </div>
+ 	<script src="<c:url value="/js/faq/urlDelete.js"/>" type="text/javascript"></script>
+             <script src="<c:url value="/js/map/submitbtn.js"/>" type="text/javascript"></script>
+ 
    </center>
 </body>
 </html>

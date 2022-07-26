@@ -14,7 +14,9 @@
 
 <body>
 <center>
-
+<br>
+<br>
+<div id = "space">
 <h1>확인 page</h1>
 <ul>픽업장소 : ${place.name}<br></ul>
 <ul>카테고리 : ${category.foodtype}<br></ul>
@@ -26,13 +28,16 @@
 	<input type="hidden" name="category" value="${category.foodtype}"/>
 	<input type="hidden" name="rest" value="${restaurant.restno}"/>
 	<input type="hidden" name="parea" value="${place.address}"/>	
-	<input type="submit" value="확인"/>
+	<input type="submit" id = "submitbtn" value="확인"/>
 </form>
 
 
-<a href = "<c:url value='/member/insertId.dlv'/>"><button id = "btn2">처음으로</button></a>
+
+<a href = "<c:url value='/member/insertId.dlv'/>"><button id = "btn2" >처음으로</button></a>
+</div>
 </center>
 	<script src="<c:url value="/js/faq/urlDelete.js"/>" type="text/javascript"></script>
+    <script src="<c:url value="/js/map/checkInfo.js"/>" type="text/javascript"></script>
 
 </body>
 </html>

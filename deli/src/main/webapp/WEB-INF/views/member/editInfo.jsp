@@ -43,6 +43,11 @@ h5 > label{
 		    <div class="w3-col l8">
 		      	<div class="w3-block w3-black w3-center ft18">Delivery Project</div>
 		    </div>
+<c:if test="${not empty SID}">
+		    <div class="w3-col s1 w3-right">
+		      	<div class="w3-button w3-block w3-black" id="dbtn">회원 탈퇴</div>
+	    	</div>
+</c:if>
 	  	</div>
 	</div>
 	<div class="w3-content w3-margin-top mxw600">
@@ -55,7 +60,7 @@ h5 > label{
 				<input type="hidden" name="nowPage" id="nowPage" value="${param.nowPage}">
 				<input type="hidden" name="vw" id="vw" value="${param.vw}">
 				
-				<input type="hidden" name="mno" value="${DATA.mno}">
+				<input type="hidden" name="mno" id="mno" value="${DATA.mno}">
 				<div class="w3-padding mgb10">
 					<h5 class="w3-left-align">
 						<label for="name" class="w3-left mgl10" >회원이름</label>
@@ -160,6 +165,12 @@ h5 > label{
 			<div class="w3-third w3-black w3-hover-lime w3-button w3-border" id="hbtn">home</div> 
 			<div class="w3-third w3-black w3-hover-aqua w3-button w3-border" id="ebtn">edit</div> 
 		</div>
+		<form method="POST" action="" id="delfrm" name="delfrm">
+		 	<input type="hidden" name="mno" id="delmno">
+		 	<input type="hidden" name="id" id="delid" >
+		 	<input type="hidden" name="nowPage" id="nowPage" value="${param.nowPage}">
+			<input type="hidden" name="vw" id="vw" value="${param.vw}">
+		 </form>
 	</div>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>

@@ -110,10 +110,13 @@
 --------------------------------------------------------------
 # 글쓰기 처리 요청
 요청내용	:	/deli/member/boardWriteProc.dlv
-파라미터	:	무
+파라미터	:	nowPage
+				board : bno, title, body, larea, marea, sarea, end, category, rest
+				regimen : bno, id
+				boardpickup : bpno, bno, placename, parea
 컨트롤러	:	com.githrd.deli.controller.PcsConstroller
 처리함수	: 	boardWriteProc()
 뷰			:	redirect ]
-					성공 : /deli/board/boardForm.dlv
+					성공 : /deli/board/boardList.dlv
 					실패 : /deli/member/boardWrite.dlv
 --------------------------------------------------------------

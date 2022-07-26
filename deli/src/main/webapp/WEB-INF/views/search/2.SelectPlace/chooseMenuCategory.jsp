@@ -12,6 +12,7 @@
 
 </head>
    <body>
+   <div id="space">
       <center>
         <br>
         <br>
@@ -29,8 +30,11 @@
                </c:forEach>
                <br>
                <input type="hidden" id="choose" value=""/>
-               <input type = "submit" value="선택" onclick= "window.close()" />
+               <input type = "submit" id = "submitbtn" value="다음페이지" onclick= "window.close()" />
+               </div>
       </center>
+      	<script src="<c:url value="/js/faq/urlDelete.js"/>" type="text/javascript"></script>
+            <script src="<c:url value="/js/map/submitbtn.js"/>" type="text/javascript"></script>
       
    </body>   
                

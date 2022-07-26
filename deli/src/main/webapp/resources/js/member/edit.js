@@ -166,6 +166,23 @@ $(document).ready(function(){
 		$('#img').attr('src', path);
 	});
 	
+	// 회원탈퇴 클릭 이벤트
+	$('#dbtn').click(function(){
+		// 보낼 데이터 읽고
+		var mno = $('#mno').val();
+		var id = $('#id').val();
+		
+		// 보낼 데이터 셋팅하고
+		$('#delmno').val(mno);
+		$('#delid').val(id);
+		// 보낼주소 수정하고
+		$('#delfrm').attr('action', '/deli/member/delMember.dlv');
+
+		if(confirm('정말 탈퇴합니까?')){
+			// form 태그가 완성이 됐으니 전송한다.
+			$('#delfrm').submit();
+		}
+	});
 	// 수정버튼 클릭이벤트
 	$('#ebtn').click(function(){
 		// 할 일
@@ -174,8 +191,8 @@ $(document).ready(function(){
 		var npw = $('#newpw').val();
 		var nmail = $('#newmail').val();
 		var ntel = $('#newtel').val();
-		var naddr = $('#sample6_address')
-		var dti_addr = $('#sample6_detailAddress');
+		var naddr = $('#sample6_address').val();
+		var dti_addr = $('#sample6_detailAddress').val();
 		var repw = $('#repw').val();
 		var sid = $('#id').val();
 		var sfile = $('#proimg').val();

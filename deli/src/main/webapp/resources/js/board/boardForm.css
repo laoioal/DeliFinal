@@ -95,3 +95,16 @@
 .citytitle1 {
 	width: 9.09%!important;
 }
+/*
+#mapset{
+	margin: 80px;
+	position: relative;
+	left: 0px;
+}
+*/
+
+img{
+	position: relative;
+	left: 400px;
+	top: 100px;
+}
