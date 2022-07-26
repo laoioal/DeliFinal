@@ -222,7 +222,7 @@ public class PayController {
 			// paSrvc.cancelPayment(token, imp_uid);
 		} catch (Exception e) {
 			e.printStackTrace();
-			result.put("result", "n");
+			result.put("result", "n"); 
 		}
 		// System.out.println("token : " + token);
 		return result;
