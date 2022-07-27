@@ -172,7 +172,7 @@ public class PayController {
 		paVO.setMyprice(mtprice);		
 		paVO.setPickup(pickup);
 		int cnt = paDao.abnoCnt(paVO.getBno());
-			
+		
 		int delpay = (paVO.getDelpay() != 0) ? paVO.getDelpay() / cnt : 0;
 		paVO.setMtprice(mtprice + delpay);
 		 
@@ -185,10 +185,13 @@ public class PayController {
 		
 		int aprice = 0;
 		for(int i = 0 ; i < mVO.size() ; i ++) {
-			if(cnt != 1) {
+			int count = cnt;
+			if(count > 1) {
 				aprice = aprice + mVO.get(i).getMprice();
-			} else {
-				aprice = 0;
+			} 
+			count = count - 1;
+			if(count == 1) {
+				break;
 			}
 		}
 		
@@ -201,7 +204,9 @@ public class PayController {
 		mv.addObject("MENU", mVO);
 		mv.addObject("MEMBER", kVO);		
 		mv.addObject("APRICE", aprice);
-		 
+		// System.out.println(kVO);
+		System.out.println(mVO);
+		System.out.println(sid);
 		mv.setViewName("payment/beforePay");
 		
 		return mv;
