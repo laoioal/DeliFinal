@@ -28,16 +28,50 @@
 <script type="text/javascript">
 
 </script>
+<style type="text/css">
+body {
+		background-image: url("/deli/img/main/test.png");
+		background-size: 640px auto;
+		background-repeat: repeat;
+	}
+</style>
 </head>
 <body>
 	<div class="mxw700 w3-content w3-center">
+		<div class="w3-top w3-content w3-margin-bottom">
+			<div class="w3-row w3-padding w3-black">
+				<div class="w3-col s1">
+					<form method="POST" action="/deli/board/boardList.dlv" id="frm1" name="frm1">
+				    	<div class="w3-button w3-block w3-black" id="total">전체</div>
+				    </form>
+			    </div>
+			    <div class="w3-col s1">
+			    	<div class="w3-button w3-block w3-black" id="faq">FAQ</div>
+			    </div>
+			    <div class="w3-col s8">
+			      	<div class="w3-block w3-black w3-center ft22">Delivery Project</div>
+			    </div>
+	<c:if test="${empty SID}">
+				<div class="w3-col s1">
+			    	<div class="w3-button w3-block w3-black" id="jbtn">JOIN</div>
+			    </div>
+			    <div class="w3-col s1">
+			      	<div class="w3-button w3-block w3-black" id="lbtn">LOGIN</div>
+		    	</div>
+	</c:if>
+	<c:if test="${not empty SID}">
+			    <div class="w3-col s2">
+			      	<div class="w3-button w3-block w3-black" id="obtn">LOGOUT</div>
+		    	</div>
+	</c:if>
+		  	</div>
 		<form method="POST" action="/deli/payment/InsertInfo.dlv" id="frm" name="frm">
 			<input type="hidden" id="ono" name="ono" value="${MUID}">
 			<input type="hidden" id="tel" name="tel" value="${MPO.tel}">
 			<input type="hidden" id="token" name="token" value="${TK}">
 			<input type="hidden" id="imp_uid" name="imp_uid" value="${UID}">
 			<input type="hidden" id="merchant_uid" name="merchant_uid" value="${MUID}">
-		<h1 class="mgb10 w3-border pdAll10" style="margin-bottom: 5px;"><strong>Delivery Project</strong></h1>
+		<h1 class="mgb10 w3-border w3-white pdAll10" style="margin-bottom: 5px;"><strong>After Payment</strong></h1>
 		<div class="w3-col w3-light-grey">
 			<div class="w3-col w3-border-bottom mgl10" align="left">
 				<h3 class="w3-center w3-col">결제가 완료되었습니다.</h3>
@@ -88,6 +122,6 @@
 			<div class="w3-half w3-button w3-green" id="cbtn">돌아가기</div>
 		</div>
 		</div>
-	
+	</div>
 </body>
 </html>

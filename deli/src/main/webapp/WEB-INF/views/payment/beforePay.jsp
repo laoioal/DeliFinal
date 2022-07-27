@@ -31,9 +31,44 @@
 $(document).ready(function(){
 });
 </script>
+<style type="text/css">
+body {
+		background-image: url("/deli/img/main/test.png");
+		background-size: 640px auto;
+		background-repeat: repeat;
+	}
+</style>
 </head>
 <body>
 	<div class="mxw700 w3-content w3-center">
+		<div class="w3-top w3-content w3-margin-bottom">
+			<div class="w3-row w3-padding w3-black">
+				<div class="w3-col s1">
+					<form method="POST" action="/deli/board/boardList.dlv" id="frm1" name="frm1">
+				    	<div class="w3-button w3-block w3-black" id="total">전체</div>
+				    </form>
+			    </div>
+			    <div class="w3-col s1">
+			    	<div class="w3-button w3-block w3-black" id="faq">FAQ</div>
+			    </div>
+			    <div class="w3-col s8">
+			      	<div class="w3-block w3-black w3-center ft22">Delivery Project</div>
+			    </div>
+	<c:if test="${empty SID}">
+				<div class="w3-col s1">
+			    	<div class="w3-button w3-block w3-black" id="jbtn">JOIN</div>
+			    </div>
+			    <div class="w3-col s1">
+			      	<div class="w3-button w3-block w3-black" id="lbtn">LOGIN</div>
+		    	</div>
+	</c:if>
+	<c:if test="${not empty SID}">
+			    <div class="w3-col s2">
+			      	<div class="w3-button w3-block w3-black" id="obtn">LOGOUT</div>
+		    	</div>
+	</c:if>
+		  	</div>
+		
 		<form method="POST" action="/deli/payment/afterPay.dlv" id="pageFrm" name="pageFrm">
 			<input type="hidden" name="bno" id="bno" value="${PO.bno}">
 			<input type="hidden" name="mname1" id="mname1" value="${PO.amname}">
@@ -53,7 +88,7 @@ $(document).ready(function(){
 			<input type="hidden" id="imp_uid" name="imp_uid" >
 			<input type="hidden" id="merchant_uid" name="merchant_uid" >
 			<input type="hidden" id="paym" name="paym" >
-		<h1 class="mgb10 w3-border pdAll10" style="margin-bottom: 5px;"><strong>Delivery Project</strong></h1>
+		<h1 class="mgb10 w3-border w3-light-grey pdAll10" style="margin-bottom: 5px;"><strong>Before Payment</strong></h1>
 		<div class="w3-col w3-light-grey">
 			<div class="w3-col w3-border-bottom " align="left">
 				<h4 class="w3-center w3-col mgl10">식당 이름 : <span id="rsname">${PO.rname}</span></h4><br><br>
@@ -107,7 +142,8 @@ $(document).ready(function(){
 			<div class="w3-half w3-button w3-deep-orange" id="cbtn">취소</div>
 		</c:if>
 		</div>
-		</div>
+	</div>
+</div>
 		
 <div class="w3-container" >
 	<div id="id01" class="w3-modal">

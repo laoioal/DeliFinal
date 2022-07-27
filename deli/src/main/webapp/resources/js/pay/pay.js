@@ -170,4 +170,20 @@ $(document).ready(function(){
 		});
 	})
 	
+	$('#total').click(function(){
+		if(confirm("지금 돌아가시면 메뉴가 초기화 됩니다. 들어가시겠습니까?")) {
+			$('#frm1').submit();
+		} else {
+			return;
+		} 
+	});
+	
+	$('#faq').click(function(){
+		if(confirm("지금 돌아가시면 메뉴가 초기화 됩니다. 들어가시겠습니까?")) {	
+			$(location).attr('href', '/deli/faq/board.dlv');
+		} else {
+			return;
+		}
+	});
+	
 });
