@@ -91,7 +91,7 @@ $(document).ready(function(){
 				// 뷰에 보여주고
 				if(result == 'OK'){
 					// 입력한 아이디가 사용가능한 경우
-					$('#mailmsg').html('* 사용 가능한 아이디 입니다! *');
+					$('#mailmsg').html('* 사용 가능한 이메일 입니다! *');
 					$('#mailmsg').addClass('w3-text-green');
 					$('#mail_ck').css('display', 'block');
 					$('#mailcheck').attr('disabled', false);
