@@ -94,10 +94,6 @@ $(document).ready(function(){
 		}
 	});
 	
-	$('#mail').click(function(){
-		$(location).attr('href', '#contact');
-	});
-	
 	$('.apbtn').click(function(){
 		var mno = $(this).attr('id');
 		$('#frimno').val(mno);
@@ -138,6 +134,7 @@ $(document).ready(function(){
 	$('#afList').click(function(){
 		$('#apfriblock').css('display', 'none');
 	});
+	
 	
 	$('.hotbtn').click(function(){
 		var bno = $(this).attr('id');

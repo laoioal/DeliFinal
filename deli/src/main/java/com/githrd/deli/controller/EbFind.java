@@ -69,18 +69,14 @@ public class EbFind {
 		
 		String mail = eDao.getMail(eVO);
 		session.setAttribute("FMAIL", mail);
-		int cnt = eDao.editPw(eVO);
 		
-		if(cnt == 0) {
-			rv.setUrl("/deli/find/pwFind.dlv");
-			mv.setView(rv);
-			return mv;
-		} else {
+		if(mail != null) {
+			eDao.editPw(eVO);
 			String npw = req.getParameter("npw");
 			eSvc.sendMail(mail, npw);
-			mv.setViewName("find/pwFindResult");
 		}
 		
+		mv.setViewName("find/pwFindResult");
 		return mv;
 	}
 }

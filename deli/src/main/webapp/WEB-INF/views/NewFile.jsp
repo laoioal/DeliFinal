@@ -106,7 +106,7 @@
 			<div class="w3-col m3">
 				<div class="w3-white w3-text-grey w3-card-4">
 					<div class="w3-display-container pdt10">
-						<img src="/deli/resources/upload/${MYINFO.aid}" style="width:80px; margin-top:10px; margin-left:50px;"
+						<img src="/deli/upload/${MYINFO.aid}" style="width:80px; margin-top:10px; margin-left:50px;"
 								alt="Avatar" class="w3-left w3-circle">
 						<h3 style="margin-top:30px; margin-right:30px;"><b>${MYINFO.id}</b></h3>
 						
@@ -191,7 +191,7 @@
 	<c:forEach var="list" items="${MYFRIEND}"> 
 				<div class="w3-col l2 m3 w3-margin-bottom">
 					<div class="w3-col">
-						<img src="/deli/img/avatar/${list.aid}" style="width:100%">
+						<img src="/deli/upload/${list.aid}" style="width:100%">
 					</div>
 					<h3>${list.id}</h3>
 					<hr>
@@ -217,7 +217,7 @@
 		 
 	<c:forEach var="list" items="${AFRIEND}"> 
 			<div class="w3-col l2 m3 w3-margin-bottom">
-				<img src="/deli/img/avatar/${list.aid}" style="width:100%">
+				<img src="/deli/upload/${list.aid}" style="width:100%">
 				<h3>${list.id}</h3>
 				<hr>
 				<p>매너점수 : ${list.esti}</p>
