@@ -191,14 +191,14 @@
 	<c:forEach var="list" items="${MYFRIEND}"> 
 				<div class="w3-col l2 m3 w3-margin-bottom">
 					<div class="w3-col">
-						<img src="/deli/upload/${list.aid}" style="width:100%">
+						<img src="/deli/upload/${list.aid}" style="width: 231px; height: 231px; overflow: hidden;">
 					</div>
 					<h3>${list.id}</h3>
 					<hr>
 					<p>매너점수 : ${list.esti}</p>
 					<!-- <p class="w3-opacity">매너점수</p> -->
 					<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:${list.pesti}%">${list.pesti}%</div>
-					<p><button class="w3-button w3-light-grey w3-block" id="mail">Contact</button></p>
+					<p><button class="w3-button w3-light-grey w3-block mail">Contact</button></p>
 					<form method="post" action="/deli/board/msForm.dlv" name="mesfrm" id="mesfrm">
 						<input type="hidden" name="mesid" value="${list.id}">
 					</form>
@@ -217,7 +217,7 @@
 		 
 	<c:forEach var="list" items="${AFRIEND}"> 
 			<div class="w3-col l2 m3 w3-margin-bottom">
-				<img src="/deli/upload/${list.aid}" style="width:100%">
+				<img src="/deli/upload/${list.aid}" style="width: 231px; height: 231px; overflow: hidden;">
 				<h3>${list.id}</h3>
 				<hr>
 				<p>매너점수 : ${list.esti}</p>

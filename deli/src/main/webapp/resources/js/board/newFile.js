@@ -142,8 +142,8 @@ $(document).ready(function(){
 		$('#frm2').submit();
 	});
 	
-	$('#mail').click(function(){
-		$('#mesfrm').submit();
+	$('.mail').click(function(){
+		$(this).parent().parent().find('form').submit();
 	});
 	
 	$('#friarr').click(function(){
