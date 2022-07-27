@@ -30,7 +30,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
 });
-</script>
+</script> 
 <style type="text/css">
 body {
 		background-image: url("/deli/img/main/test.png");

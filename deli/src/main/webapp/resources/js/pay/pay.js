@@ -162,7 +162,7 @@ $(document).ready(function(){
 				}else{ 
 					alert("환불실패");
 				}
-			},
+			}, 
 			error : function(){
 				alert('### 통신 실패 ###');
 				return "/deli/payment/afterPay.dlv";

@@ -64,7 +64,7 @@ body {
 			      	<div class="w3-button w3-block w3-black" id="obtn">LOGOUT</div>
 		    	</div>
 	</c:if>
-		  	</div>
+		  	</div> 
 		<form method="POST" action="/deli/payment/InsertInfo.dlv" id="frm" name="frm">
 			<input type="hidden" id="ono" name="ono" value="${MUID}">
 			<input type="hidden" id="tel" name="tel" value="${MPO.tel}">
