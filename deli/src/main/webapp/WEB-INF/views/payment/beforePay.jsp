@@ -105,7 +105,7 @@ body {
 				<h4 class="mgl10">요청 사항 : </h4>
 				<input id="rq" name="rq" class="w3-col w3-border m11 mgl10">
 				<h4 class="w3-col mgl10">가격 : <span >${PO.myprice}</span></h4>
-			</div>
+			</div> 
 <c:forEach var="data" items="${MENU}" varStatus="status"  >
 <c:set var="memb" value="${MEMBER[status.index]}" />
 <c:if test="${SID ne memb.aid && memb.aid != null}">
@@ -140,7 +140,7 @@ body {
 			<div class="w3-half w3-button w3-deep-orange" id="cbtn">취소</div>
 		</c:if>
 		<c:if test="${PO.minprice+0 > APRICE+0}">
-			<div class="w3-col" id="backbtn">최소주문금액에 도달하지 못했습니다.</div>
+			<div class="w3-col w3-white" id="backbtn">최소주문금액에 도달하지 못했습니다.</div>
 			<div class="w3-half w3-button w3-green" id="pbtn">결제</div>
 			<div class="w3-half w3-button w3-deep-orange" id="cbtn">취소</div>
 		</c:if>
