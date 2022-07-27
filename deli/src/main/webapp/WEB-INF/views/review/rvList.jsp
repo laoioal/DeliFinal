@@ -67,7 +67,7 @@
 							<div class="w3-col">
 								<div class="w3-col m2"><b>글번호</b></div>
 								<div class="w3-col m7 w3-border-left w3-border-right"><b>제목</b></div>
-								<div class="w3-col m3"><b>등록일자</b></div>
+								<div class="w3-col m3"><b>참여일자</b></div>
 							</div>
 						</div>
 <c:forEach var="rdata" items="${RLIST}">

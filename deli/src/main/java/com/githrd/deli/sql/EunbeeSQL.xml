@@ -64,7 +64,7 @@
 		FROM
 		    (
 		        SELECT
-		            bno, title, b.wdate sdate
+		            bno, title, r.wdate sdate
 		        FROM
 		           regimem r, board b
 		        WHERE
