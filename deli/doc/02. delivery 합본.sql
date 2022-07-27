@@ -1929,7 +1929,7 @@ VALUES(
 INSERT INTO
     board(bno, bmno, title, body, larea, marea, sarea, end, category, rest)
 VALUES(
-    (SELECT NVL(MAX(bno) + 1, 1) FROM board), 1004, '스테이크', '빕스or아웃백', 10, 100, 1000, 3, '양식', 3
+    (SELECT NVL(MAX(bno) + 1, 1) FROM board), 1004, '고기먹으러 갈래?', '고기먹으러 갈래?', 10, 100, 1000, 3, '고기·구이', 3
 );
 
 INSERT INTO
