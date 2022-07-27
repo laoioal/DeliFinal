@@ -28,6 +28,8 @@
 			<mapping path="/member/delMember.dlv" />
 			<mapping path="/member/editInfo.dlv" />
 			<mapping path="/member/editProc.dlv" />
+			<mapping path="/member/boardWrite.dlv" />
+			<mapping path="/member/boardWriteProc.dlv" />
 		
 			<beans:ref bean="loginRedirect" />
 		</interceptor>
