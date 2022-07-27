@@ -13,6 +13,21 @@ import com.githrd.deli.dao.*;
 import com.githrd.deli.service.EunbeeService;
 import com.githrd.deli.vo.EunbeeVO;
 
+/**
+ * 아이디 비밀번호 찾기 작업을 전담해서 처리하는 클래스
+ * @author	안은비
+ * @since	2022.07.14
+ * @version	v.1.0
+ * 
+ * 			작업이력 ]
+ * 				2022.07.14	-	클래스제작
+ * 				2022.07.20	-	idFind()
+ * 				2022.07.20	-	idFindResult()
+ * 				2022.07.21	-	pwFind()
+ * 				2022.07.21	-	pwFindResult()
+ * 									담당자 ] 안은비
+ */
+
 @Controller
 @RequestMapping("/find")
 public class EbFind {

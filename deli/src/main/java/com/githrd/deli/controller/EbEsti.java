@@ -13,6 +13,21 @@ import org.springframework.web.servlet.view.*;
 import com.githrd.deli.dao.*;
 import com.githrd.deli.vo.*;
 
+/**
+ * 평가 관련 작업을 전담해서 처리하는 클래스
+ * @author	안은비
+ * @since	2022.07.22
+ * @version	v.1.0
+ * 
+ * 			작업이력 ]
+ * 				2022.07.22	-	클래스제작
+ * 				2022.07.22	-	rvList()
+ * 				2022.07.25	-	rvWrite()
+ * 				2022.07.25	-	rvWriteProc()
+ * 				2022.07.26	-	estiProc()
+ * 									담당자 ] 안은비
+ */
+
 @Controller
 @RequestMapping("/review")
 public class EbEsti {

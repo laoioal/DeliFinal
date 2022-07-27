@@ -13,6 +13,20 @@ import org.springframework.web.servlet.view.*;
 import com.githrd.deli.dao.*;
 import com.githrd.deli.vo.*;
 
+/**
+ * 쿠폰 관련 작업을 전담해서 처리하는 클래스
+ * @author	안은비
+ * @since	2022.07.26
+ * @version	v.1.0
+ * 
+ * 			작업이력 ]
+ * 				2022.07.26	-	클래스제작
+ * 				2022.07.26	-	eventPage()
+ * 				2022.07.27	-	evtProc()
+ * 				2022.07.27	-	myCoupon()
+ * 									담당자 ] 안은비
+ */
+
 @Controller
 @RequestMapping("/event")
 public class EbEvent {

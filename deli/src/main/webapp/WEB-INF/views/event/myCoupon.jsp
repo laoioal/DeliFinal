@@ -1,15 +1,14 @@
 <%-- 
-
-/** 참여 내역 리스트
+/** 내 쿠폰함
  * @author	안은비
- * @since	2022/07/26
+ * @since	2022/07/27
  * @version	v.1.0
  * 
  * 			작업이력 ]
- * 				2022.07.26	-	클래스제작
+ * 				2022.07.27	-	뷰제작
  * 								담당자 : 안은비
  */
---%>
+ --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>

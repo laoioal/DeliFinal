@@ -11,6 +11,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.githrd.deli.dao.EunbeeDao;
 import com.githrd.deli.vo.EunbeeVO;
 
+/**
+ * 이 클래스는 메일 작업을 전담해서 처리하는 클래스
+ * @author	안은비
+ * @since	2022.07.21
+ * @version	v.1.0
+ * 
+ * 			작업이력 ]
+ * 				2022.07.21	-	클래스제작
+ * 									담당자 ] 안은비
+ *
+ */
+
 public class EunbeeService {
 	@Autowired
 	EunbeeDao eDao;
