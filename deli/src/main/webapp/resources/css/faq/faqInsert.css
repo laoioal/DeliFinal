@@ -1,39 +1,58 @@
-#faq {
-	margin-top:50px;
-	margin-left:28%;
-}
-h1{
-	margin-left:18%;
-	margin-bottom:5%;
+#faq11 {
+	margin-top:150px;
+	margin-left:25%;
 }
 #title {
+	margin-left:31px;
 	width: 500px;
 	height: 40px;
 	font-size: 20px;
 	margin-bottom:10px;
 }
 
-#content {
+a{
+	text-decoration-line: none;
+	color:black;
+}
 
+#content {
+	margin-left:31px;
 	width: 500px;
 	height: 300px;   
 	font-size: 20px;
 }
 
 .faqInsert{
+	margin-left:5px;
 	font-size:30px;
 }
-.btn{
-	margin-top:20px;
-	margin-left:21%;
-	width:80px;
-	height:30px;
+#btn1{
+
+	background-color:black;
+	color:white;
 	font-size:15px;
-	
+	font-weight:bold;
+	width:80px;
+	height:35px;
+	border-radius: 10px;
+	outline:0px;	
+	cursor:pointer;
+	float:left;
+	border:0px;
+	margin-top:10px;
+	margin-left:280px;
 }
 #btn2{
-	position: absolute;	
-	margin-top:-30px;
-	margin-left:360px;
-	float: left;
+	background-color:black;
+	color:white;
+	font-size:15px;
+	font-weight:bold;
+	width:85px;
+	height:35px;
+	border-radius: 10px;
+	outline:0px;	
+	cursor:pointer;
+	margin-top:10px;
+	margin-left:10px;
+	border:0px;
 }
