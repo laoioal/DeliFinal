@@ -57,7 +57,7 @@
 		<div class="w3-center">
 			<div class="w3-col m3 num1">
 				<div class="w3-col w3-card-4 w3-padding num3 w3-round-large" style="width:355px; background-color:#f5f5f5;">
-				<h3><b>실시간 <span class="w3-text-blue">채팅</span></b></h3>
+				<h3 class="w3-pink"><b>실시간 <span class="w3-text-amber">채팅</span></b></h3>
 					<textarea class="w3-padding" id="chatbox" rows="13" cols="30" readonly style="background-color:#f5f5f5;"></textarea>	
 					<form class="w3-margin-bottom">
 						<input id="chatid" type="text" value="${SID}" disabled style="width:321px;">
@@ -68,9 +68,9 @@
 					</form>
 				</div>
 				
-				<div class="w3-col hotclick w3-border w3-card-4 mt50 w3-round-large" style="width:355px; background-color:#f5f5f5;">
-				<h3><b><span class="w3-text-red">HOT</span> 게시물</b></h3>
-					<div class="w3-col w3-padding w3-border mgl12"style="width:321px;">
+				<div class="w3-col hotclick w3-border w3-card-4 mt50 w3-round-large w3-padding" style="width:355px; background-color:#f5f5f5;">
+				<h3 class="w3-pink"><b><span class="w3-text-amber">HOT</span> 게시물</b></h3>
+					<div class="w3-col w3-padding w3-border" style="width:321px;">
 						<form method="POST" action="/deli/board/boardForm.dlv" id="frm2" name="frm2">
 							<input type=hidden id="bno" name="bno">
 	<c:forEach var="data" items="${TLIST}" varStatus="st">
@@ -89,7 +89,7 @@
 			<form method="POST" action="/deli/board/boardList.dlv" id="frm" name="frm">
 				<input type="hidden" id="maincity" name="city" value="">
 				<div class="w3-col m6 mt75 num2">
-					<img src="/deli/img/main/total.png" style="width: 450px; margin-right:20px;">
+					<img src="/deli/img/main/total.png" style="width: 450px; margin-right:20px; opacity:0.5;">
 						<h3 style="position: relative; top: -560px; right: 101px;"><b class="selArea citytitle" id="서울특별시">서울</b></h3>
 						<h3 style="position: relative; top: -557px; right: 70px;"><b class="selArea citytitle" id="경기도">경기/인천</b></h3>
 						<h3 style="position: relative; top: -675px; right: -50px;"><b class="selArea citytitle" id="강원도">강원</b></h3>
@@ -117,14 +117,14 @@
 					
 					<div class="w3-container">
 						<hr>
-						<p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>기본정보</b></p>
-						<p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>이름 : ${MYINFO.name}</p>
-						<p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>지역 : ${MYINFO.marea}</p>
-						<p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>카카오ID : ${MYINFO.kid}</p>
+						<p class="w3-large w3-text-theme w3-left-align"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>기본정보</b></p>
+						<p class="w3-left-align mgl20"><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>이름 : ${MYINFO.name}</p>
+						<p class="w3-left-align mgl20"><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>지역 : ${MYINFO.marea}</p>
+						<p class="w3-left-align mgl20"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>카카오ID : ${MYINFO.kid}</p>
 						<hr>
 						
 						
-						<p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>평점</b></p>
+						<p class="w3-large w3-left-align"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>평점</b></p>
 						<p>나의 매너점수</p>
 						<div class="w3-light-grey w3-round-xlarge w3-small">
 							<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:${MYINFO.esti}%">${MYINFO.esti}%</div>
@@ -132,7 +132,7 @@
 						<hr>
 						
 						
-						<p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>회원관리</b></p>
+						<p class="w3-large w3-text-theme w3-left-align"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>회원관리</b></p>
 						<p class="memText mainBtn" id="msgbtn">쪽지보내기</p>
 						<hr>
 						<div class="msList mainBtn">
