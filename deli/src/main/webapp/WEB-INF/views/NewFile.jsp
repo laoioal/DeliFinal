@@ -57,6 +57,7 @@
 		<div class="w3-center">
 			<div class="w3-col m3 num1">
 				<div class="w3-col w3-card-4 w3-padding num3" style="width:355px; background-color:#f5f5f5;">
+				<h3><b>### 실시간 채팅 ###</b></h3>
 					<textarea class="w3-padding" id="chatbox" rows="13" cols="30" readonly style="background-color:#f5f5f5;"></textarea>	
 					<form class="w3-margin-bottom">
 						<input id="chatid" type="text" value="${SID}" disabled style="width:321px;">
@@ -67,9 +68,9 @@
 					</form>
 				</div>
 				
-				<h3 class="mt50"><b>핫게시물</b></h3>
-				<div class="w3-col hotclick w3-border w3-card-4" style="width:355px; background-color:#f5f5f5;">
-					<div class="w3-col w3-padding">
+				<div class="w3-col hotclick w3-border w3-card-4 mt50" style="width:355px; background-color:#f5f5f5;">
+				<h3><b>### <span class="w3-text-red">HOT</span> 게시물 ###</b></h3>
+					<div class="w3-col w3-padding w3-border">
 						<form method="POST" action="/deli/board/boardForm.dlv" id="frm2" name="frm2">
 							<input type=hidden id="bno" name="bno">
 	<c:forEach var="data" items="${TLIST}" varStatus="st">
