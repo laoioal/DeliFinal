@@ -2623,6 +2623,6 @@ INSERT ALL
     VALUES(
         13, 'jennie', aid, isshow
     )
-SELECT * FROM regimem
+SELECT * FROM regimem;
 
 commit;
