@@ -103,10 +103,10 @@
 처리함수	:	reboardProc()
 뷰			:	/WEB-INF/views/board/boardForm.jsp
 ----------------------------------------------------------------------------------
-# 게시판 댓글달기 처리 요청
+# 주변 가입자 조회 요청
 요청내용	:	/deli/board/friendArround.dlv
 파라미터	:	x
 컨트롤러	:	com.githrd.deli.controller.YonghyunController
-처리함수	:	friendtest
+처리함수	:	friendtest()
 뷰			:	/WEB-INF/views/board/friendArround.jsp
 ----------------------------------------------------------------------------------
