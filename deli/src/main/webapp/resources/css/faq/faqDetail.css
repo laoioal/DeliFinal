@@ -1,13 +1,14 @@
-
-.btn{
+.adminBtn{
 	margin-top:20px;
 	width:80px;
 	height:30px;
 	font-size:15px;
 }
-h1{
-		margin-top:3%;
-		margin-left:48%;
+
+
+a{
+	text-decoration-line: none;
+	color:black;
 }
 
 #content{
@@ -15,15 +16,15 @@ h1{
 	text-align:center;
 }
 
-#faq{
+#faq11{
 	margin-left:25%;
 	margin-top:5%;
 	width:800px;
-	height:700px;
-	border:solid;
+	height:600px;
+	border:2px solid #dddddd;
 }
 ul{
-	margin-left:15%;
+	margin-left:10%;
 	font-size:20px;
 }
 
@@ -34,17 +35,29 @@ ul{
 }
 
 #buttonArea{
-	margin-top:20%;
+	margin-top:10%;
 	margin-left:32%;
 
 }
 
-#backBtn{
+#submitbtn{
+	margin-left:48%;
+	
+
+	margin-top:-9%;
+	
+	background-color:black;
+	color:white;
+	font-size:20px;
+	font-weight:bold;
 	width:100px;
 	height:40px;
-	font-size:20px;
-	margin-top:10%;
-		margin-left:45%;
+	border-radius: 10px;
+	outline:0px;	
+	cursor:pointer;
+	border:0px;
 	
 	
+	
+	float: left;
 }
