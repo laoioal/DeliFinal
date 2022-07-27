@@ -126,6 +126,7 @@ $(document).ready(function(){
 	// blur -> focus가 벗어나는 경우 발생
 	$('#mailcheck').blur(function () {
 		const inputCode = $(this).val();
+		$('#mailcheckmsg').removeClass('w3-text-green w3-text-red');
 		const $resultMsg = $('#mailcheckmsg');
 		
 		if(inputCode === code){

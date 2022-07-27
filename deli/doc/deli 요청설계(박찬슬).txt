@@ -51,7 +51,7 @@
 --------------------------------------------------------------
 # 내정보 폼보기 요청 
 요청내용	: 	/deli/main.dlv
-파라미터	:	무
+파라미터	:	id, mno, name, kakaoid, mail, tel, addr, oriname, dir
 컨트롤러	: 	com.githrd.deli.controller.PcsController
 뷰			:	/WEB-INF/views/deli/mein.jsp
 --------------------------------------------------------------
