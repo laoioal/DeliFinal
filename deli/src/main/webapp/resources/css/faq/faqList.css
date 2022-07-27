@@ -1,10 +1,11 @@
 #tableInfo {
-	width: 75%;
+		height:150px;
+	
+	width: 70%;
 	border-top: 2px solid #dddddd;
 	border-bottom: 2px solid #dddddd;
 	font-size: 12px;
 	border-radius: 2px;
-	background: #fff;
 	background: rgba(255, 255, 255, 0.8);
 	padding: 5px;
 	font-size: 20px;
@@ -13,8 +14,27 @@
 		border-bottom: 2px solid #dddddd;
 	
 }
+
+#btn1{
+	margin-top:20%;
+	background-color:black;
+	color:white;
+	font-size:15px;
+	font-weight:bold;
+	width:100px;
+	height:35px;
+	border-radius: 10px;
+	outline:0px;	
+	cursor:pointer;
+	border:0px;
+}
+
+a{
+	text-decoration-line: none;
+	color:black;
+}
 .no {
-	width: 5%;
+	width: 8%;
 	font-size: 15px;
 }
 
@@ -24,22 +44,33 @@
 }
 
 .content {
-	width: 45%;
+	width: 50%;
+	font-size: 15px;
+	cursor:pointer;
+	text-decoration-line: none;
+}
+
+a{
+	text-decoration-line: none;
+	color:black;
+
+}
+.wdate {
+	width: 20%;
 	font-size: 15px;
 }
 
-.wdate {
-	width: 15%;
-	font-size: 15px;
-}
+
 
 h1 {
-	margin-left: 28%;
+	margin-left: 23%;
+	margin-bottom:35px;
+	
 }
 
-#faq {
+#faq11 {
 	margin-top: 100px;
-	margin-left: 19%;
+	margin-left: 23%;
 }
 
 
@@ -52,20 +83,14 @@ h1 {
 	margin-left:50px;
 	float: left;
 }
-.btn {
-	width: 100px;
-	height: 30px;
-	margin-left:-12%;
-	font-size: 15px;
-}
-
-#admin{
+#btn {
 	width: 100px;
 	height: 30px;
 	font-size: 15px;
+	margin-left:-80px;
 }
 
 #buttonArea {
-	margin-left: 35%;
+	margin-left: 28%;
 	margin-top: 3%;
 }
