@@ -105,7 +105,7 @@
 		</div>
 		<c:if test="${not empty SID}">			
 			<div class="w3-col m3">
-				<div class="w3-white w3-text-grey w3-card-4">
+				<div class="w3-white w3-text-grey w3-card-4 w3-round-large">
 					<div class="w3-display-container pdt10">
 						<img src="/deli/upload/${MYINFO.aid}" style="width:80px; margin-top:10px; margin-left:50px;"
 								alt="Avatar" class="w3-left w3-circle">
