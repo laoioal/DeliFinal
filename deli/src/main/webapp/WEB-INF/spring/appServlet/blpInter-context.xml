@@ -12,6 +12,10 @@
 	<beans:bean id="loginCheck" class="com.githrd.deli.interceptor.LoginCheckInterceptor" />
 	<beans:bean id="loginRedirect" class="com.githrd.deli.interceptor.LoginRedirectInterceptor" />
 	
+	<!-- Admin 계정 로그인 체크 인터셉터 빈처리 -->
+	<beans:bean id="AdminLoginInterceptor" class="com.githrd.deli.interceptor.AdminLoginInterceptor" />
+
+	
 	<interceptors>
 		<interceptor>
 			<mapping path="/member/login.dlv" />
@@ -33,5 +37,19 @@
 		
 			<beans:ref bean="loginRedirect" />
 		</interceptor>
+		
+		<interceptor>
+				 <mapping path="/faq/admin/board/**/*" />	
+				 <exclude-mapping path="/faq/admin/board/loginCheck.dlv"/>
+				 <exclude-mapping path="/faq/admin/board/loginOK.dlv"/>
+				 <exclude-mapping path="/faq/board.dlv"/>
+				 
+				<beans:ref bean="AdminLoginInterceptor" />
+		</interceptor>
+		
 	</interceptors>	
+	
+	
+	
+	
 </beans:beans>
