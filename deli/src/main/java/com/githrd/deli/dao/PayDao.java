@@ -100,10 +100,18 @@ public class PayDao {
 	public int odtCnt(int mno) {
 		return sqlSession.selectOne("paSQL.odtCnt", mno);
 	}
+	
 	/*
 	//	메뉴 원 가격 알아내는 함수
 	public int selMenuPrice(Map<String, String> map) {
 		return sqlSession.selectOne("paSQL.selMenuPrice", map);
+	}
+	*/
+	
+	/*
+	//	메뉴 정보 알아내는 함수
+	public List<PayVO> selMenuInfo(PayVO paVO) {
+		return sqlSession.selectList("paSQL.selMenuInfo", paVO);
 	}
 	*/
 }

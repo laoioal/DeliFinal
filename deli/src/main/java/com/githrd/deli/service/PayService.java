@@ -59,7 +59,7 @@ public class PayService {
 		
 		for(Entry<String,String> entry : entries) {
 			paramList.add(new BasicNameValuePair(entry.getKey(), entry.getValue()));
-			System.out.println("paramList : "+paramList);
+			// System.out.println("paramList : "+paramList);
 		}
 		return paramList;
 	}
@@ -85,7 +85,7 @@ public class PayService {
 			System.out.println("getToken error");
 			throw new RuntimeException("아임포트 토큰 발급에 실패했습니다.");
 		}
-		System.out.println("paramList : "+ token);
+		// System.out.println("paramList : "+ token);
 		return token;
 	}
 	
@@ -151,7 +151,7 @@ public class PayService {
 			ObjectMapper mapper = new ObjectMapper();
 			String body = EntityUtils.toString(res.getEntity());
 			JsonNode rootNode = mapper.readTree(body);
-			System.out.println(rootNode);
+			// System.out.println(rootNode);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}	
