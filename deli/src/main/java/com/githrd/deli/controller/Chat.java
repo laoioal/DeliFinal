@@ -34,12 +34,10 @@ public class Chat {
 	@OnOpen
 	public void ChatStart(Session userSession) {
 		sessionUsers.add(userSession);
-System.out.println("접속성공");
 	}
 
 	@OnMessage
 	public void handleMessage(String message, Session userSession) throws Exception {
-		//System.out.println(message);
 		String name = "";
 		Matcher matcher = pattern.matcher(message);
 		if (matcher.find()) {
