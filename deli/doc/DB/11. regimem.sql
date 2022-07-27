@@ -116,4 +116,16 @@ VALUES(
 
 ALTER TABLE regimem DROP COLUMN estishow;
 
+INSERT INTO
+    regimem(abno, aid)
+VALUES(
+    13, 'jennie'
+);
+
+INSERT INTO
+    regimem(abno, aid)
+VALUES(
+    13, 'YHLEE'
+);
+
 commit;

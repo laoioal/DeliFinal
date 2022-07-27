@@ -2675,6 +2675,28 @@ ALTER TABLE ORDERLIST ADD pickup VARCHAR2(100 CHAR) CONSTRAINT OL_PICKUP_NN NOT 
 ;
 
 
+INSERT INTO
+    regimem(abno, aid)
+VALUES(
+    13, 'jennie'
+);
+
+INSERT INTO
+    regimem(abno, aid)
+VALUES(
+    13, 'YHLEE'
+);
+
+INSERT ALL
+    WHEN
+        abno = 13 AND aid != 'jennie' THEN
+    INTO
+        estitable
+    VALUES(
+        13, 'jennie', aid, isshow
+    )
+SELECT * FROM regimem
+
 commit;
 
 

@@ -13,3 +13,13 @@
         CONSTRAINT ETB_SHOW_NN NOT NULL
         CONSTRAINT ETB_SHOW_CK CHECK(isshow IN('Y','N'))
 );
+
+INSERT ALL
+    WHEN
+        abno = 13 AND aid != 'jennie' THEN
+    INTO
+        estitable
+    VALUES(
+        13, 'jennie', aid, isshow
+    )
+SELECT * FROM regimem
