@@ -56,16 +56,20 @@
 		<div class="w75p mt100">
 		<div class="w3-center">
 			<div class="w3-col m3">
-				<textarea class="w3-card-4 w3-padding mgl10" id="chatbox" rows="13" cols="30" readonly></textarea>	
-				<form class="w3-margin-bottom">
-					<input id="chatid" type="text" value="${SID}" disabled>
-					<input id="textMessage" type="text">
-					<input value="Send" type="button" id="sendbtn">
-				</form>
+				<div class="w3-col w3-card-4 w3-padding" style="width:355px; background-color:#f5f5f5;">
+					<textarea class="w3-padding" id="chatbox" rows="13" cols="30" readonly style="background-color:#f5f5f5;"></textarea>	
+					<form class="w3-margin-bottom">
+						<input id="chatid" type="text" value="${SID}" disabled style="width:321px;">
+						<div class="mgt5" style="width:321px;">
+							<input class="w3-col m9 mgr5" id="textMessage" type="text" style="width:260px;">
+							<input class="w3-col m2"  value="Send" type="button" id="sendbtn" style="width:56px;">
+						</div>
+					</form>
+				</div>
 				
 				<h3 class="mt50"><b>핫게시물</b></h3>
-				<div class="w3-col hotclick w3-border w3-card-4" >
-					<div class="w3-col">
+				<div class="w3-col hotclick w3-border w3-card-4" style="width:355px; background-color:#f5f5f5;">
+					<div class="w3-col w3-padding">
 						<form method="POST" action="/deli/board/boardForm.dlv" id="frm2" name="frm2">
 							<input type=hidden id="bno" name="bno">
 	<c:forEach var="data" items="${TLIST}" varStatus="st">
