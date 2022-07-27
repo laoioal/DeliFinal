@@ -2625,4 +2625,14 @@ INSERT ALL
     )
 SELECT * FROM regimem;
 
+INSERT ALL
+    WHEN
+        abno = 13 AND aid != 'YHLEE' THEN
+    INTO
+        estitable
+    VALUES(
+        13, 'YHLEE', aid, isshow
+    )
+SELECT * FROM regimem;
+
 commit;
