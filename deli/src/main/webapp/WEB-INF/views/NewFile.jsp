@@ -57,7 +57,7 @@
 		<div class="w3-center">
 			<div class="w3-col m3 num1">
 				<div class="w3-col w3-card-4 w3-padding num3 w3-round-large" style="width:355px; background-color:#f5f5f5;">
-				<h3><b>### 실시간 채팅 ###</b></h3>
+				<h3><b>실시간 <span class="w3-text-blue">채팅</span></b></h3>
 					<textarea class="w3-padding" id="chatbox" rows="13" cols="30" readonly style="background-color:#f5f5f5;"></textarea>	
 					<form class="w3-margin-bottom">
 						<input id="chatid" type="text" value="${SID}" disabled style="width:321px;">
