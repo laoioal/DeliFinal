@@ -135,7 +135,7 @@ $(document).ready(function(){
 			return;
 		}*/
 		
-		if(content == ''){
+		if(content == ' ' || content == null){
 			alert("내용을 입력해주세요.");
 			oEditors.getById["ir1"].exec('FOCUS');
 			return;
