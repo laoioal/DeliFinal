@@ -43,7 +43,6 @@ public class YonghyunController {
 			}
 		}
 		
-		System.out.println(page);
 		int total = yDao.getBoardTotal(page);
 		page.setPage(page.getNowPage(), total);
 		List<YonghyunVO> list = yDao.getBoardList(page);
@@ -59,7 +58,6 @@ public class YonghyunController {
 		if(yVO.getCk() != 1) {
 			int cnt = yDao.upClick(yVO);
 			if(cnt != 1) {
-				System.out.println("조회수 업데이트 실패");
 			}
 		}
 		yVO = yDao.getBoard(yVO);

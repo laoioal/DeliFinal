@@ -181,7 +181,6 @@ public class PayController {
 		
 		
 		List<YonghyunVO> kVO = yDao.selRegimem(yVO);
-		System.out.println(kVO);
 		
 		
 		int aprice = 0;
@@ -247,7 +246,6 @@ public class PayController {
 	@ResponseBody
 	public int canCelPay(String merchant_uid) {
 		String token = paSrvc.getImportToken();
-		System.out.println("token : " + token);
 		int cnt = paSrvc.cancelPayment(token, merchant_uid);
 		String ono = merchant_uid;
 		paSrvc.delAllM(ono);
@@ -275,7 +273,6 @@ public class PayController {
 	//	결제 후 페이지 폼보기 처리 함수
 	@RequestMapping("afterPay.dlv")
 	public ModelAndView afterPay(ModelAndView mv, HttpSession session, PayVO paVO, YonghyunVO yVO, HttpServletRequest req, RedirectView rv, MembVO membVO) {
-		System.out.println(paVO);
 		
 		Map result = new HashMap<String, String>();
 
@@ -343,7 +340,7 @@ public class PayController {
 	@RequestMapping("orderHistory.dlv")
 	public ModelAndView orderHistory(ModelAndView mv, HttpSession session, RedirectView rv, PayVO paVO, PageUtil page) {
 		String sid = (String) session.getAttribute("SID");
-		System.out.println(sid);
+
 		
 		if(sid == null) {
 			rv.setUrl("/deli/member/login.dlv");
