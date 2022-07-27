@@ -1,17 +1,20 @@
 package com.githrd.deli.controller;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Param;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.githrd.deli.service.AdminService;
 import com.githrd.deli.service.FaqService;
@@ -24,69 +27,72 @@ import com.githrd.deli.vo.faqVO;
 @Controller
 @RequestMapping("/faq")
 public class FaqController {
-	
-	//admin 계정 로그인을 처리해주는 서비스함수
-	@Autowired	private AdminService adminService;
-	//faq 테이블의 생성,수정,삭제를 처리해주는 서비스함수
-	@Autowired 	private FaqService faqService;
+	private static final Logger log = LoggerFactory.getLogger(FaqController.class);
 
+	@Autowired	private AdminService adminService;
+	@Autowired 	private FaqService faqService;
 	private static adminVO admin;
 	private static List<faqVO> list;
 	
 	// faq 테이블 보기
 	@GetMapping("/board.dlv")
-	public String boardView(Model model) {
+	public String boardView(HttpSession session,Model model) {
 		String uri = "/deli/faq/board.dlv";
 		List<faqVO> list = faqService.selectList();
+		session.setAttribute("list", list);
+		admin = (adminVO)session.getAttribute("admin");
+		log.info("list={}",list);
 		list =	faqService.cutContent(faqService.selectList());
-		model.addAttribute("list", list);
-		model.addAttribute("admin",admin);
+		session.setAttribute("list", list);
 		return faqService.findViewPage(uri);
 	}
 	
-//	faq 페이지를 수정하기 위해서는 관리자계정 로그인을 해야함
-	@GetMapping("/admin/board/login.dlv")
-	public ModelAndView content() {
-
-		ModelAndView mv = new ModelAndView();
 	
-		mv.setViewName("faq/admin/adminLogin");
-			return mv;
+//	faq 페이지를 수정하기 위해서는 관리자계정 로그인을 해야함
+	@GetMapping("/admin/board/loginCheck.dlv")
+	public String content(HttpSession session){
+		String msg = (String)session.getAttribute("msg");
+		if(msg!=null) {
+		session.removeAttribute("msg");
+		}	
+			return "/faq/admin/adminLogin";
+	}
+	@GetMapping("/admin/board/login.dlv")
+	public String login() {
+	
+		return "/faq/faqList";
 	}
 	
-
 	
 	//로그인에 성공하면 수정,삭제,입력 버튼이 보이고 아니면 메세지가 하단에 표시됨.
-	@PostMapping("/admin/board/login.dlv")
-	public String login(Model model, @Param("id")String id, @Param("pw")String pw) {
+	@RequestMapping("/admin/board/loginOK.dlv")
+	public String login(HttpServletRequest request, Model model, @Param("id")String id, @Param("pw")String pw){
+			String msg = adminService.LoginMsg(id, pw);
+			HttpSession session = request.getSession();
+			if(msg==null) {
+				adminVO admin = new adminVO(id,pw);
+				session.setAttribute("admin", admin);
+				return "redirect:/faq/board.dlv";
+			}
+			else {
+				session.setAttribute("msg",msg);
+				return "redirect:/faq/admin/board/login.dlv";
+			}
+		}
 	
-		String msg = adminService.LoginMsg(id, pw);
-		if(msg==null) {
-			admin = adminService.selectId(id);
-			model.addAttribute("admin",admin);
-			return "redirect:/faq/board.dlv";
-		}
-		else {
-			return	faqService.findViewPage("/deli/faq/admin/board/login.dlv");
-		}
-	}
 
 	//테이블을 추가하거나,  logout 버튼을 누르게되면 faq 테이블이 있는 페이지로 이동
 	@RequestMapping(value={"/admin/board/insert.dlv","/admin/board/logout.dlv"})
-	public String beforeInsert(HttpServletRequest request,Model model) {
+	public String beforeInsert(HttpSession session,HttpServletRequest request,Model model) {
 		String uri = request.getRequestURI();
-		
-	//	List<faqVO> list =	faqService.cutContent(faqService.selectList());
-		
-		model.addAttribute("list", list);
 		
 		if(uri.contains("insert")) {
 			//테이블 추가하면 admin 객체를 전달
-		model.addAttribute("admin", admin);
+			session.setAttribute("list", list);
 		}
-		//그렇지 않으면 admin 객체는 null값으로 반환
+		//로그아웃하면 admin 객체는 null값으로 반환
 		else {
-			admin = null;
+			session.removeAttribute("admin");
 		}
 		return faqService.findViewPage(uri);
 	}
@@ -97,7 +103,7 @@ public class FaqController {
 	public String afterInsert(Model model, @Param("id")String id, @Param("pw")String pw, @Param("title")String title,@Param("content")String content) {
 		faqVO faq = new faqVO(id,pw,title,content);
 		faqService.insert(faq);
-		//List<faqVO> list =	faqService.cutContent(faqService.selectList());
+		list =	faqService.cutContent(faqService.selectList());
 		model.addAttribute("list", list);
 		return "/faq/faqList";
 	}
@@ -107,7 +113,7 @@ public class FaqController {
 	public String detailView(HttpServletRequest request, @Param("no")int no,Model model) {
 		faqVO faq = faqService.selectNum(no);
 		String uri = request.getRequestURI();	//요청받은 uri
-		model.addAttribute("admin",admin);	//admin 객체 전달
+	//	model.addAttribute("admin",admin);	//admin 객체 전달
 		
 		if(uri.equals("/deli/faq/admin/board/update2.dlv"))
 		{	
