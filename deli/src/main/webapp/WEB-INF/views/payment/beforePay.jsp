@@ -68,6 +68,7 @@ body {
 		    	</div>
 	</c:if>
 		  	</div>
+		</div>
 		
 		<form method="POST" action="/deli/payment/afterPay.dlv" id="pageFrm" name="pageFrm">
 			<input type="hidden" name="bno" id="bno" value="${PO.bno}">
@@ -88,7 +89,9 @@ body {
 			<input type="hidden" id="imp_uid" name="imp_uid" >
 			<input type="hidden" id="merchant_uid" name="merchant_uid" >
 			<input type="hidden" id="paym" name="paym" >
-		<h1 class="mgb10 w3-border w3-light-grey pdAll10" style="margin-bottom: 5px;"><strong>Before Payment</strong></h1>
+		<div style="margin-top: 60px;">
+			<h1 class="mgb10 w3-border w3-light-grey pdAll10" style="margin-bottom: 5px;"><strong>Before Payment</strong></h1>
+		</div>
 		<div class="w3-col w3-light-grey">
 			<div class="w3-col w3-border-bottom " align="left">
 				<h4 class="w3-center w3-col mgl10">식당 이름 : <span id="rsname">${PO.rname}</span></h4><br><br>
@@ -142,8 +145,9 @@ body {
 			<div class="w3-half w3-button w3-deep-orange" id="cbtn">취소</div>
 		</c:if>
 		</div>
-	</div>
-</div>
+		</div>
+
+
 		
 <div class="w3-container" >
 	<div id="id01" class="w3-modal">
