@@ -69,8 +69,8 @@
 				</div>
 				
 				<div class="w3-col hotclick w3-border w3-card-4 mt50" style="width:355px; background-color:#f5f5f5;">
-				<h3><b>### <span class="w3-text-red">HOT</span> 게시물 ###</b></h3>
-					<div class="w3-col w3-padding w3-border">
+				<h3><b><span class="w3-text-red">HOT</span> 게시물</b></h3>
+					<div class="w3-col w3-padding w3-border mgl12"style="width:321px;">
 						<form method="POST" action="/deli/board/boardForm.dlv" id="frm2" name="frm2">
 							<input type=hidden id="bno" name="bno">
 	<c:forEach var="data" items="${TLIST}" varStatus="st">
