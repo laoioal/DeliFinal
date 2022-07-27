@@ -1887,7 +1887,7 @@ VALUES(
 INSERT INTO
     board(bno, bmno, title, body, larea, marea, sarea, end, category, rest)
 VALUES(
-    (SELECT NVL(MAX(bno) + 1, 1) FROM board), 1006, '테스트입니다.', '무엇을 먹어야할지 생각하는 테스트입니다.', 1, 2, 27, 1, '치킨', 2
+    (SELECT NVL(MAX(bno) + 1, 1) FROM board), 1006, '무엇을 먹을까요.', '무엇을 먹어야할지 생각해봅시다. 정답은 치킨', 1, 2, 27, 1, '치킨', 2
 );
 
 INSERT INTO
@@ -1941,7 +1941,7 @@ VALUES(
 INSERT INTO
     board(bno, bmno, title, body, larea, marea, sarea, end, category, rest)
 VALUES(
-    (SELECT NVL(MAX(bno) + 1, 1) FROM board), 1005, '테스트용', '테스트 해보자 얼른.', 1, 1, 2, 6, '치킨', 3
+    (SELECT NVL(MAX(bno) + 1, 1) FROM board), 1005, '이런 야밤에는 치킨이죠', '치킨 먹을사람 모여라.', 1, 1, 2, 6, '치킨', 3
 );
 
 INSERT INTO

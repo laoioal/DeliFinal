@@ -34,6 +34,9 @@ textarea {
 .hotclickhr {
 	margin-top : 0px;
 	margin-bottom : 0px;
+	height: 1px;
+	background-color: lightgray;
+	opacity: 0.5;
 }
 small {
 	font-size: 7px;

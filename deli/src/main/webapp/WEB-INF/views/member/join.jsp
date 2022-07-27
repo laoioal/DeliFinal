@@ -41,7 +41,7 @@ h5 > label{
 		    	<div class="w3-button w3-block w3-black" id="faq">FAQ</div>
 		    </div>
 		    <div class="w3-col l8">
-		      	<div class="w3-block w3-black w3-center ft18">Delivery Project</div>
+		      	<div class="w3-block w3-black w3-center ft22">Delivery Project</div>
 		    </div>
 	  	</div>
 	</div>

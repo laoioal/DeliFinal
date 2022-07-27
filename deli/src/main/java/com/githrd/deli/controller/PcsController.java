@@ -237,8 +237,6 @@ public class PcsController {
 			rv.setUrl("/deli/member/join.dlv");
 			e.printStackTrace();
 		}
-		System.out.println("pcVO : " + pcVO);
-		System.out.println("fVO : " + fVO);
 		
 		mv.setView(rv);
 		return mv;

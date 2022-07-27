@@ -107,7 +107,6 @@ public class FileService {
 		PcDao.addMember(pcVO);
 		
 		
-		System.out.println("############### service mno : " + pcVO.getMno());
 		if(pcVO.getFile() != null) {
 			// 파일정보테이블에 파일정보들 입력하고(반복)
 			ArrayList<FileVO> list = uploadProc(pcVO.getFile());
