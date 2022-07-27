@@ -31,7 +31,7 @@
 $(document).ready(function(){
 });
 </script> 
-<style type="text/css">
+<style type="text/css"> 
 body {
 		background-image: url("/deli/img/main/test.png");
 		background-size: 640px auto;

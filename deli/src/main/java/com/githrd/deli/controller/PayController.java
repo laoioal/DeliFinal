@@ -186,7 +186,7 @@ public class PayController {
 				aprice = aprice + mVO.get(i).getMprice();
 			} 
 			count = count - 1;
-			if(count == 1) {
+			if(count == 1) { 
 				break;
 			}
 		}
