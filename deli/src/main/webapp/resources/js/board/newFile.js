@@ -135,6 +135,7 @@ $(document).ready(function(){
 		$('#apfriblock').css('display', 'none');
 	});
 	
+	
 	$('.hotbtn').click(function(){
 		var bno = $(this).attr('id');
 		$('#bno').val(bno);
