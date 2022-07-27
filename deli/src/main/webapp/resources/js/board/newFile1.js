@@ -14,8 +14,8 @@ $(document).ready(function(){
 		var city = $(this).attr('id');
 		$('#maincity').val(city);
 		$('#frm').submit();
-	}); 
-
+	});
+	
 	$('#total').click(function(){
 		$('#frm1').submit();
 	});
@@ -33,8 +33,7 @@ $(document).ready(function(){
 	});
 
 //	var webSocket = new WebSocket('ws://180.228.75.2/deli/main.dlv');
-//	var webSocket = new WebSocket('ws://192.168.0.107/deli/main.dlv');
-	var webSocket = new WebSocket('ws://192.168.0.131/deli/main.dlv');
+	var webSocket = new WebSocket('ws://192.168.0.107/deli/main.dlv');
 	var chatbox = document.getElementById('chatbox');
 	
 	webSocket.onopen = function(chat) {
@@ -165,7 +164,4 @@ $(document).ready(function(){
 		$(location).attr('href', '/deli/event/slot.dlv');
 	});
 	
-	$('#estibtn').click(function(){
-		$(location).attr('href', '/deli/review/rvList.dlv');
-	});
 });
