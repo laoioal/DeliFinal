@@ -1,43 +1,92 @@
-#faq{
-	text-align:center;
-	margin-top:5%;
-}
-h2{
-	font-size:50px;
-	margin-top:40px;
-}
-
-
-#id {
-	margin-left:20px;
-	width: 300px;
-	height: 40px;
+#tableInfo {
+	
+	width: 70%;
+	border-top: 2px solid #dddddd;
+	border-bottom: 2px solid #dddddd;
+	font-size: 12px;
+	border-radius: 2px;
+	background: rgba(255, 255, 255, 0.8);
+	padding: 5px;
 	font-size: 20px;
-	margin-bottom:10px;
 }
-
-#pw {
-	width: 300px;
-	height: 40px;
-	font-size: 20px;
-	margin-bottom:10px;
-
-}
-#submit{
-	width:50px;
-	height:30px;
-	font-size: 15px;
+#lineStyle{
+		border-bottom: 2px solid #dddddd;
 	
 }
 
-.btn {
-	width:100px;
-	height:40px;
-	font-size: 20px;
+
+#id{
+	width:300px;
+	height:35px;
+	margin-left:13px;
+	margin-top:10px;
+	margin-bottom:10px;
 }
-.faqInsert{
-	font-size:20px;
+#pw{
+	width:300px;
+	height:35px;
 }
-#buttonArea{
-	margin-left:70px;
+
+a{
+	text-decoration-line: none;
+	color:black;
+}
+.no {
+	width: 8%;
+	font-size: 15px;
+}
+
+.title {
+	width: 25%;
+	font-size: 15px;
+}
+
+.content {
+	width: 50%;
+	font-size: 15px;
+	cursor:pointer;
+	text-decoration-line: none;
+}
+
+a{
+	text-decoration-line: none;
+	color:black;
+
+}
+.wdate {
+	width: 20%;
+	font-size: 15px;
+}
+
+
+
+h1 {
+	margin-left: 23%;
+	margin-bottom:35px;
+	
+}
+#btn1{
+	background-color:black;
+	color:white;
+	font-size:15px;
+	font-weight:bold;
+	width:80px;
+	height:35px;
+	border-radius: 10px;
+	outline:0px;	
+	cursor:pointer;
+	border:0px;
+}
+#btn2{
+	margin-left:20px;
+	background-color:black;
+	color:white;
+	font-size:15px;
+	font-weight:bold;
+	width:85px;
+	height:35px;
+	border-radius: 10px;
+	outline:0px;	
+	cursor:pointer;
+	border:0px;
 }
