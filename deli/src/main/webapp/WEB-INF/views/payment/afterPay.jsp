@@ -37,8 +37,7 @@ body {
 </style>
 </head>
 <body>
-	<div class="mxw700 w3-content w3-center">
-		<div class="w3-top w3-content w3-margin-bottom">
+		<div class="w3-top">
 			<div class="w3-row w3-padding w3-black">
 				<div class="w3-col s1">
 					<form method="POST" action="/deli/board/boardList.dlv" id="frm1" name="frm1">
@@ -66,6 +65,7 @@ body {
 	</c:if>
 		  	</div> 
 		</div>
+	<div class="mxw700 w3-content w3-center">
 		<form method="POST" action="/deli/payment/InsertInfo.dlv" id="frm" name="frm">
 			<input type="hidden" id="ono" name="ono" value="${MUID}">
 			<input type="hidden" id="tel" name="tel" value="${MPO.tel}">

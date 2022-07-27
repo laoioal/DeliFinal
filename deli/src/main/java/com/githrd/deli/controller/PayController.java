@@ -175,13 +175,9 @@ public class PayController {
 		
 		int delpay = (paVO.getDelpay() != 0) ? paVO.getDelpay() / cnt : 0;
 		paVO.setMtprice(mtprice + delpay);
-		 
 		
 		List<YonghyunVO> mVO = yDao.getMenu(yVO);
-		
-		
 		List<YonghyunVO> kVO = yDao.selRegimem(yVO);
-		
 		
 		int aprice = 0;
 		for(int i = 0 ; i < mVO.size() ; i ++) {
@@ -204,9 +200,6 @@ public class PayController {
 		mv.addObject("MENU", mVO);
 		mv.addObject("MEMBER", kVO);		
 		mv.addObject("APRICE", aprice);
-		// System.out.println(kVO);
-		System.out.println(mVO);
-		System.out.println(sid);
 		mv.setViewName("payment/beforePay");
 		
 		return mv;
