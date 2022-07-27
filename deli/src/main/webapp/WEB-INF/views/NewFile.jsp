@@ -55,8 +55,8 @@
 	<div class="w3-center w3-container w3-center">
 		<div class="w75p mt100">
 		<div class="w3-center">
-			<div class="w3-col m3">
-				<div class="w3-col w3-card-4 w3-padding" style="width:355px; background-color:#f5f5f5;">
+			<div class="w3-col m3 num1">
+				<div class="w3-col w3-card-4 w3-padding num3" style="width:355px; background-color:#f5f5f5;">
 					<textarea class="w3-padding" id="chatbox" rows="13" cols="30" readonly style="background-color:#f5f5f5;"></textarea>	
 					<form class="w3-margin-bottom">
 						<input id="chatid" type="text" value="${SID}" disabled style="width:321px;">
@@ -87,7 +87,7 @@
 			</div>
 			<form method="POST" action="/deli/board/boardList.dlv" id="frm" name="frm">
 				<input type="hidden" id="maincity" name="city" value="">
-				<div class="w3-col m6 mt75">
+				<div class="w3-col m6 mt75 num2">
 					<img src="/deli/img/main/total.png" style="width: 450px; margin-right:20px;">
 						<h3 style="position: relative; top: -560px; right: 101px;"><b class="selArea citytitle" id="서울특별시">서울</b></h3>
 						<h3 style="position: relative; top: -557px; right: 70px;"><b class="selArea citytitle" id="경기도">경기/인천</b></h3>

@@ -161,7 +161,6 @@ public class PcsController {
 		pcVO.setMno(PcDao.getMno(sid));
 		
 		int cnt = PcDao.addBoard(pcVO);
-		System.out.println(pcVO);
 		if(cnt == 1) {
 			PcDao.addRegimem(pcVO);
 			PcDao.addPickUp(pcVO);
@@ -373,7 +372,6 @@ public class PcsController {
 				// 파일 기본경로 _ 상세경로
 				String path = defaultPath + "resources" + File.pathSeparator + "bUpload" + File.separator;
 				File file = new File("path:" + path);
-				System.out.println("path : " + path);
 				// 디렉토리가 존재하지 않을 경우 디렉토리 생성
 				if(!file.exists()) {
 					file.mkdirs();
@@ -390,8 +388,6 @@ public class PcsController {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("callback_func : " + callback_func);
-		System.out.println("callback : " + callback);
 		return "redirect:" + callback + "?callback_func="+callback_func+file_result;
 	}
 	

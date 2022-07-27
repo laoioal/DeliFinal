@@ -93,3 +93,14 @@ small {
 	position: relative;
 	top: 10px;
 }
+
+.num1{
+	position: relative;
+	z-index: 2;
+}
+.num2{
+	z-index: 1;
+}
+.num3{
+	z-index: 3;
+}
