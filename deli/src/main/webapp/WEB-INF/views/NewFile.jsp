@@ -18,7 +18,7 @@
 <style type="text/css">
 	body {
 		background-image: url("/deli/img/main/test.png");
-		background-size: auto 100%;
+		background-size: 640px auto;
 		background-repeat: repeat;
 	}
 </style>
