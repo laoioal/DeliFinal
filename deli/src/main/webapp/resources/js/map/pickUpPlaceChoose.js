@@ -1,13 +1,19 @@
- 
- let place_name;
- function openChild(name){
 
+ let place_name;
+
+ function openChild(name){
+	place_name=name;
 	let url = document.getElementById('url').value;
-	 url = name;
-	 place_name=name;
+	 url = place_name;
 	}
  
   		function onClick(){
+	
+		if(place_name==""||place_name==undefined){
+			alert("다시입력해주세요");
+			return;
+		}
+
   			let popupWidth = 500;
   			let popupHeight = 600;
   			let left = Math.ceil((window.screen.width-popupWidth)/2);
