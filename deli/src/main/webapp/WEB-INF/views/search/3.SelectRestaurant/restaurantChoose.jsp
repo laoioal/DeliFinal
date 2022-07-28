@@ -39,10 +39,13 @@
              		   	</c:forEach>
                                  	  <tr class="trstyle"/>
                 </table>
-                			<input type="hidden" name = "place_name" value='${place.name}'/>
-                			<input type="hidden" id ="no" values=""/>
+                             <div name = "code" id = "code" value='${category.code}'/>
+                                             <div name = "place_name2" id = "place_name2" value='${place.name}'/>
+                
+                			<input type="hidden" name = "place_name" id = "place_name" value='${place.name}'/>
+                			<input type="hidden" id ="no" value=""/>
 							<h2 id = "h2style">
-                            <input type="submit" id = "submitbtn"  value="다음페이지"/></h2>
+                            <input type="submit" id = "submitbtn"  value="다음페이지" onclick = "onClick()"/></h2>
                             </form>
                 <script>
                 
@@ -54,7 +57,6 @@
            
            let map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
            var geocoder = new daum.maps.services.Geocoder();
-
 	      let address = [];
 	      let rname = [];
 	         <c:forEach items="${restaurant}" var="restaurant">
@@ -81,7 +83,6 @@
 	                                         	content : '<div class ="label2"><span class="left2"></span><span class="center2">'+rname[idx]+'</span><span class="right2"></span></div>'
 	                               	  });
 	                              	 customOverlay.setMap(map);
-
 	                            	}
 	                            	else{
 	                        	  let marker = new kakao.maps.Marker({
@@ -92,17 +93,15 @@
 	                             let customOverlay = new kakao.maps.CustomOverlay({
 	              				   		position: coords,
 	                                     content : '<div class ="label"><span class="left"></span><span class="center">'+rname[idx]+'</span><span class="right"></span></div>'
-
 	                           	  });
 	                        	 customOverlay.setMap(map);
-
 	                         }}
 		    		  
 		    	  })})
 		  
-              function setChildText(){
-                  openWin.document.getElementById("cInput").value = document.getElementById("pInput").value;
-                 }
+              function setChildText(){
+                  openWin.document.getElementById("cInput").value = document.getElementById("pInput").value;
+                 }
              
           
      	
@@ -111,11 +110,9 @@
                 
 		
 </center>
-	<script src="<c:url value="/js/faq/urlDelete.js"/>" type="text/javascript"></script>
             <script src="<c:url value="/js/map/submitbtn.js"/>" type="text/javascript"></script>
 
 
 </form>
 </body>
 </html>
-
