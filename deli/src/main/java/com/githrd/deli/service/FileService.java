@@ -10,7 +10,7 @@ package com.githrd.deli.service;
  * 									파일 서비스 클래스 제작
  */
 
-import java.io.File;
+import java.io.*;
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.* ;
@@ -48,6 +48,8 @@ public class FileService {
 		// 저장 경로를 기억할 변수
 		String path = this.getClass().getResource("").getPath();
 		path = path.substring(0, path.indexOf("/WEB-INF")) + "/resources" + dir;
+		
+		System.out.println(path);
 		
 		fVO.setDir("/resources" + dir);
 		
