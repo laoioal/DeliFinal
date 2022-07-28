@@ -36,10 +36,10 @@
  
 	<!-- 회원가입 메일 인증 -->
    <beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-      <beans:property name="host" value="smtp.naver.com" />
-      <beans:property name="port" value="465" />
-      <beans:property name="username" value="[ID입력]" />
-      <beans:property name="password" value="[PW입력]" />
+      <beans:property name="host" value="smtp.gmail.com" />
+      <beans:property name="port" value="587" />
+      <beans:property name="username" value="delivery0729@gmail.com" />
+      <beans:property name="password" value="wrdwiottzehnqboa" />
       <beans:property name="javaMailProperties">
          <beans:props>
                 <beans:prop key="mail.transport.protocol">smtp</beans:prop>

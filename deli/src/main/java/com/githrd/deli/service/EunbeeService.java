@@ -28,9 +28,9 @@ public class EunbeeService {
 	EunbeeDao eDao;
 	
 	public void sendMail(String mail, String npw) {
-		String host = "smtp.naver.com"; 
-		String user = "320aeb@naver.com";	// 네이버 계정
-		String password = "";	// 네이버 패스워드
+		String host = "smtp.gmail.com"; 
+		String user = "delivery0729@gmail.com";	// 네이버 계정
+		String password = "wrdwiottzehnqboa";	// 네이버 패스워드
 		
 		// SMTP 서버 정보를 설정한다.
 		Properties props = new Properties();
