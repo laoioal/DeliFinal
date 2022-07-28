@@ -47,16 +47,24 @@ public class MemberController {
 	//아이디 주소를 입력하면 주소값에 대한 위도값, 경도값을 자바스크립트를 통해 전달 받은 뒤
 	//등록된 pickup정보를 바탕으로 거리 계산하고 이를 view(placeView)에 뿌려주는 기능
 	@GetMapping("/placeView.dlv")
-	public String mapSearh(Model model, @Param("lat")double lat, @Param("lon")double lon) {
+	public String mapSearh(@Param("lat")double lat, @Param("lon")double lon,HttpSession session) {
 		List<placeVO> place = mapper.selectList();	//픽업 리스트
 		List<calculatorVO> cal = calculator.setArray(place, lat, lon);
-		placeVO myPlace = new placeVO(member.getId()+"의 위치",member.getAddr(),lon,lat);	
-		//마커 표시를 위해 회원 정보도 list에 넣어줌
+		
+		
+		placeVO myPlace = new placeVO(member.getId()+"의 위치",member.getAddr(),lon,lat);	//마커 표시를 위해 회원 정보도 list에 넣어줌
 		place.add(myPlace);
-		model.addAttribute("lat",lat);
-		model.addAttribute("lon",lon);
-		model.addAttribute("place",place);
-		model.addAttribute("cal",cal);
+//		model.addAttribute("lat",lat);
+//		model.addAttribute("lon",lon);
+//		model.addAttribute("place",place);
+//		model.addAttribute("cal",cal);
+//		
+		session.setAttribute("lat", lat);
+		session.setAttribute("lon", lon);
+		session.setAttribute("place", place);
+		session.setAttribute("cal", cal);
+
+		
 		return "search/2.SelectPlace/pickUpPlaceChoose";
 	}
 	
