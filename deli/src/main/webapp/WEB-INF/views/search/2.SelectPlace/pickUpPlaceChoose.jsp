@@ -22,7 +22,6 @@
                         <th>거리</th>
                         <th>주소</th>
                   <tr class="trstyle"/>
-               	 </tr>
               	 <tr>
                         <c:forEach items="${cal}" var="cal">
                             <th><input type="radio" name = "name" value="${cal.name}" id = "name" onclick="openChild('${cal.name}')"/></th>
@@ -36,9 +35,11 @@
                       		<h2 id="h2style">
                             <input type="submit" value="다음페이지" id = "submitbtn" name="check" onclick="onClick()"/></h2>
                 </table>
+                
+                
                       		<h2 style="margin-top:380px;position:absolute;left:1070px">픽업 장소 
                             <input type="submit" value="선택"  name="check" style="margin-top:0px" onclick="onClick()"/></h2>
-                            
+               
                <script type = "text/javascript">
                
                
@@ -50,7 +51,6 @@
                
                let map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
                let geocoder = new daum.maps.services.Geocoder();
-
              let address = [];
              let name = [];
              
@@ -59,8 +59,7 @@
                 name.push("${place.name}"); //식당이름 관련 위치값을 배열에 담기
                 </c:forEach>
              	let idx = name.length;
-				let idx2 = idx-1;
-
+				let idx2 = idx-1;	
              
              address.forEach(function(addr,idx){
                 geocoder.addressSearch(addr,function(result,status){
@@ -76,7 +75,6 @@
                                    	content : '<div class ="label2"><span class="left2"></span><span class="center2">'+name[idx]+'</span><span class="right2"></span></div>'
                          	  });
                         	 customOverlay.setMap(map);
-
                       	}
                       	else{
                   	  let marker = new kakao.maps.Marker({
@@ -87,19 +85,15 @@
                        let customOverlay = new kakao.maps.CustomOverlay({
         				   		position: coords,
                                content : '<div class ="label"><span class="left"></span><span class="center">'+name[idx]+'</span><span class="right"></span></div>'
-
                      	  });
                   	 customOverlay.setMap(map);
-
                    }}
                 }) 
              })
-
               </script>
           
             
-            	<script src="<c:url value="/js/faq/urlDelete.js"/>" type="text/javascript"></script>
             <script src="<c:url value="/js/map/submitbtn.js"/>" type="text/javascript"></script>
-            
+            <script src="<c:url value="/js/faq/urlDelete.js"/>" type="text/javascript"></script>
     </body>
 </html>
