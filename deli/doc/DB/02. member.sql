@@ -68,7 +68,7 @@ VALUES(
 INSERT INTO
     member(mno, name, id, kakaoid, pw, mail, tel, addr)
 VALUES(
-    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), '제니', 'jennie', 'jennie12', '12345', 'jennie@githrd.com', '010-5555-5555', '서울시 중구 다산로11길 13'
+    (SELECT NVL(MAX(mno) + 1, 1001) FROM member), '제니', 'jennie', 'jennie12', '12345', 'erkasiyan01@naver.com', '010-5555-5555', '서울시 중구 다산로11길 13'
 );
 
 INSERT INTO
